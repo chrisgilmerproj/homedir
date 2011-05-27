@@ -1,0 +1,14 @@
+[user]
+	name = Chris Gilmer
+	email = chris.gilmer@gmail.com
+[github]
+	user = chrisgilmerproj
+[alias]
+	st = status
+	br = branch
+	ci = commit
+	co = checkout
+[color]
+	diff   = auto
+	status = auto
+	branch = auto
