@@ -3,6 +3,7 @@ export NODE_PATH="/usr/local/lib/node"
 
 alias ls='ls -Gh'
 alias ll='ls -al'
+alias sethostname='scutil –set HostName'
 
 export EDITOR=vim
 
