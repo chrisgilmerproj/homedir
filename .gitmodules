@@ -1,3 +1,6 @@
 [submodule ".vim/nerdtree"]
 	path = .vim/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
+[submodule ".vim/nerdtree_plugin"]
+	path = .vim/nerdtree_plugin
+	url = git://github.com/scrooloose/nerdtree.git
