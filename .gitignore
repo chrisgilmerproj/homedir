@@ -20,7 +20,6 @@ Sites
 .ipython/
 .npm/
 .pip/
-.ssh/
 .subversion/
 
 #--- Dot files
@@ -35,3 +34,4 @@ Sites
 .serverauth.*
 .viminfo
 
+*
