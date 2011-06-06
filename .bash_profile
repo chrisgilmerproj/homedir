@@ -1,6 +1,7 @@
 # add user bin directory to path
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/1.9.2-p180/bin:$PATH
 export NODE_PATH=/usr/local/lib/node
+export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 # add editor variable
 export EDITOR=vim
