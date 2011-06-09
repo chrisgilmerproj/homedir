@@ -1,3 +1,6 @@
 [submodule ".vim/nerdtree_plugin"]
 	path = .vim/nerdtree_plugin
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/ftplugin/python"]
+	path = .vim/ftplugin/python
+	url = git://github.com/kevinw/pyflakes-vim.git
