@@ -97,3 +97,7 @@ bind } history
 #hardstatus lastline '%w%=%c:%s   %1`'
 hardstatus lastline '%c:%s  %w'
 #hardstatus alwayslastline '%=%n %t%=(%l) %c:%s%='
+
+#scrollback buffer
+defscrollback 5000
+
