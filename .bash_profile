@@ -2,6 +2,7 @@
 export PATH=$HOME/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/1.9.2-p180/bin:$PATH
 export NODE_PATH=/usr/local/lib/node
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
 # add editor variable
 export EDITOR=vim
