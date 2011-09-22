@@ -9,6 +9,10 @@
 	ci = commit
 	co = checkout
 [color]
-	diff   = auto
+    branch = auto
+    diff   = auto
+    interactive = auto
 	status = auto
-	branch = auto
+    ui = auto
+[core]
+    editor = vim
