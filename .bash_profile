@@ -13,7 +13,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # set the prompt for the terminal
-export PS1='\[\033[34m\]\u@\h:\W $(parse_git_branch)\$\[\033[0m\]'
+export PS1='\[\033[34m\]\u@\h:\W $(parse_git_branch)\$\[\033[0m\] '
 export INTERACTIVE_SHELL=1
 
 # set the prompt for interactive shells
