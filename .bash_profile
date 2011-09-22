@@ -13,7 +13,16 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # set the prompt for the terminal
-export PS1='\[\033[34m\]\u@\h:\W\$\[\033[0m\] '
+export PS1='\[\033[34m\]\u@\h:\W $(parse_git_branch)\$\[\033[0m\]'
+export INTERACTIVE_SHELL=1
+
+# set the prompt for interactive shells
+# http://en.tldp.org/HOWTO/Bash-Prompt-HOWTO/
+parse_git_branch() {
+    # returns '(git branch name) ' if inside git directory, 
+    # otherwise returns ''
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
 
 # set alias commands
 alias ls='ls -Gh'
@@ -29,4 +38,9 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 # Django Bash Completion
 . /usr/local/bin/django_bash_completion
 
+# Git Bash Completion
+. /usr/local/bin/git_bash_completion
+
 ARCHFLAGS="-arch i386 -arch x86_64"
+
+export RUBY_SOURCE_DIR=/usr/bin/ruby
