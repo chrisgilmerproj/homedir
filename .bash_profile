@@ -44,3 +44,6 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 . /usr/local/bin/git_bash_completion
 
 ARCHFLAGS="-arch i386 -arch x86_64"
+
+# Get RVM Running - LAST LINE
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
