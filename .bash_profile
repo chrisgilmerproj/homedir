@@ -12,6 +12,7 @@ export EDITOR=vim
 export TERM=xterm-color
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+export RI="--format ansi --width 70"
 
 # set the prompt for the terminal
 export PS1='\[\033[34m\]\u@\h:\W $(parse_git_branch)\$\[\033[0m\] '
