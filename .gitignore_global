@@ -1,0 +1,34 @@
+
+# Compiled Source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.pyc
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs
+*.log
+*.sql
+*.sqlite
+
+# Database Files
+dev.db
+
+# OS Generated Files
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
