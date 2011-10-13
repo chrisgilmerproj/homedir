@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# Simple script for recursive global find and replace
+
+usage="usage: $0 <ext> <from> <to>"
+if [ -z "$1" -o -z "$2" -o -z "$3" ]; then 
+    echo $usage
+    exit
+fi
+
+echo "find . -name \"*.$1\" -type f -exec sed -i \"\" \"s/$2/$3/g\" {} \\;";
+find . -name "*.$1" -type f -exec sed -i "" "s/${2}/${3}/g" {} \;
