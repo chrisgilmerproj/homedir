@@ -44,7 +44,7 @@ def main():
     failed = False
 
     print "Testing with pep8"
-    output = system('pep8', '--ignore=E501', '.', cwd=tempdir)
+    output = system('pep8', '--ignore=E501', '--repeat', '.', cwd=tempdir)
     if output:
         print output
         failed = True
