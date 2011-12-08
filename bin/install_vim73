@@ -1,0 +1,26 @@
+#! /bin/bash
+
+hg clone https://vim.googlecode.com/hg/ vim
+hg pull
+hg update default
+
+cd vim/src
+make
+
+make test
+
+cd ../
+
+mv runtime vim73
+
+mv src/vim vim73/
+
+sudo mv vim73 /usr/local/share/
+
+sudo mv /usr/bin/vim /usr/local/share/vim72
+
+cd /usr/bin
+
+sudo ln -s /usr/local/share/vim73/vim
+
+
