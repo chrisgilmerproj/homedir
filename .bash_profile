@@ -33,6 +33,7 @@ alias maketar='tar -pczf'
 alias untar='tar -xvf'
 alias sethostname='scutil –set HostName'
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias fsleep="osascript -e 'tell the application "Finder" to sleep'"
 
 # postgresql
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
