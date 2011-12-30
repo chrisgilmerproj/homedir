@@ -15,7 +15,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
 # set the prompt for the terminal
-export PS1='\[\033[34m\]\u@\h:\W $(parse_git_branch)\$\[\033[0m\] '
+export PS1='\[\033[34m\]\u@\h:\W ($(parse_git_branch)) \$\[\033[0m\] '
 export INTERACTIVE_SHELL=1
 
 # set the prompt for interactive shells
@@ -23,7 +23,7 @@ export INTERACTIVE_SHELL=1
 parse_git_branch() {
     # returns '(git branch name) ' if inside git directory, 
     # otherwise returns ''
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 # set alias commands
