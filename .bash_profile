@@ -37,6 +37,7 @@ alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
 alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
 alias gpthis='git push origin HEAD:$(parse_git_branch)'
 alias gpfthis='git push -f origin HEAD:$(parse_git_branch)'
+alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
 
 # postgresql
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
