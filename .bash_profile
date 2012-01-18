@@ -40,10 +40,12 @@ alias sethostname='scutil –set HostName'
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
 alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
+
+# git
 alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
 alias gpr='open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)"'
-alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
 
 # postgresql
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
