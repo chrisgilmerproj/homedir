@@ -15,15 +15,20 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
 # set the prompt for the terminal
-export PS1='\[\033[34m\]\u@\h:\W ($(parse_git_branch)) \$\[\033[0m\] '
+export PS1='\[\033[34m\]\u@\h:\W ($(git_current_branch)) \$\[\033[0m\] '
 export INTERACTIVE_SHELL=1
 
-# set the prompt for interactive shells
-# http://en.tldp.org/HOWTO/Bash-Prompt-HOWTO/
-parse_git_branch() {
-    # returns '(git branch name) ' if inside git directory, 
-    # otherwise returns ''
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+# functions
+function git_current_branch() {
+  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
+}
+
+function git_current_origin() {
+  git config --get remote.origin.url | sed -e 's/^.*\://' | sed -e 's/\.git.*//'
+}
+
+function fe() {
+  find . -type f -iname '*'${1:-}'*' -exec ${2:-file} {} \;
 }
 
 # set alias commands
@@ -35,8 +40,9 @@ alias sethostname='scutil –set HostName'
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
 alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
-alias gpthis='git push origin HEAD:$(parse_git_branch)'
-alias gpfthis='git push -f origin HEAD:$(parse_git_branch)'
+alias gpthis='git push origin HEAD:$(git_current_branch)'
+alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
+alias gpr='open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)"'
 alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
 
 # postgresql
