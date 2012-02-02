@@ -51,6 +51,9 @@ alias gpr='open "https://github.com/$(git_current_origin)/pull/new/$(git_current
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
+# mongodb
+alias mdbstart="mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf"
+
 # Django Bash Completion
 . /usr/local/bin/django_bash_completion
 
