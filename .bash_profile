@@ -15,7 +15,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
 # set the prompt for the terminal
-export PS1='\[\033[34m\]\u@\h:\W ($(git_current_branch)) \$\[\033[0m\] '
+export PS1='\[\033[32m\]\u@\h:\[\033[34m\]\W \[\033[36m\]($(git_current_branch))\[\033[34m\] \$\[\033[0m\] '
 export INTERACTIVE_SHELL=1
 
 # functions
@@ -64,3 +64,10 @@ ARCHFLAGS="-arch i386 -arch x86_64"
 
 # Get RVM Running - LAST LINE
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# WORK RELATED
+alias vup="vagrant up"
+alias vhalt="vagrant halt"
+alias vdestroy="vagrant destroy"
+alias vssh="vagrant ssh"
+alias vnew="vagrant destroy; rake; vagrant up; vagrant ssh"
