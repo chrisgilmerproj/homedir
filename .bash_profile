@@ -27,6 +27,14 @@ function git_current_origin() {
   git config --get remote.origin.url | sed -e 's/^.*\://' | sed -e 's/\.git.*//'
 }
 
+function git_ref_origin() {
+  git rev-parse origin
+}
+
+function git_ref_head() {
+  git rev-parse HEAD
+}
+
 function fe() {
   find . -type f -iname '*'${1:-}'*' -exec ${2:-file} {} \;
 }
@@ -46,6 +54,7 @@ alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
 alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
 alias gpr='open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)"'
+alias gcompare='open "http://github.com/$(git_current_origin)/compare/$(git_ref_origin)...$(git_ref_head)"'
 
 # postgresql
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
