@@ -1,2 +1,6 @@
 --type-add
 csv=.csv
+--type-add
+md=.md
+--type-add
+rst=.rst
