@@ -1,11 +1,29 @@
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle manage Vundle required!
+Bundle 'gmarik/vundle'
+
+" Start Bundles
+" github repos
+Bundle 'scrooloose/nerdtree'
+" vim-scripts repos
+" non github repos
+" End Bundles
+
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
- 
-filetype indent on
+set nocompatible
+
 syntax on
- 
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+
 map <silent> <left>  h
 map <silent> <down>  j
 map <silent> <up>    k
@@ -65,8 +83,6 @@ set spell
 vmap > >gv
 vmap < <gv
 
-filetype plugin indent on
-syntax on
 
 map q :w<cr>:exe ':!./%' <cr>
 
@@ -76,7 +92,3 @@ set colorcolumn=80
 
 "Fixes backspace not working to dedent a line
 set backspace=indent,eol,start
-
-
-
-
