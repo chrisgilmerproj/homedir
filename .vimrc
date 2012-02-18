@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 " Start Bundles
 " github repos
 Bundle 'scrooloose/nerdtree'
+Bundle 'klen/python-mode'
 " vim-scripts repos
 " non github repos
 " End Bundles
@@ -53,10 +54,13 @@ imap <Home> <C-o><Home>
 
 " NERDTree
 map <C-t> :NERDTreeToggle<cr>
+let g:NERDTreeDirArrows=0
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyo$', '\.pyc$', '\.svn[\//]$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
+
+let g:pymode_lint_checker = "pyflakes"
 
 :colorscheme desert
 

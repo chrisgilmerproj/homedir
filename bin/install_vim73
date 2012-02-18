@@ -1,10 +1,19 @@
 #! /bin/bash
 
 hg clone https://vim.googlecode.com/hg/ vim
+cd vim
 hg pull
 hg update default
 
-cd vim/src
+cd src
+LDFLAGS="-arch x86_64" ./configure \
+    --with-features=huge \
+    --enable-cscope \
+    --enable-perlinterp \
+    --enable-pythoninterp  \
+    --with-python-config-dir=/usr/local/Cellar/python/2.7.2/lib/python2.7/config \
+    --enable-rubyinterp \
+    --with-mac-arch=intel
 make
 
 make test
