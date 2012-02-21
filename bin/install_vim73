@@ -5,8 +5,14 @@ cd vim
 hg pull
 hg update default
 
+# Don't forget to change 
+# /Library/Frameworks/Python.framework/Current
+# to point at
+# /usr/local/Cellar/python/2.7.2
+# Also, add 2.7.2 link in Current folder
+
 cd src
-LDFLAGS="-arch x86_64" ./configure \
+LDFLAGS="-arch i386" ./configure \
     --with-features=huge \
     --enable-cscope \
     --enable-perlinterp \
