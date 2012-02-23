@@ -1,8 +1,4 @@
---type-add
-csv=.csv
---type-add
-md=.md
---type-add
-rst=.rst
---type-add
-jade=.jade
+--type-add=csv=.csv
+--type-add=md=.md
+--type-add=rst=.rst
+--type-add=jade=.jade
