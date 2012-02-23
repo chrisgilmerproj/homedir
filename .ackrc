@@ -4,3 +4,5 @@ csv=.csv
 md=.md
 --type-add
 rst=.rst
+--type-add
+jade=.jade
