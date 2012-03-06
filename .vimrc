@@ -8,7 +8,9 @@ Bundle 'gmarik/vundle'
 " Start Bundles
 " github repos
 Bundle 'scrooloose/nerdtree'
-Bundle 'klen/python-mode'
+Bundle 'vim-scripts/pep8'
+"Bundle 'kevinw/pyflakes-vim'
+"Bundle 'klen/python-mode'
 " vim-scripts repos
 " non github repos
 " End Bundles
@@ -60,10 +62,11 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 
-let g:pymode_lint_checker = "pyflakes"
+" pyflakes-vim
+let g:pyflakes_use_quickfix = 0
 
+" color
 :colorscheme desert
-
 :highlight OverColLimit term=bold cterm=bold
 :au BufRead,BufNewFile * match OverColLimit '\%>80v.\+'
 
