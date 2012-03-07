@@ -15,7 +15,21 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
 # set the prompt for the terminal
-export PS1='\[\033[32m\]\u@\h:\[\033[34m\]\W \[\033[36m\]($(git_current_branch))\[\033[34m\] \$\[\033[0m\] '
+prompts[0]="\[\033[37m\]☭"
+prompts[1]="\[\033[37m\]☃"
+prompts[2]="\[\033[37m\]★"
+prompts[3]="\[\033[37m\]☁"
+prompts[4]="\[\033[37m\]☯"
+prompts[5]="\[\033[37m\]♔"
+prompts[6]="\[\033[37m\]♡"
+prompts[7]="\[\033[37m\]♢"
+prompts[8]="\[\033[37m\]♧"
+prompts[9]="\[\033[37m\]♤"
+prompts[10]="\[\033[37m\]♬"
+prompts[11]="\[\033[37m\]⚠"
+prompts[12]="\[\033[37m\]♖"
+
+export PS1="\[\033[32m\]\u@\h:\[\033[34m\]\W \[\033[36m\]($(git_current_branch))\[\033[34m\] \n${prompts[RANDOM % ${#prompts[@]}]}\[\033[0m\] "
 export INTERACTIVE_SHELL=1
 
 # functions
