@@ -24,20 +24,18 @@ export C_MAGENTA="\033[35m\]"
 export C_CYAN="\033[36m\]"
 export C_WHITE="\033[37m\]"
 
-# set the prompt for the terminal
-prompts[0]="☭"
-prompts[1]="★"
-prompts[2]="☁"
-prompts[3]="☯"
-prompts[4]="♡"
-prompts[5]="♢"
-prompts[6]="♧"
-prompts[7]="♤"
-prompts[8]="♬"
-
 # functions
 function random_prompt() {
-  echo "${prompts[RANDOM % ${#prompts[@]}]}"
+  prompts[0]="☭"
+  prompts[1]="★"
+  prompts[2]="☁"
+  prompts[3]="☯"
+  prompts[4]="♡"
+  prompts[5]="♢"
+  prompts[6]="♧"
+  prompts[7]="♤"
+  prompts[8]="♬"
+  echo "$C_WHITE${prompts[RANDOM % ${#prompts[@]}]}"
 }
 
 function git_current_branch() {
@@ -61,7 +59,7 @@ function fe() {
 }
 
 # Set up prompt
-export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN($(git_current_branch))$C_WHITE \n$(random_prompt) $C_NORMAL "
+export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN ($(git_current_branch))$C_NORMAL $ "
 export INTERACTIVE_SHELL=1
 
 # set alias commands
