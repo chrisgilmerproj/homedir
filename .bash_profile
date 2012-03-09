@@ -26,16 +26,27 @@ export C_WHITE="\033[37m\]"
 
 # functions
 function random_prompt() {
-  prompts[0]="☭"
-  prompts[1]="★"
-  prompts[2]="☁"
-  prompts[3]="☯"
-  prompts[4]="♡"
-  prompts[5]="♢"
-  prompts[6]="♧"
-  prompts[7]="♤"
-  prompts[8]="♬"
-  echo "$C_WHITE${prompts[RANDOM % ${#prompts[@]}]}"
+  # Symbols from http://www.alanwood.net/unicode/miscellaneous_symbols.html
+  prompts[0]="☭" # hammer & sickle
+  prompts[1]="★" # star
+  prompts[2]="☁" # cloud
+  prompts[3]="☯" # yin-yang
+  prompts[4]="♥" # heart
+  prompts[5]="♦" # diamond
+  prompts[6]="♣" # club
+  prompts[7]="♠" # spade
+  prompts[8]="♬" # music notes
+  prompts[9]="☢" # radiation
+  prompts[10]="☿" # mercury
+  prompts[11]="♀" # venus
+  prompts[12]="♁" # earth
+  prompts[13]="♂" # mars
+  prompts[14]="♃" # jupiter
+  prompts[15]="♄" # saturn
+  prompts[16]="♅" # uranus
+  prompts[17]="♆" # neptune
+  prompts[18]="♇" # pluto
+  echo "${prompts[RANDOM % ${#prompts[@]}]}"
 }
 
 function git_current_branch() {
@@ -59,7 +70,7 @@ function fe() {
 }
 
 # Set up prompt
-export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN ($(git_current_branch))$C_NORMAL $ "
+export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n\$(random_prompt) $C_NORMAL "
 export INTERACTIVE_SHELL=1
 
 # set alias commands
