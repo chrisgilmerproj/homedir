@@ -97,6 +97,15 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 # mongodb
 alias mdbstart="mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf"
 
+# elasticsearch
+## daemon
+alias esdstop="launchctl unload -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
+alias esdstart="launchctl load -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
+## manual
+alias esmstart="elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.18.7/config/elasticsearch.yml"
+alias esopen="open http://localhost:9200/"
+alias eslog="tail -f /usr/local/var/log/elasticsearch/elasticsearch_cgilmer.log"
+
 # Django Bash Completion
 . /usr/local/bin/django_bash_completion
 

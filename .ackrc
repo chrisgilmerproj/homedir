@@ -1,5 +1,7 @@
 --type-add=csv=.csv
+--type-add=txt=.txt
 --type-add=md=.md
 --type-add=rst=.rst
 --type-add=jade=.jade
 --type-add=soy=.soy
+--type-add=wsgi=.wsgi
