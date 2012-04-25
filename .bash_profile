@@ -4,6 +4,7 @@ export NODE_PATH=/usr/local/lib/node
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 export RUBY_SOURCE_DIR=/usr/local/bin/ruby
+export CPLUS_INCLUDE_PATH=/usr/local/include:$CPLUS_INCLUDE_PATH
 
 # add editor variable
 export EDITOR=vim
@@ -121,5 +122,6 @@ ARCHFLAGS="-arch i386 -arch x86_64"
 alias vup="vagrant up"
 alias vhalt="vagrant halt"
 alias vdestroy="vagrant destroy"
-alias vssh="vagrant ssh"
+#alias vssh="vagrant ssh"
+alias vssh="ssh -i /Library/Ruby/Gems/1.8/gems/vagrant-0.8.6/keys/vagrant vagrant@33.33.33.33"
 alias vnew="vagrant destroy; rake; vagrant up; vagrant ssh"

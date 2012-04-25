@@ -3,5 +3,6 @@
 --type-add=md=.md
 --type-add=rst=.rst
 --type-add=jade=.jade
+--type-add=json=.json
 --type-add=soy=.soy
 --type-add=wsgi=.wsgi
