@@ -125,3 +125,5 @@ alias vdestroy="vagrant destroy"
 #alias vssh="vagrant ssh"
 alias vssh="ssh -i /Library/Ruby/Gems/1.8/gems/vagrant-0.8.6/keys/vagrant vagrant@33.33.33.33"
 alias vnew="vagrant destroy; rake; vagrant up; vagrant ssh"
+
+export LIBCLOUD_DEBUG=/dev/stderr
