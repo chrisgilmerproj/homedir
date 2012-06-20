@@ -1,4 +1,5 @@
 --type-add=csv=.csv
+--type-add=css=.css
 --type-add=txt=.txt
 --type-add=md=.md
 --type-add=rst=.rst
