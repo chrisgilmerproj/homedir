@@ -15,6 +15,14 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
+# history
+HISTCONTROL=ignoredups:ignorespace
+HISTSIZE=10000
+HISTFILESIZE=20000
+shopt -s histappend
+shopt -s checkwinsize
+
+# set colors
 export C_NORMAL="\033[0m\]"
 export C_BLACK="\033[30m\]"
 export C_RED="\033[31m\]"
@@ -75,8 +83,8 @@ export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n\$
 export INTERACTIVE_SHELL=1
 
 # set alias commands
-alias ls='ls -Gh'
-alias ll='ls -al'
+alias ls='ls -Gh --color=auto'
+alias ll='ls -al --color=auto'
 alias maketar='tar -pczf'
 alias untar='tar -xvf'
 alias sethostname='scutil –set HostName'

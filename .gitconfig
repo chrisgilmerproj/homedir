@@ -23,5 +23,3 @@
     interactive = auto
     status = auto
     ui = auto
-[push]
-	default = upstream
