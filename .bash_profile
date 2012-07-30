@@ -83,8 +83,8 @@ export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n\$
 export INTERACTIVE_SHELL=1
 
 # set alias commands
-alias ls='ls -Gh --color=auto'
-alias ll='ls -al --color=auto'
+alias ls='ls -Gh'
+alias ll='ls -al'
 alias maketar='tar -pczf'
 alias untar='tar -xvf'
 alias sethostname='scutil –set HostName'
@@ -135,3 +135,6 @@ alias vssh="ssh -i /Library/Ruby/Gems/1.8/gems/vagrant-0.8.6/keys/vagrant vagran
 alias vnew="vagrant destroy; rake; vagrant up; vagrant ssh"
 
 export LIBCLOUD_DEBUG=/dev/stderr
+
+export P4CLIENT=cgilmer-laptop
+export P4PORT=perforce:1666
