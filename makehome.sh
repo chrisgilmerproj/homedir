@@ -15,6 +15,7 @@ cd ~/
 DOTFILES=(
     ".ackrc"
     ".bash_profile"
+    ".bash"
     ".bashrc"
     ".gitconfig"
     ".gitignore_global"

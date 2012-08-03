@@ -1,0 +1,3 @@
+# WORK RELATED
+export P4CLIENT=cgilmer-laptop
+export P4PORT=perforce:1666

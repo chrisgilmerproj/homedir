@@ -1,0 +1,44 @@
+# functions
+function random_prompt() {
+  # Symbols from http://www.alanwood.net/unicode/miscellaneous_symbols.html
+  prompts[0]="☭" # hammer & sickle
+  prompts[1]="★" # star
+  prompts[2]="☁" # cloud
+  prompts[3]="☯" # yin-yang
+  prompts[4]="♥" # heart
+  prompts[5]="♦" # diamond
+  prompts[6]="♣" # club
+  prompts[7]="♠" # spade
+  prompts[8]="♬" # music notes
+  prompts[9]="☢" # radiation
+  prompts[10]="☿" # mercury
+  prompts[11]="♀" # venus
+  prompts[12]="♁" # earth
+  prompts[13]="♂" # mars
+  prompts[14]="♃" # jupiter
+  prompts[15]="♄" # saturn
+  prompts[16]="♅" # uranus
+  prompts[17]="♆" # neptune
+  prompts[18]="♇" # pluto
+  echo "${prompts[RANDOM % ${#prompts[@]}]}"
+}
+
+function git_current_branch() {
+  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
+}
+
+function git_current_origin() {
+  git config --get remote.origin.url | sed -e 's/^.*\://' | sed -e 's/\.git.*//'
+}
+
+function git_ref_origin() {
+  git rev-parse origin
+}
+
+function git_ref_head() {
+  git rev-parse HEAD
+}
+
+function fe() {
+  find . -type f -iname '*'${1:-}'*' -exec ${2:-file} {} \;
+}

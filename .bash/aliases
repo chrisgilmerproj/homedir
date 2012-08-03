@@ -1,0 +1,37 @@
+# set alias commands
+if [ "$(uname)" == 'Linux' ]; then 
+    alias ls='ls -Gh --color=auto'
+    alias ll='ls -al --color=auto'
+else
+    alias ls='ls -Gh'
+    alias ll='ls -al'
+    alias sethostname='scutil –set HostName'
+    alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+    alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
+    alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+fi
+alias maketar='tar -pczf'
+alias untar='tar -xvf'
+alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
+
+# git
+alias gpthis='git push origin HEAD:$(git_current_branch)'
+alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
+alias gpr='open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)"'
+alias gcompare='open "http://github.com/$(git_current_origin)/compare/$(git_ref_origin)...$(git_ref_head)"'
+
+# postgresql
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+# mongodb
+alias mdbstart="mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf"
+
+# elasticsearch
+## daemon
+alias esdstop="launchctl unload -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
+alias esdstart="launchctl load -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
+## manual
+alias esmstart="elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.18.7/config/elasticsearch.yml"
+alias esopen="open http://localhost:9200/"
+alias eslog="tail -f /usr/local/var/log/elasticsearch/elasticsearch_cgilmer.log"
