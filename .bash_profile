@@ -83,8 +83,13 @@ export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n\$
 export INTERACTIVE_SHELL=1
 
 # set alias commands
-alias ls='ls -Gh'
-alias ll='ls -al'
+if [ "$(uname)" == 'Linux' ]; then 
+    alias ls='ls -Gh --color=auto'
+    alias ll='ls -al --color=auto'
+else
+    alias ls='ls -Gh'
+    alias ll='ls -al'
+fi
 alias maketar='tar -pczf'
 alias untar='tar -xvf'
 alias sethostname='scutil –set HostName'
@@ -127,14 +132,5 @@ ARCHFLAGS="-arch i386 -arch x86_64"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # WORK RELATED
-alias vup="vagrant up"
-alias vhalt="vagrant halt"
-alias vdestroy="vagrant destroy"
-#alias vssh="vagrant ssh"
-alias vssh="ssh -i /Library/Ruby/Gems/1.8/gems/vagrant-0.8.6/keys/vagrant vagrant@33.33.33.33"
-alias vnew="vagrant destroy; rake; vagrant up; vagrant ssh"
-
-export LIBCLOUD_DEBUG=/dev/stderr
-
 export P4CLIENT=cgilmer-laptop
 export P4PORT=perforce:1666
