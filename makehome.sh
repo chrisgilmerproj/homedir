@@ -4,6 +4,9 @@
 git submodule init
 git submodule update
 
+# Ensure vim is set up
+vim +BundleInstall +qall
+
 # Change to the home directory
 HOMEDIR=`pwd`
 cd ~/
