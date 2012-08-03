@@ -116,10 +116,10 @@ alias esopen="open http://localhost:9200/"
 alias eslog="tail -f /usr/local/var/log/elasticsearch/elasticsearch_cgilmer.log"
 
 # Django Bash Completion
-. /usr/local/bin/django_bash_completion
+. ~/bin/django_bash_completion
 
 # Git Bash Completion
-. /usr/local/bin/git_bash_completion
+. ~/bin/git_bash_completion
 
 ARCHFLAGS="-arch i386 -arch x86_64"
 
