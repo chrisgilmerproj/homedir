@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 " Start Bundles
 " github repos
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/pep8'
 "Bundle 'kevinw/pyflakes-vim'
 "Bundle 'klen/python-mode'
