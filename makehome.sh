@@ -32,4 +32,7 @@ for dot in ${DOTFILES[@]}; do
     ln -s $HOMEDIR/$dot .;
 done;
 
+# Link the ssh config
+ln -s $HOMEDIR/.ssh/config .ssh/config
+
 cd $HOMEDIR
