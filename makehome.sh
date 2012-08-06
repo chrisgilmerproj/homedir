@@ -24,15 +24,13 @@ DOTFILES=(
     ".ipython"
     ".irbrc"
     ".screenrc"
+    ".ssh/config"
     ".vim"
     ".vimrc"
     "bin")
 
 for dot in ${DOTFILES[@]}; do
-    ln -s $HOMEDIR/$dot .;
+    ln -s $HOMEDIR/$dot $dot;
 done;
-
-# Link the ssh config
-ln -s $HOMEDIR/.ssh/config .ssh/config
 
 cd $HOMEDIR
