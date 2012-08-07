@@ -10,6 +10,11 @@ else
     alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
     alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
 fi
+
+# common
+alias now="date +'%F %T'"
+
+# tar files
 alias maketar='tar -pczf'
 alias untar='tar -xvf'
 
