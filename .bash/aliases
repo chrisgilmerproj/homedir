@@ -13,6 +13,7 @@ fi
 
 # common
 alias now="date +'%F %T'"
+alias tree="find ./ -type d | sed -e 's/[^-][^\/]*\//--/g;s/--/ |-/'"
 
 # tar files
 alias maketar='tar -pczf'
