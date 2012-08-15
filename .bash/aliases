@@ -2,9 +2,11 @@
 if [ "$(uname)" == 'Linux' ]; then 
     alias ls='ls -Gh --color=auto'
     alias ll='ls -al --color=auto'
+    alias ip='ifconfig eth0 | grep "inet addr" | cut -d":" -f 2 | cut -d " " -f 1'
 else
     alias ls='ls -Gh'
     alias ll='ls -al'
+    alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f 2"
     alias sethostname='scutil –set HostName'
     alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
     alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
