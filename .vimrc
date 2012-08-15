@@ -60,6 +60,7 @@ map <C-t> :NERDTreeToggle<cr>
 let g:NERDTreeDirArrows=0
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyo$', '\.pyc$', '\.svn[\//]$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
+let NERDTreeShowHidden=1
 autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 
