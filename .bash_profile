@@ -44,4 +44,12 @@ done
 
 [[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
 
+# Activate virtualenv on machines that have them installed
+if [ -d ~/env ]; then
+    if [ ! -f ~/activate ]; then
+        ln -s ~/env/bin/activate ~/activate
+    fi
+    source ~/activate
+fi
+
 ARCHFLAGS="-arch i386 -arch x86_64"
