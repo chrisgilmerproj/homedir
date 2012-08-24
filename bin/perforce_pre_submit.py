@@ -19,47 +19,42 @@ $ cd your_p4_repo
 $ psub
 """
 
-def system(*args, **kwargs):
-    kwargs.setdefault('stdout', subprocess.PIPE)
-    proc = subprocess.Popen(args, **kwargs)
-    out, err = proc.communicate()
-    return out
+P4HOME = '/home/cgilmer/sbwork/'
+
+def system(*args):
+    proc = subprocess.Popen(args, shell=False,
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = proc.communicate()
+    return stdout
 
 
 def main():
     
-    modified = re.compile('^//depot/\s+(?P<name>.*\.py)', re.MULTILINE)
-    files = system('p4', 'opened', '-C', '$P4CLIENT')
+    modified = re.compile('^//depot/(?P<name>.*\.py)', re.MULTILINE)
+    client = os.environ['P4CLIENT']
+    files = system('p4', 'opened', '-C', client)
     files = modified.findall(files)
-    print files
-    sys.exit(1)
-
-    tempdir = tempfile.mkdtemp()
-    for name in files:
-        filename = os.path.join(tempdir, name)
-        filepath = os.path.dirname(filename)
-        if not os.path.exists(filepath):
-            os.makedirs(filepath)
-        with file(filename, 'w') as f:
-            system('git', 'show', ':' + name, stdout=f)
 
     failed = False
 
     print "Testing with pep8"
-    output = system('pep8', '--ignore=E261,E501', '--repeat', '.', cwd=tempdir)
-    if output:
-        print output
-        failed = True
+    for name in files:
+        name = os.path.join(P4HOME, name)
+        output = system('pep8', '--ignore=E261,E501', '--repeat', name)
+        if output:
+            print output
+            failed = True
 
     print "Testing with pyflakes"
-    output = system('pyflakes', '.', cwd=tempdir)
-    if output:
-        print output
-        failed = True
-
-    shutil.rmtree(tempdir)
+    for name in files:
+        name = os.path.join(P4HOME, name)
+        output = system('pyflakes', name)
+        if output:
+            print output
+            failed = True
 
     if failed:
+        print "Failed, will not submit"
         sys.exit(1)
 
 if __name__ == '__main__':
