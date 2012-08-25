@@ -32,6 +32,7 @@ export INTERACTIVE_SHELL=1
 
 # ROS
 export ROS_OS_OVERRIDE=osx:homebrew
+source ~/ros/setup.bash
 
 # Get RVM Running - LAST LINE
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
