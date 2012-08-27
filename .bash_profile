@@ -16,15 +16,15 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
 # set colors
-export C_NORMAL="\033[0m\]"
-export C_BLACK="\033[30m\]"
-export C_RED="\033[31m\]"
-export C_GREEN="\033[32m\]"
-export C_YELLOW="\033[33m\]"
-export C_BLUE="\033[34m\]"
-export C_MAGENTA="\033[35m\]"
-export C_CYAN="\033[36m\]"
-export C_WHITE="\033[37m\]"
+export C_NORMAL="\[\033[0m\]"
+export C_BLACK="\[\033[30m\]"
+export C_RED="\[\033[31m\]"
+export C_GREEN="\[\033[32m\]"
+export C_YELLOW="\[\033[33m\]"
+export C_BLUE="\[\033[34m\]"
+export C_MAGENTA="\[\033[35m\]"
+export C_CYAN="\[\033[36m\]"
+export C_WHITE="\[\033[37m\]"
 
 # Set up prompt
 export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n$ $C_NORMAL "
