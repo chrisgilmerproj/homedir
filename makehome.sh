@@ -17,6 +17,7 @@ DOTFILES=(
     ".bash_profile"
     ".bash"
     ".bashrc"
+    ".gdbinit"
     ".gitconfig"
     ".gitignore_global"
     ".hgrc"
