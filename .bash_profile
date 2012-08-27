@@ -1,5 +1,5 @@
 # add user bin directory to path
-export PATH=$HOME/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/1.9.2-p180/bin:$PATH
+export PATH=$HOME/bin:/usr/local/share/python:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/1.9.2-p180/bin:$PATH
 export NODE_PATH=/usr/local/lib/node
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
@@ -29,6 +29,12 @@ export C_WHITE="\033[37m\]"
 # Set up prompt
 export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n$ $C_NORMAL "
 export INTERACTIVE_SHELL=1
+
+# ROS
+source /opt/ros/fuerte/setup.bash
+export ROS_OS_OVERRIDE=osx:homebrew
+export ROS_PACKAGE_PATH=$HOME/Projects/ros_workspace:$ROS_PACKAGE_PATH
+export ROS_WORKSPACE=/Users/cgilmer/Projects/ros_workspace
 
 # Get RVM Running - LAST LINE
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

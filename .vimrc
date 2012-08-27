@@ -82,7 +82,7 @@ map q :w<cr>:exe ':!./%' <cr>
 
 set statusline=%f%m%=%c%V\ \ %l/%L\ \ %{strftime(\"%H:%M\")}\ \ 
 set laststatus=2
-set colorcolumn=80
+"set colorcolumn=80
 
 "Fixes backspace not working to dedent a line
 set backspace=indent,eol,start
