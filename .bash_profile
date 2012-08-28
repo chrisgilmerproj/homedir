@@ -34,7 +34,7 @@ export INTERACTIVE_SHELL=1
 source /opt/ros/fuerte/setup.bash
 export ROS_OS_OVERRIDE=osx:homebrew
 export ROS_PACKAGE_PATH=$HOME/Projects/ros_workspace:$ROS_PACKAGE_PATH
-export ROS_WORKSPACE=/Users/cgilmer/Projects/ros_workspace
+export ROS_WORKSPACE=$HOME/Projects/ros_workspace
 
 # Get RVM Running - LAST LINE
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
