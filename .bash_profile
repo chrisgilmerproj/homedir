@@ -31,10 +31,12 @@ export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n$ 
 export INTERACTIVE_SHELL=1
 
 # ROS
-source /opt/ros/fuerte/setup.bash
-export ROS_OS_OVERRIDE=osx:homebrew
-export ROS_PACKAGE_PATH=$HOME/Projects/ros_workspace:$ROS_PACKAGE_PATH
-export ROS_WORKSPACE=$HOME/Projects/ros_workspace
+if [ -d /opt/ros/fuerte ]; then
+    source /opt/ros/fuerte/setup.bash
+    export ROS_OS_OVERRIDE=osx:homebrew
+    export ROS_PACKAGE_PATH=$HOME/Projects/ros_workspace:$ROS_PACKAGE_PATH
+    export ROS_WORKSPACE=$HOME/Projects/ros_workspace
+fi
 
 # Get RVM Running - LAST LINE
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
