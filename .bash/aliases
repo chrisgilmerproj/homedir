@@ -11,6 +11,7 @@ else
     alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
     alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
     alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+    alias xrelease="sudo xattr -d -r com.apple.quarantine"
 fi
 
 # common
