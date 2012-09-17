@@ -4,3 +4,4 @@ export P4PORT=perforce:1666
 
 # perforce
 alias psub='~/bin/perforce_pre_submit.py && p4 submit -r'
+alias cdpkg='cd ~/sbwork/sysad/debian/packages'
