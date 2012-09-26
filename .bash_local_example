@@ -1,6 +1,7 @@
 # WORK RELATED
 export P4CLIENT=cgilmer-laptop
 export P4PORT=perforce:1666
+command -v p4 > /dev/null 2>&1 && p4 sync
 
 # perforce
 alias psub='~/bin/perforce_pre_submit.py && p4 submit -r'

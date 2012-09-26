@@ -44,7 +44,6 @@ fi
 . $HOME/.bash/aliases
 . $HOME/.bash/functions
 . $HOME/.bash/options
-. $HOME/.bash/work
 
 for i in $(ls $HOME/.bash/completions); do
     . $HOME/.bash/completions/$i;
