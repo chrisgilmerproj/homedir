@@ -1,4 +1,5 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/ruby -w
+#
 # encoding: UTF-8
 #
 # A simply `p4 diff` output colorizer.
