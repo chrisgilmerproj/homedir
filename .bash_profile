@@ -58,4 +58,6 @@ if [ -d ~/env ]; then
     source ~/activate
 fi
 
-ARCHFLAGS="-arch i386 -arch x86_64"
+# Useful for numpy
+export ARCHFLAGS="-arch i386 -arch x86_64"
+export CC=clang
