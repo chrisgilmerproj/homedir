@@ -4,9 +4,6 @@
 git submodule init
 git submodule update
 
-# Ensure vim is set up
-vim +BundleInstall +qall
-
 # Change to the home directory
 HOMEDIR=`pwd`
 cd ~/
@@ -17,6 +14,7 @@ DOTFILES=(
     ".bash_profile"
     ".bash"
     ".bashrc"
+    ".gdbinit"
     ".gitconfig"
     ".gitignore_global"
     ".hgrc"
@@ -33,4 +31,9 @@ for dot in ${DOTFILES[@]}; do
     ln -s $HOMEDIR/$dot $dot;
 done;
 
+source ~/.bash_profile
+
 cd $HOMEDIR
+
+# Ensure vim is set up
+vim +BundleInstall +qall

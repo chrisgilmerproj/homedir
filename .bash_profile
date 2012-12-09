@@ -16,25 +16,27 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
 # set colors
-export C_NORMAL="\033[0m\]"
-export C_BLACK="\033[30m\]"
-export C_RED="\033[31m\]"
-export C_GREEN="\033[32m\]"
-export C_YELLOW="\033[33m\]"
-export C_BLUE="\033[34m\]"
-export C_MAGENTA="\033[35m\]"
-export C_CYAN="\033[36m\]"
-export C_WHITE="\033[37m\]"
+export C_NORMAL="\[\033[0m\]"
+export C_BLACK="\[\033[30m\]"
+export C_RED="\[\033[31m\]"
+export C_GREEN="\[\033[32m\]"
+export C_YELLOW="\[\033[33m\]"
+export C_BLUE="\[\033[34m\]"
+export C_MAGENTA="\[\033[35m\]"
+export C_CYAN="\[\033[36m\]"
+export C_WHITE="\[\033[37m\]"
 
 # Set up prompt
-export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n\$(random_prompt) $C_NORMAL "
+export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE\n$ $C_NORMAL "
 export INTERACTIVE_SHELL=1
 
 # ROS
-source /opt/ros/fuerte/setup.bash
-export ROS_OS_OVERRIDE=osx:homebrew
-export ROS_PACKAGE_PATH=$HOME/Projects/ros_workspace:$ROS_PACKAGE_PATH
-export ROS_WORKSPACE=/Users/cgilmer/Projects/ros_workspace
+if [ -d /opt/ros/fuerte ]; then
+    source /opt/ros/fuerte/setup.bash
+    export ROS_OS_OVERRIDE=osx:homebrew
+    export ROS_PACKAGE_PATH=$HOME/Projects/ros_workspace:$ROS_PACKAGE_PATH
+    export ROS_WORKSPACE=$HOME/Projects/ros_workspace
+fi
 
 # Get RVM Running - LAST LINE
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -42,7 +44,6 @@ export ROS_WORKSPACE=/Users/cgilmer/Projects/ros_workspace
 . $HOME/.bash/aliases
 . $HOME/.bash/functions
 . $HOME/.bash/options
-. $HOME/.bash/work
 
 for i in $(ls $HOME/.bash/completions); do
     . $HOME/.bash/completions/$i;

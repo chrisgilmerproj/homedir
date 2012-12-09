@@ -1,9 +1,11 @@
 # set alias commands
-if [ "$(uname)" == 'Linux' ]; then 
-    alias ls='ls -Gh --color=auto'
+if [ "$(uname)" == 'Linux' ]; then
+    alias ps='ps auxf'
+    alias ls='ls -h --color=auto'
     alias ll='ls -al --color=auto'
     alias ip='ifconfig eth0 | grep "inet addr" | cut -d":" -f 2 | cut -d " " -f 1'
 else
+    alias ps='ps aux'
     alias ls='ls -Gh'
     alias ll='ls -al'
     alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f 2"
@@ -11,9 +13,11 @@ else
     alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
     alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
     alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+    alias xrelease="sudo xattr -d -r com.apple.quarantine"
 fi
 
 # common
+alias s='source ~/.bash_profile'
 alias now="date +'%F %T'"
 alias tree="find ./ -type d | sed -e 's/[^-][^\/]*\//--/g;s/--/ |-/'"
 
