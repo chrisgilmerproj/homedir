@@ -6,7 +6,7 @@
 # Flaws of termcap and standard settings are done here.
 #
 
-#startup_message off
+startup_message off
 
 #defflow on # will force screen to process ^S/^Q
 
