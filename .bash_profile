@@ -60,5 +60,6 @@ if [ -d ~/env ]; then
 fi
 
 # Useful for numpy
-export ARCHFLAGS="-arch i386 -arch x86_64"
-export CC=clang
+# you may need to export these
+ARCHFLAGS="-arch i386 -arch x86_64"
+CC=clang
