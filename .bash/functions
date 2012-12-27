@@ -42,3 +42,7 @@ function git_ref_head() {
 function fe() {
   find . -type f -iname '*'${1:-}'*' -exec ${2:-file} {} \;
 }
+
+function unquarantine() {
+  sudo xattr -d -r com.apple.quarantine $1
+}
