@@ -1,7 +1,7 @@
 # WORK RELATED
 export P4CLIENT=cgilmer-laptop
 export P4PORT=perforce:1666
-command -v p4 > /dev/null 2>&1 && p4 sync
+command -v p4 > /dev/null 2>&1 && p4 sync > /dev/null 2>&1
 
 # perforce
 alias psub='~/bin/perforce_pre_submit.py && p4 submit -r'
@@ -10,3 +10,18 @@ alias cdpkg='cd ~/sbwork/sysad/debian/packages'
 
 # function
 function status { echo `info-sb statusget $1`:`info-sb statusgeteng $1`; }
+
+function hostall {
+   nag=nagios-hq
+   host=$@
+   if [  "$host" == "" ]; then
+     echo hostname required
+     return 1
+   fi
+   for n in `echo -e 'GET hosts\nColumns: name\nFilter: groups >= nagios_cross_site\n' | nc $nag 6557`; do
+     for i in `echo -e "GET hosts\nColumns: name\nFilter: name = ${host}\nFilter: groups >= ${host}.vms\nOr: 2\n" | nc ${n} 6557`; do
+       echo $i
+       echo -e "GET services\nColumns: host_name description\nFilter: host_name = ${i}\nFilter: host_groups >= ${i}.vms\nOr: 2\n" | nc ${n} 6557
+     done
+   done
+}
