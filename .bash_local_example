@@ -6,6 +6,7 @@ command -v p4 > /dev/null 2>&1 && p4 sync > /dev/null 2>&1
 # perforce
 alias psub='~/bin/perforce_pre_submit.py && p4 submit -r'
 alias pdiff='p4 diff | ~/bin/p4c.rb'
+alias px='p4 edit -t text+kx'
 alias cdpkg='cd ~/sbwork/sysad/debian/packages'
 
 # function
