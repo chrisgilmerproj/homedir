@@ -21,6 +21,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set noerrorbells
+set visualbell
 
 syntax on
 filetype on
