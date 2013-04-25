@@ -3,9 +3,19 @@ export PATH=$HOME/bin:/usr/local/share/python:/usr/local/lib/wxPython/bin:/usr/l
 export NODE_PATH=/usr/local/lib/node
 export NPM_PATH=/usr/local/share/npm/bin/
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
-export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 export RUBY_SOURCE_DIR=/usr/local/bin/ruby
-export CPLUS_INCLUDE_PATH=/usr/local/include:$CPLUS_INCLUDE_PATH
+
+if [ -z "$PYTHONPATH" ]; then
+    export PYTHONPATH=/usr/local/lib/python
+else
+    export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+fi
+
+if [ -z "$CPLUS_INCLUDE_PATH" ]; then
+    export CPLUS_INCLUDE_PATH=/usr/local/include
+else
+    export CPLUS_INCLUDE_PATH=/usr/local/include:$CPLUS_INCLUDE_PATH
+fi
 
 # add editor variable
 hash vim &>/dev/null && export EDITOR=vim
