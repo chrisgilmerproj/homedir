@@ -2,10 +2,8 @@
 
 import os
 import re
-import shutil
 import subprocess
 import sys
-import tempfile
 
 """
 Copied and modified for perforce from:
@@ -40,7 +38,7 @@ def main():
     print "Testing with pep8"
     for name in files:
         name = os.path.join(P4HOME, name)
-        output = system('pep8', '--ignore=E261,E501', '--repeat', name)
+        output = system('pep8', '--ignore=E126,E127,E128,E261,E501', '--repeat', name)
         if output:
             print output
             failed = True
