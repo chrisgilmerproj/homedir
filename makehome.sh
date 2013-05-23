@@ -8,6 +8,11 @@ git submodule update
 HOMEDIR=`pwd`
 cd ~/
 
+# Must move any existing .vim folder
+if [ -d .vim -a ! -L .vim ]; then
+    mv .vim .vim_old;
+fi
+
 # Link all the files and dirs
 DOTFILES=(
     ".ackrc"
