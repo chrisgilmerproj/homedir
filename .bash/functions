@@ -47,6 +47,6 @@ function unquarantine() {
   sudo xattr -d -r com.apple.quarantine $1
 }
 
-function setup_homedir() {
-  ssh $1 'if [ -x /usr/bin/git -a ! -d "homedir" ]; then git clone https://github.com/chrisgilmerproj/homedir.git; cd homedir; bash makehome.sh; fi';
+function setup() {
+  ssh $1 "if [ -x /usr/bin/git ]; then if [ -d "homedir" ]; then cd homedir && git pull || git reset --hard HEAD && git pull; else git clone https://github.com/chrisgilmerproj/homedir.git && cd homedir && bash makehome.sh || echo 'Could not setup homedir'; fi; fi;";
 }
