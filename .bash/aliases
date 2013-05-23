@@ -21,9 +21,6 @@ alias s='source ~/.bash_profile'
 alias now="date +'%F %T'"
 alias tree="find ./ -type d | sed -e 's/[^-][^\/]*\//--/g;s/--/ |-/'"
 
-# setup
-alias setup='$(setup_homedir)'
-
 # tar files
 alias maketar='tar -pczf'
 alias untar='tar -xvf'
