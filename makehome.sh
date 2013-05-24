@@ -8,11 +8,6 @@ git submodule update
 HOMEDIR=`pwd`
 cd ~/
 
-# Must move any existing .vim folder
-if [ -d .vim -a ! -L .vim ]; then
-    mv .vim .vim_old;
-fi
-
 # Link all the files and dirs
 DOTFILES=(
     ".ackrc"
@@ -33,6 +28,11 @@ DOTFILES=(
     "bin")
 
 for dot in ${DOTFILES[@]}; do
+    # Must move any existing files and folders
+    if [ ! -L $dot ]; then
+        mv $dot $dot-old;
+    fi;
+    # Link the new file or folder
     ln -s $HOMEDIR/$dot $dot;
 done;
 
