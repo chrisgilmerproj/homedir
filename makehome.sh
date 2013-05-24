@@ -41,4 +41,4 @@ source ~/.bash_profile
 cd $HOMEDIR
 
 # Ensure vim is set up
-vim +BundleInstall +qall
+vim +BundleInstall +qall < `tty` > `tty`
