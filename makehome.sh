@@ -30,7 +30,7 @@ DOTFILES=(
 for dot in ${DOTFILES[@]}; do
     # Must move any existing files and folders
     if [ ! -L $dot ]; then
-        mv $dot $dot_old;
+        mv $dot $dot-old;
     fi;
     # Link the new file or folder
     ln -s $HOMEDIR/$dot $dot;
