@@ -1,14 +1,14 @@
 # add user bin directory to path
-export PATH=$HOME/bin:/usr/local/share/python:/usr/local/share/python3:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/1.9.2-p180/bin:/usr/local/share/npm/bin:$PATH
-export NODE_PATH=/usr/local/lib/node
+export PATH=$HOME/bin:/usr/local/share:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/1.9.3-p194/bin:/usr/local/share/npm/bin:$PATH
+export NODE_PATH=/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/lib/node_modules
 export NPM_PATH=/usr/local/share/npm/bin
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export RUBY_SOURCE_DIR=/usr/local/bin/ruby
 
 if [ -z "$PYTHONPATH" ]; then
-    export PYTHONPATH=/usr/local/lib/python
+    export PYTHONPATH=/usr/local/lib/python:/usr/local/lib/python3
 else
-    export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+    export PYTHONPATH=/usr/local/lib/python:/usr/local/lib/python3:$PYTHONPATH
 fi
 
 if [ -z "$CPLUS_INCLUDE_PATH" ]; then
