@@ -2,7 +2,7 @@
 export P4CLIENT=cgilmer-laptop
 export P4PORT=ssl:perforce.savagebeast.com:1666
 export P4HOST=`hostname`
-command -v p4 > /dev/null 2>&1 && p4 sync > /dev/null 2>&1
+#command -v p4 > /dev/null 2>&1 && p4 login -s || p4 login && p4 sync > /dev/null 2>&1
 
 # perforce
 alias psub='~/bin/perforce_pre_submit.py && p4 submit -r'
