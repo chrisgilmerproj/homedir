@@ -1,5 +1,5 @@
 # add user bin directory to path
-export PATH=$HOME/bin:/usr/local/share:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/1.9.3-p194/bin:/usr/local/share/npm/bin:$PATH
+export PATH=$HOME/bin:/usr/local/share/python:/usr/local/share/python3:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/2.0.0-p195/bin:/usr/local/share/npm/bin:$PATH
 export NODE_PATH=/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/lib/node_modules
 export NPM_PATH=/usr/local/share/npm/bin
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
