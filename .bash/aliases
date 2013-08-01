@@ -54,3 +54,6 @@ alias esdstart="launchctl load -wF ~/Library/LaunchAgents/homebrew.mxcl.elastics
 alias esmstart="elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.18.7/config/elasticsearch.yml"
 alias esopen="open http://localhost:9200/"
 alias eslog="tail -f /usr/local/var/log/elasticsearch/elasticsearch_cgilmer.log"
+
+# fix ssh screen session
+alias fs="source ~/fixssh"
