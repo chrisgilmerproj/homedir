@@ -4,10 +4,6 @@
 git submodule init
 git submodule update
 
-# Change to the home directory
-HOMEDIR=`pwd`
-cd ~/
-
 # Link all the files and dirs
 DOTFILES=(
     ".ackrc"
@@ -28,17 +24,15 @@ DOTFILES=(
     "bin")
 
 for dot in ${DOTFILES[@]}; do
-    # Must move any existing files and folders
-    if [ ! -L $dot ]; then
-        mv $dot $dot-old;
+    if [ ! -L ~/$dot ]; then
+        # Must move any existing files and folders
+        mv ~/$dot ~/$dot-old;
+        # Link the new file or folder
+        ln -s $dot ~/$dot;
     fi;
-    # Link the new file or folder
-    ln -s $HOMEDIR/$dot $dot;
 done;
 
 source ~/.bash_profile
-
-cd $HOMEDIR
 
 # Ensure vim is set up
 vim +BundleInstall +qall < `tty` > `tty`

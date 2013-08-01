@@ -48,5 +48,5 @@ function unquarantine() {
 }
 
 function setup() {
-  ssh $1 "if [ -x /usr/bin/git ]; then if [ -d "homedir" ]; then cd homedir && git pull || git reset --hard HEAD && git pull; else git clone https://github.com/chrisgilmerproj/homedir.git && cd homedir && bash makehome.sh || echo 'Could not setup homedir'; fi; fi;";
+  ssh $1 "if [ -x /usr/bin/git ]; then if [ -d "homedir" ]; then cd homedir && git reset --hard HEAD && git pull; else git clone https://github.com/chrisgilmerproj/homedir.git && cd homedir && bash makehome.sh || echo 'Could not setup homedir'; fi; fi;";
 }
