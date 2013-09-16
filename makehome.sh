@@ -1,8 +1,13 @@
 #! /bin/bash
 
+CWD="$( pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # Get the submodules
+cd ${DIR}
 git submodule init
 git submodule update
+cd ${CWD}
 
 # Link all the files and dirs
 DOTFILES=(
@@ -25,10 +30,12 @@ DOTFILES=(
 
 for dot in ${DOTFILES[@]}; do
     if [ ! -L ~/$dot ]; then
-        # Must move any existing files and folders
-        mv ~/$dot ~/$dot-old;
+        if [ -f ~/$dot ]; then
+            # Must move any existing files and folders
+            mv -f ~/$dot ~/$dot-old;
+        fi;
         # Link the new file or folder
-        ln -s $dot ~/$dot;
+        ln -s ${DIR}/$dot ~/$dot;
     fi;
 done;
 
