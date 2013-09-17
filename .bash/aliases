@@ -17,6 +17,10 @@ else
     # This requires the directory of the app you wish to unquarantine
     # $ xrelease /Applications/Adium.app/
     alias xrelease="sudo xattr -d -r com.apple.quarantine"
+
+    # show and hide hidden files
+    alias showfiles="defaults write com.apple.Finder AppleShowAllFiles TRUE; killall Finder"
+    alias hidefiles="defaults write com.apple.Finder AppleShowAllFiles FALSE; killall Finder"
 fi
 
 # common
