@@ -31,6 +31,10 @@ function git_current_origin() {
   git config --get remote.origin.url | sed -e 's/^.*\://' | sed -e 's/\.git.*//'
 }
 
+function git_current_domain() {
+  git config --get remote.origin.url | sed -e 's/^.*\@//' | sed -e 's/\:.*//'
+}
+
 function git_ref_origin() {
   git rev-parse origin
 }

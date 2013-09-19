@@ -1,9 +1,10 @@
 # add user bin directory to path
-export PATH=$HOME/bin:/usr/local/share/python:/usr/local/share/python3:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/2.0.0-p195/bin:/usr/local/share/npm/bin:$PATH
+export PATH=$HOME/bin:/usr/local/share/python:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/2.0.0-p195/bin:/usr/local/share/npm/bin:$PATH
 export NODE_PATH=/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/lib/node_modules
 export NPM_PATH=/usr/local/share/npm/bin
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export RUBY_SOURCE_DIR=/usr/local/bin/ruby
+export GEM_HOME=$(brew --prefix)
 
 if [ -z "$PYTHONPATH" ]; then
     export PYTHONPATH=/usr/local/lib/python:/usr/local/lib/python3
