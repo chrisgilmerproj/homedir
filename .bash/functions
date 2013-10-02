@@ -56,5 +56,6 @@ function setup() {
 }
 
 function sendkey() {
-  cat ~/.ssh/id_rsa.pub | ssh cgilmer@$1 "cat - >> ~/.ssh/authorized_keys"
+  ssh -q $USER@$1 "mkdir -p ~/.ssh; touch ~/.ssh/authorized_keys"
+  cat ~/.ssh/id_rsa.pub | ssh -q $USER@$1 "cat - >> ~/.ssh/authorized_keys"
 }
