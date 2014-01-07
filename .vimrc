@@ -34,7 +34,7 @@ map <silent> <left>  h
 map <silent> <down>  j
 map <silent> <up>    k
 map <silent> <right> l
- 
+
 map j gj
 map k gk
 map - <C-w>-
@@ -48,12 +48,12 @@ map <silent> <C-d> gT
 map <silent> <C-f> gt
 map <silent> <C-e> :q<cr>
 
-" Move around windows with control key 
+" Move around windows with control key
 map <silent> <C-h> <C-w>h
 map <silent> <C-j> <C-w>j
 map <silent> <C-k> <C-w>k
 map <silent> <C-l> <C-w>l
- 
+
 noremap <expr> <Home> (col('.') == matchend(getline('.'), '^\s*')+1 ? '0'  : '^')
 imap <Home> <C-o><Home>
 
@@ -82,9 +82,11 @@ vmap < <gv
 
 map q :w<cr>:exe ':!./%' <cr>
 
-set statusline=%f%m%=%c%V\ \ %l/%L\ \ %{strftime(\"%H:%M\")}\ \ 
+set statusline=%f%m%=%c%V\ \ %l/%L\ \ %{strftime(\"%H:%M\")}\ \
 set laststatus=2
 "set colorcolumn=80
 
 "Fixes backspace not working to dedent a line
 set backspace=indent,eol,start
+
+:command Nowhitespace :%s/\s\+$//
