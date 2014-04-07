@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Port forward to FreeNAS for Crashplan plugin
+
+SERVICE_PORT=`cat /Applications/CrashPlan.app/Contents/Resources/Java/conf/ui.properties | grep servicePort | egrep -v '#' | awk -F "=" '{print $2}'`
+
+CRASHPLAN_USER="crashplan"
+CRASHPLAN_JAIL=192.168.1.2
+echo "Connecting on Service Port: $SERVICE_PORT"
+echo "Expecting Crashplan FreeNAS Jail at: $CRASHPLAN_USER@$CRASHPLAN_JAIL"
+
+# Connect to crashplan
+ssh -L $SERVICE_PORT:127.0.0.1:4243 $CRASHPLAN_USER@$CRASHPLAN_JAIL -N
