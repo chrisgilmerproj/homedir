@@ -10,10 +10,10 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/pep8'
-"Bundle 'kevinw/pyflakes-vim'
-"Bundle 'klen/python-mode'
 " vim-scripts repos
+"
 " non github repos
+"
 " End Bundles
 
 set nocompatible
@@ -74,7 +74,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let g:pyflakes_use_quickfix = 0
 
 " color
-:colorscheme desert
+:colorscheme elflord
 :highlight OverColLimit term=bold cterm=bold
 :au BufRead,BufNewFile * match OverColLimit '\%>80v.\+'
 
