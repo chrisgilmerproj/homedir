@@ -21,6 +21,9 @@ else
     # show and hide hidden files
     alias showfiles="defaults write com.apple.Finder AppleShowAllFiles TRUE; killall Finder"
     alias hidefiles="defaults write com.apple.Finder AppleShowAllFiles FALSE; killall Finder"
+
+    # Clear DNS
+    alias cleardns="sudo killall -HUP mDNSResponder"
 fi
 
 # common
@@ -33,6 +36,7 @@ alias maketar='tar -pczf'
 alias untar='tar -xvf'
 
 # python
+alias findpy='find . -type f -name "*.py" -print0 | xargs -0 grep'
 alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
 alias pyproc='ps aux | grep python'
 alias notebook='ipython notebook --pylab inline'

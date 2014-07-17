@@ -54,6 +54,10 @@ map <silent> <C-j> <C-w>j
 map <silent> <C-k> <C-w>k
 map <silent> <C-l> <C-w>l
 
+" Disable increment and decrement of numbers
+nmap <C-A> <Nop>
+nmap <C-X> <Nop>
+
 noremap <expr> <Home> (col('.') == matchend(getline('.'), '^\s*')+1 ? '0'  : '^')
 imap <Home> <C-o><Home>
 

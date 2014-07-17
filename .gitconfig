@@ -17,6 +17,7 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     yd = diff "@{yesterday}"
     prune = gc --prune=now
+    contrib = blame
 [color]
     branch = auto
     diff   = auto
