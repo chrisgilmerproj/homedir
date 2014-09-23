@@ -1,0 +1,18 @@
+# Local bash functions
+function cdc() {
+  cd $HOME/Projects/counsyl
+  if [ -n "$1" ]; then
+    cd $1
+  fi
+}
+
+function cdt() {
+  cd $HOME/Projects/techops
+  if [ -n "$1" ]; then
+    cd $1
+  fi
+}
+
+function pbi() {
+  puppet module build && puppet module install -f `ls -1t pkg/*.tar.gz | head -n 1`
+}
