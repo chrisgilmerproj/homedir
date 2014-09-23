@@ -12,7 +12,3 @@ function cdt() {
     cd $1
   fi
 }
-
-function pbi() {
-  puppet module build && puppet module install -f `ls -1t pkg/*.tar.gz | head -n 1`
-}

@@ -59,3 +59,14 @@ function sendkey() {
   ssh -q $USER@$1 "mkdir -p ~/.ssh; touch ~/.ssh/authorized_keys"
   cat ~/.ssh/id_rsa.pub | ssh -q $USER@$1 "cat - >> ~/.ssh/authorized_keys"
 }
+
+function cdp() {
+  cd $HOME/Projects
+  if [ -n "$1" ]; then
+    cd $1
+  fi
+}
+
+function pbi() {
+  puppet module build && puppet module install -f `ls -1t pkg/*.tar.gz | head -n 1`
+}
