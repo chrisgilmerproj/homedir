@@ -25,6 +25,7 @@ DOTFILES=(
     ".irbrc"
     ".screenrc"
     ".ssh/config"
+    ".tmux.conf"
     ".vim"
     ".vimrc"
     "bin")
