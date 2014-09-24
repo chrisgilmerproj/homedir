@@ -78,7 +78,7 @@ let g:pyflakes_use_quickfix = 0
 :highlight OverColLimit term=bold cterm=bold
 :au BufRead,BufNewFile * match OverColLimit '\%>80v.\+'
 
-set spell
+" set spell
 
 vmap > >gv
 vmap < <gv
