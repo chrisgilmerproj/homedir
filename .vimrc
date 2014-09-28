@@ -1,20 +1,5 @@
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Vundle manage Vundle required!
-Bundle 'gmarik/vundle'
-
-" Start Bundles
-" github repos
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-scripts/pep8'
-" vim-scripts repos
-"
-" non github repos
-"
-" End Bundles
+execute pathogen#infect()
 
 set nocompatible
 set smartindent
@@ -72,6 +57,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " pyflakes-vim
 let g:pyflakes_use_quickfix = 0
+let g:syntastic_python_checkers = ['flake8']
 
 " color
 :colorscheme elflord

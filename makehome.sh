@@ -42,6 +42,3 @@ for dot in ${DOTFILES[@]}; do
 done;
 
 source ~/.bash_profile
-
-# Ensure vim is set up
-vim +BundleInstall +qall < `tty` > `tty`
