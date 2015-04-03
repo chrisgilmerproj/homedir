@@ -5,6 +5,12 @@ export NPM_PATH=/usr/local/share/npm/bin
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export RUBY_SOURCE_DIR=/usr/local/bin/ruby
 export GEM_HOME=$(brew --prefix)
+export GOPATH=~/go
+
+# Docker
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_TLS_VERIFY=1
+export DOCKER_CERT_PATH=/Users/cgilmer/.boot2docker/certs/boot2docker-vm
 
 if [ -z "$PYTHONPATH" ]; then
     export PYTHONPATH=/usr/local/lib/python:/usr/local/lib/python3

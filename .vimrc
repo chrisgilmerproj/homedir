@@ -1,11 +1,15 @@
 filetype off
 execute pathogen#infect()
 
+" au FileType py set nocompatible
+" au FileType py set smartindent
+" au FileType py set shiftwidth=4
+" au FileType py set expandtab
 set nocompatible
 set smartindent
-set tabstop=4
 set shiftwidth=4
 set expandtab
+set tabstop=4
 set noerrorbells
 set visualbell
 
@@ -60,7 +64,8 @@ let g:pyflakes_use_quickfix = 0
 let g:syntastic_python_checkers = ['flake8']
 
 " color
-:colorscheme elflord
+set background=dark
+:colorscheme Tomorrow-Night
 :highlight OverColLimit term=bold cterm=bold
 :au BufRead,BufNewFile * match OverColLimit '\%>80v.\+'
 

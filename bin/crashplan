@@ -5,7 +5,7 @@
 SERVICE_PORT=`cat /Applications/CrashPlan.app/Contents/Resources/Java/conf/ui.properties | grep servicePort | egrep -v '#' | awk -F "=" '{print $2}'`
 
 CRASHPLAN_USER="crashplan"
-CRASHPLAN_JAIL=192.168.1.2
+CRASHPLAN_JAIL=192.168.1.4
 echo "Connecting on Service Port: $SERVICE_PORT"
 echo "Expecting Crashplan FreeNAS Jail at: $CRASHPLAN_USER@$CRASHPLAN_JAIL"
 

@@ -40,6 +40,7 @@ alias findpy='find . -type f -name "*.py" -print0 | xargs -0 grep'
 alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
 alias pyproc='ps aux | grep python'
 alias notebook='ipython notebook --pylab inline'
+alias simpleserver='python -m SimpleHTTPServer 8000'
 
 # git
 alias gpthis='git push origin HEAD:$(git_current_branch)'
