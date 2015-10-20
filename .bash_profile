@@ -1,11 +1,11 @@
 # add user bin directory to path
-export PATH=$HOME/bin:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/2.0.0-p195/bin:/usr/local/share/npm/bin:$PATH
+export GOPATH=~/go
+export PATH=$HOME/bin:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/2.0.0-p195/bin:/usr/local/share/npm/bin:$PATH:$GOPATH/bin
 export NODE_PATH=/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/lib/node_modules
 export NPM_PATH=/usr/local/share/npm/bin
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export RUBY_SOURCE_DIR=/usr/local/bin/ruby
 export GEM_HOME=$(brew --prefix)
-export GOPATH=~/go
 
 # Docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
@@ -81,3 +81,6 @@ fi
 # you may need to export these
 ARCHFLAGS="-arch i386 -arch x86_64"
 CC=clang
+
+# added by Anaconda 2.2.0 installer
+#export PATH="/Users/cgilmer/anaconda/bin:$PATH"

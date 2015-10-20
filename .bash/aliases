@@ -23,13 +23,15 @@ else
     alias hidefiles="defaults write com.apple.Finder AppleShowAllFiles FALSE; killall Finder"
 
     # Clear DNS
-    alias cleardns="sudo killall -HUP mDNSResponder"
+    #alias cleardns="sudo killall -HUP mDNSResponder"
+    alias cleardns="sudo discoveryutil udnsflushcaches"
 fi
 
 # common
 alias s='source ~/.bash_profile'
 alias now="date +'%F %T'"
 alias tree="find ./ -type d | sed -e 's/[^-][^\/]*\//--/g;s/--/ |-/'"
+alias pmake="make --eval=\"print-%: ; @echo $*=$($*)\""
 
 # tar files
 alias maketar='tar -pczf'

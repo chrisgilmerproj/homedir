@@ -28,3 +28,11 @@ function dbq() {
 }
 
 alias diskinfo='lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
+
+function switch() {
+    ssh -C -NL 8000:$1:80 counsyl@admin-gw1
+}
+
+function ldap_compare() {
+    comm <(ldap group users $1 | xargs -n1 | sort -u) <(ldap group users $2 | xargs -n1 | sort -u)
+}
