@@ -20,8 +20,6 @@ function cda() {
   fi
 }
 
-export LDAP_CN=admin
-export LDAP_PASSWD=hWjXUD
 
 function dbq() {
     ssh root@prod-db "su - postgres -c \"psql -H -d postgres -c 'SELECT datname,pid,query_start,query FROM pg_stat_activity ORDER BY query_start;'\"" > queries.html
