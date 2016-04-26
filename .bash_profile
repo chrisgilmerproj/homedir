@@ -1,6 +1,7 @@
 # add user bin directory to path
 export GOPATH=~/go
-export PATH=$HOME/bin:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/2.0.0-p195/bin:/usr/local/share/npm/bin:$PATH:$GOPATH/bin
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$HOME/bin:$PYENV_ROOT/shims:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/2.0.0-p195/bin:/usr/local/share/npm/bin:$PATH:$GOPATH/bin
 export NODE_PATH=/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/lib/node_modules
 export NPM_PATH=/usr/local/share/npm/bin
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache

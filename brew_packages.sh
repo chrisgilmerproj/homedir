@@ -5,7 +5,6 @@ autoconf
 automake
 gdbm
 gettext
-gfortran
 git
 gnu-tar
 mercurial
@@ -14,7 +13,7 @@ pcre
 perforce
 pkg-config
 postgresql
-python
+pyenv
 readline
 sqlite
 the_silver_searcher
