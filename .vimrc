@@ -85,3 +85,4 @@ set laststatus=2
 set backspace=indent,eol,start
 
 :command Nowhitespace :%s/\s\+$//
+:command Nws :%s/\s\+$//
