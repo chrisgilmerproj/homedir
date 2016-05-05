@@ -1,29 +1,13 @@
 # add user bin directory to path
-export GOPATH=~/go
 export PYENV_ROOT=$HOME/.pyenv
-export PATH=$HOME/bin:$PYENV_ROOT/shims:/usr/local/lib/wxPython/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/local/Cellar/ruby/2.0.0-p195/bin:/usr/local/share/npm/bin:$PATH:$GOPATH/bin
-export NODE_PATH=/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/lib/node_modules
-export NPM_PATH=/usr/local/share/npm/bin
+export PATH=$HOME/bin:$PYENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
-export RUBY_SOURCE_DIR=/usr/local/bin/ruby
-export GEM_HOME=$(brew --prefix)
 
-# Docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=/Users/cgilmer/.boot2docker/certs/boot2docker-vm
-
-if [ -z "$PYTHONPATH" ]; then
-    export PYTHONPATH=/usr/local/lib/python:/usr/local/lib/python3
-else
-    export PYTHONPATH=/usr/local/lib/python:/usr/local/lib/python3:$PYTHONPATH
-fi
-
-if [ -z "$CPLUS_INCLUDE_PATH" ]; then
-    export CPLUS_INCLUDE_PATH=/usr/local/include
-else
-    export CPLUS_INCLUDE_PATH=/usr/local/include:$CPLUS_INCLUDE_PATH
-fi
+# if [ -z "$CPLUS_INCLUDE_PATH" ]; then
+#     export CPLUS_INCLUDE_PATH=/usr/local/include
+# else
+#     export CPLUS_INCLUDE_PATH=/usr/local/include:$CPLUS_INCLUDE_PATH
+# fi
 
 # add editor variable
 hash vim &>/dev/null && export EDITOR=vim
@@ -49,17 +33,6 @@ export C_WHITE="\[\033[37m\]"
 export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE $ $C_NORMAL "
 export INTERACTIVE_SHELL=1
 
-# ROS
-if [ -d /opt/ros/fuerte ]; then
-    source /opt/ros/fuerte/setup.bash
-    export ROS_OS_OVERRIDE=osx:homebrew
-    export ROS_PACKAGE_PATH=$HOME/Projects/ros_workspace:$ROS_PACKAGE_PATH
-    export ROS_WORKSPACE=$HOME/Projects/ros_workspace
-fi
-
-# Get RVM Running - LAST LINE
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 . $HOME/.bash/aliases
 . $HOME/.bash/functions
 . $HOME/.bash/options
@@ -70,18 +43,10 @@ done
 
 [[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
 
-# Activate virtualenv on machines that have them installed
-if [ -d ~/env ]; then
-    if [ ! -f ~/activate ]; then
-        ln -s ~/env/bin/activate ~/activate
-    fi
-    source ~/activate
-fi
-
 # Useful for numpy
 # you may need to export these
 ARCHFLAGS="-arch i386 -arch x86_64"
 CC=clang
 
-# added by Anaconda 2.2.0 installer
-#export PATH="/Users/cgilmer/anaconda/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
