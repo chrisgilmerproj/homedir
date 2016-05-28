@@ -19,7 +19,7 @@ filetype plugin on
 filetype plugin indent on
 
 autocmd BufNewFile,BufRead *.cfg set filetype=ini
-autocmd BufNewFile,BufRead *.yml set filetype=yaml
+autocmd BufNewFile,BufRead *.yml set filetype=yaml.ansible
 
 map <silent> <left>  h
 map <silent> <down>  j
@@ -65,6 +65,8 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let g:pyflakes_use_quickfix = 0
 
 " file checkers
+let g:syntastic_aggregate_errors = 1
+
 let g:syntastic_ansible_checkers = ['ansible-lint']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_python_checkers = ['flake8']
