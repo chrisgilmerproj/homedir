@@ -1,4 +1,3 @@
-filetype off
 execute pathogen#infect()
 
 " au FileType py set nocompatible
@@ -18,6 +17,9 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
+
+autocmd BufNewFile,BufRead *.cfg set filetype=ini
+autocmd BufNewFile,BufRead *.yml set filetype=yaml
 
 map <silent> <left>  h
 map <silent> <down>  j
@@ -61,7 +63,20 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " pyflakes-vim
 let g:pyflakes_use_quickfix = 0
+
+" file checkers
+let g:syntastic_ansible_checkers = ['ansible-lint']
+let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_yaml_checkers = ['yamllint']
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
 " color
 set background=dark
