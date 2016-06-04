@@ -19,7 +19,9 @@ filetype plugin on
 filetype plugin indent on
 
 autocmd BufNewFile,BufRead *.cfg set filetype=ini
+autocmd BufNewFile,BufRead *.pp set filetype=ruby
 autocmd BufNewFile,BufRead *.yml set filetype=yaml.ansible
+autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 
 map <silent> <left>  h
 map <silent> <down>  j
