@@ -61,7 +61,7 @@ function sendkey() {
 }
 
 function cdp() {
-  cd $HOME/Projects
+  cd $HOME/Projects/personal
   if [ -n "$1" ]; then
     cd $1
   fi
