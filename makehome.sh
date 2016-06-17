@@ -15,6 +15,7 @@ DOTFILES=(
     ".bash_profile"
     ".bash"
     ".bashrc"
+    ".config"
     ".gdbinit"
     ".gemrc"
     ".gitconfig"
