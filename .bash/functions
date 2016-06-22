@@ -43,18 +43,6 @@ function git_ref_head() {
   git rev-parse HEAD
 }
 
-function fe() {
-  find . -type f -iname '*'${1:-}'*' -exec ${2:-file} {} \;
-}
-
-function unquarantine() {
-  sudo xattr -d -r com.apple.quarantine $1
-}
-
-function setup() {
-  ssh $1 "if [ -x /usr/bin/git ]; then if [ -d "homedir" ]; then cd homedir && git reset --hard HEAD && git pull; else git clone https://github.com/chrisgilmerproj/homedir.git && cd homedir && bash makehome.sh || echo 'Could not setup homedir'; fi; fi;";
-}
-
 function sendkey() {
   ssh -q $USER@$1 "mkdir -p ~/.ssh; touch ~/.ssh/authorized_keys"
   cat ~/.ssh/id_rsa.pub | ssh -q $USER@$1 "cat - >> ~/.ssh/authorized_keys"
