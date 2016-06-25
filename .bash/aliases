@@ -45,6 +45,7 @@ alias notebook='ipython notebook --pylab inline'
 alias simpleserver='python -m SimpleHTTPServer 8000'
 alias pysort='isort -rc -sl -dt .'
 alias fixpy='for version in 2.7.11 2.6.9 3.3.6 3.4.4 3.5.1; do echo $version; pyenv uninstall $version; pyenv install $version; done'
+alias fixcrypto='env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pip install cryptography'
 
 # git
 alias gpthis='git push origin HEAD:$(git_current_branch)'
