@@ -52,4 +52,4 @@ export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
 export PYTHON_CONFIGURE_OPTS="--enable-unicode=ucs2 --enable-framework"
 
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#eval "$(pyenv virtualenv-init -)"
