@@ -47,6 +47,9 @@ done
 # you may need to export these
 ARCHFLAGS="-arch i386 -arch x86_64"
 CC=clang
+CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include"
+LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
+PYTHON_CONFIGURE_OPTS=--enable-unicode=ucs2
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
