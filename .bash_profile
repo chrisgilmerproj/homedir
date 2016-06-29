@@ -45,11 +45,11 @@ done
 
 # Useful for numpy
 # you may need to export these
-ARCHFLAGS="-arch i386 -arch x86_64"
-CC=clang
-CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include"
-LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
-PYTHON_CONFIGURE_OPTS=--enable-unicode=ucs2
+export ARCHFLAGS="-arch i386 -arch x86_64"
+export CC=clang
+export CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include"
+export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
+export PYTHON_CONFIGURE_OPTS="--enable-unicode=ucs2 --enable-framework"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
