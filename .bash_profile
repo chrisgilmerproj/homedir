@@ -1,13 +1,6 @@
 # add user bin directory to path
 export PYENV_ROOT=$HOME/.pyenv
-export PATH=$HOME/bin:$PYENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
-export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
-
-# if [ -z "$CPLUS_INCLUDE_PATH" ]; then
-#     export CPLUS_INCLUDE_PATH=/usr/local/include
-# else
-#     export CPLUS_INCLUDE_PATH=/usr/local/include:$CPLUS_INCLUDE_PATH
-# fi
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
 
 # add editor variable
 hash vim &>/dev/null && export EDITOR=vim
@@ -47,12 +40,6 @@ done
 # you may need to export these
 ARCHFLAGS="-arch i386 -arch x86_64"
 CC=clang
-CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include -I$(brew --prefix expat)/include"
-LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib -L$(brew --prefix expat)/lib"
-# CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include"
-# LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib -L$(xcrun --show-sdk-path)/usr/lib"
-# PYTHON_CONFIGURE_OPTS="--enable-unicode=ucs2 --enable-framework"
-export PYTHON_CONFIGURE_OPTS="--enable-unicode=ucs2"
 
 eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
