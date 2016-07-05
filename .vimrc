@@ -72,6 +72,7 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_ansible_checkers = ['ansible-lint']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_post_args='--ignore=F405'
 let g:syntastic_yaml_checkers = ['yamllint']
 
 " syntastic
