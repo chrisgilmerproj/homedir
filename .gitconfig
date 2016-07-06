@@ -25,4 +25,4 @@
     status = auto
     ui = auto
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
