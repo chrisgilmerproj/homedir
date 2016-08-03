@@ -4,6 +4,7 @@ execute pathogen#infect()
 " au FileType py set smartindent
 " au FileType py set shiftwidth=4
 " au FileType py set expandtab
+set paste
 set nocompatible
 set smartindent
 set shiftwidth=4
