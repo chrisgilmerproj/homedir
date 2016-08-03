@@ -59,3 +59,6 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
 # fix ssh screen session
 alias fs="source ~/fixssh"
+
+# ansible
+alias cpssh="cp /Users/christophergi/Projects/dotloop/ansible/ssh/config ~/.ssh/config && sed -i -e 's/UserKnownHostsFile.*/ForwardAgent Yes/' ~/.ssh/config"
