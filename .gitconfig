@@ -9,7 +9,7 @@
 [diff]
     tool = vimdiff
 [alias]
-    st = status
+    st = status --short --branch
     br = branch
     ci = commit
     co = checkout
@@ -18,6 +18,8 @@
     yd = diff "@{yesterday}"
     prune = gc --prune=now
     contrib = blame
+	shorty = status --short --branch
+	commend = commit --amend --no-edit
 [color]
     branch = auto
     diff   = auto

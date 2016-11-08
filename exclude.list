@@ -1,6 +1,7 @@
 .ansible/
 .asdm/
 .aws/
+.bash_history
 .bash_sessions/
 .boot2docker/
 .bower/
@@ -23,6 +24,7 @@
 .keepassx/
 .local/
 .matplotlib/
+.NERDTreeBookmarks
 .node-gyp/
 .npm/
 .oracle_jre_usage/
@@ -36,6 +38,8 @@
 .terraform.d/
 .Trash/
 .vagrant.d/
+.viminfo
+.yarn-cache/
 
 env/
 venv/

@@ -1,6 +1,8 @@
 # add user bin directory to path
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=~/Projects/go/
 
 # add editor variable
 hash vim &>/dev/null && export EDITOR=vim
