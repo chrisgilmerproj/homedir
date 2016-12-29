@@ -1,0 +1,18 @@
+#! /usr/bin/expect
+
+spawn bash
+sleep 0.3
+send "screen\n"
+interact timeout 2 return
+send "\x01"; send "c"
+sleep 0.3
+send "\x01"; send "c"
+sleep 0.3
+send "\x01"; send "c"
+sleep 0.3
+send "\x01"; send "c"
+sleep 0.3
+send "\x01"; send "1"
+sleep 0.3
+send "vim"
+exit
