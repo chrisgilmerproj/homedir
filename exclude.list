@@ -1,14 +1,20 @@
+.ackrc
 .ansible/
+.ansible_galaxy
 .asdm/
-.aws/
+.bash
 .bash_history
+.bash_profile
 .bash_sessions/
+.bashrc
 .boot2docker/
 .bower/
 .bundle/
 .bundler/
 .cache/
+.CFUserTextEncoding
 .conda/
+.config
 .continuum/
 .cpan/
 .cups/
@@ -17,13 +23,24 @@
 .distlib/
 .dropbox/
 .esets/
+.flake8
+.gdbinit
 .gem/
+.gemrc
+.gitconfig
+.gitignore_global
 .gnupg/
+.hgrc
+.inputrc
+.ipython
+.irbrc
+.isort.cfg
 .jssc/
 .jupyter/
 .keepassx/
 .local/
 .matplotlib/
+.matplotlibrc
 .NERDTreeBookmarks
 .node-gyp/
 .npm/
@@ -33,12 +50,16 @@
 .puppet/
 .pyenv/
 .pylint.d/
+.screenrc
 .subversion/
 .tblive*/
 .terraform.d/
+.tmux.conf
 .Trash/
 .vagrant.d/
+.vim/
 .viminfo
+.vimrc
 .yarn-cache/
 
 env/
@@ -52,7 +73,9 @@ node_modules/
 bower_components/
 
 anaconda/
+bin
 Applications/
+exclude.list
 Desktop/
 Dropbox/
 Google Drive/
