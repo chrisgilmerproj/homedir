@@ -78,7 +78,6 @@ Applications/
 exclude.list
 Desktop/
 Dropbox/
-Google Drive/
 Library/
 mapscache/
 Movies/
@@ -86,9 +85,7 @@ Music/
 network/
 packer_cache/
 Pictures/
-Projects/counsyl/vagrant/puppet/modules/
 Public/
-Samsung/
 VirtualBox VMs/
 
 .DS_Store
