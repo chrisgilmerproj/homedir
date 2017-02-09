@@ -87,7 +87,7 @@ let g:syntastic_auto_loc_list = 0
 " color
 set background=dark
 :colorscheme Tomorrow-Night
-":colorscheme monokai
+":colorscheme space-vim-dark
 :highlight OverColLimit term=bold cterm=bold
 :au BufRead,BufNewFile * match OverColLimit '\%>80v.\+'
 

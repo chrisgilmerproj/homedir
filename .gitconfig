@@ -21,6 +21,7 @@
 	shorty = status --short --branch
 	commend = commit --amend --no-edit
 	unadd = reset HEAD
+	ocmmit = commit
 [color]
     branch = auto
     diff   = auto

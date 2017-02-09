@@ -68,3 +68,10 @@ function cdb() {
     cd $1
   fi
 }
+
+function cdt() {
+  cd $HOME/Projects/tendai
+  if [ -n "$1" ]; then
+    cd $1
+  fi
+}

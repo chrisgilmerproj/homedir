@@ -1,8 +1,9 @@
 # add user bin directory to path
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:./node_modules/.bin:$HOME/.npm-packages/bin
 export GOPATH=~/Projects/go/
+export NODE_ENV=development
 
 # add editor variable
 hash vim &>/dev/null && export EDITOR=vim

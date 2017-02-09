@@ -76,7 +76,6 @@ anaconda/
 bin
 Applications/
 exclude.list
-Desktop/
 Dropbox/
 Library/
 mapscache/
@@ -93,3 +92,4 @@ VirtualBox VMs/
 *.swo
 *.pyc
 *.pyo
+ansible-ubuntu*
