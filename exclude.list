@@ -86,6 +86,7 @@ packer_cache/
 Pictures/
 Public/
 VirtualBox VMs/
+pydocs/
 
 .DS_Store
 *.swp
