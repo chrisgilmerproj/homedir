@@ -108,3 +108,6 @@ set backspace=indent,eol,start
 
 :command Nowhitespace :%s/\s\+$//
 :command Nws :%s/\s\+$//
+
+" Enable search term highlighting
+set hlsearch
