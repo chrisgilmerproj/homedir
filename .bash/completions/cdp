@@ -1,0 +1,15 @@
+#! /bin/bash
+# cdt bash completion
+
+_cd_complete()
+{
+    local cur_word prev_word type_list
+    cur_word="${COMP_WORDS[COMP_CWORD]}"
+    prev_word="${COMP_WORDS[COMP_CWORD-1]}"
+
+    dir_list=`$prev_word && ls`
+    COMPREPLY=( $(compgen -W "${dir_list}" -- ${cur_word}) )
+    return 0
+}
+
+complete -o default -F _cd_complete cdg cdp cdt
