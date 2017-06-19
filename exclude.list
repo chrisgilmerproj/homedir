@@ -44,6 +44,7 @@
 .NERDTreeBookmarks
 .node-gyp/
 .npm/
+.nvm/
 .oracle_jre_usage/
 .pip/
 .pip_download_cache/
@@ -89,6 +90,7 @@ VirtualBox VMs/
 pydocs/
 
 .DS_Store
+*.iso
 *.swp
 *.swo
 *.pyc
