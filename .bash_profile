@@ -1,6 +1,6 @@
 # add user bin directory to path
 export PYENV_ROOT=$HOME/.pyenv
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:./node_modules/.bin:$HOME/.npm-packages/bin
 export GOPATH=~/Projects/go/
 export NODE_ENV=development
@@ -11,6 +11,7 @@ hash vim &>/dev/null && export EDITOR=vim
 # set the colors for the terminal
 export TERM=xterm-color
 export CLICOLOR=1
+export GREP_OPTIONS='--color=always'
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
@@ -46,3 +47,7 @@ CC=clang
 
 eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
