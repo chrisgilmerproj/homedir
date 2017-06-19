@@ -33,6 +33,7 @@ alias now="date +'%F %T'"
 alias tree="find ./ -type d | sed -e 's/[^-][^\/]*\//--/g;s/--/ |-/'"
 alias pmake="make --eval=\"print-%: ; @echo $*=$($*)\""
 alias sshfind="nmap -sV -p 22 192.168.0.0/24 | grep 192"
+alias pubkey="cat ~/.ssh/id_rsa.pub"
 
 # tar files
 alias maketar='tar -pczf'
@@ -41,6 +42,7 @@ alias untar='tar -xvf'
 # python
 alias pydocs='open /Users/cgilmer/Documents/pydocs/python-2.7.13-docs-html/index.html'
 alias pydocs3='open /Users/cgilmer/Documents/pydocs/python-3.6.1-docs-html/index.html'
+alias findjs='find . -type f -name "*.js*" -print0 | xargs -0 grep'
 alias findpy='find . -type f -name "*.py" -print0 | xargs -0 grep'
 alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
 alias pyproc='ps aux | grep python'
