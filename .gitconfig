@@ -18,10 +18,11 @@
     yd = diff "@{yesterday}"
     prune = gc --prune=now
     contrib = blame
-	shorty = status --short --branch
-	commend = commit --amend --no-edit
-	unadd = reset HEAD
-	ocmmit = commit
+    shorty = status --short --branch
+    commend = commit --amend --no-edit
+    unadd = reset HEAD
+    ocmmit = commit
+    rev = rev-parse --verify HEAD
 [color]
     branch = auto
     diff   = auto
