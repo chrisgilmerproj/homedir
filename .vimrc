@@ -89,7 +89,7 @@ set background=dark
 :colorscheme Tomorrow-Night
 ":colorscheme space-vim-dark
 :highlight OverColLimit term=bold cterm=bold
-:au BufRead,BufNewFile * match OverColLimit '\%>80v.\+'
+:au BufRead,BufNewFile * match OverColLimit '\%>120v.\+'
 
 " set spell
 
