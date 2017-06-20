@@ -21,6 +21,7 @@
     shorty = status --short --branch
     commend = commit --amend --no-edit
     unadd = reset HEAD
+    undo = reset --soft HEAD~1
     ocmmit = commit
     rev = rev-parse --verify HEAD
 [color]
