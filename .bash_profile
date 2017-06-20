@@ -11,7 +11,7 @@ hash vim &>/dev/null && export EDITOR=vim
 # set the colors for the terminal
 export TERM=xterm-color
 export CLICOLOR=1
-export GREP_OPTIONS='--color=always'
+# export GREP_OPTIONS='--color=always' # v2.5.1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
