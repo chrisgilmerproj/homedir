@@ -75,3 +75,37 @@ function cdt() {
     cd $1
   fi
 }
+
+function gr() {
+  args="$@"
+
+  # If no directory specified, use '.'
+  if (( $# < 2 )); then
+    set -- "$@" .
+  fi
+
+  grep -r --colour=auto \
+    --exclude "bundle.js" \
+    --exclude "*.iso" \
+    --exclude "*.min.js" \
+    --exclude "*.pyc" \
+    --exclude "*.pyo" \
+    --exclude "*.sql" \
+    --exclude "*.swp" \
+    --exclude-dir ".env" \
+    --exclude-dir ".git" \
+    --exclude-dir ".venv" \
+    --exclude-dir "aws-build" \
+    --exclude-dir "bootstrap" \
+    --exclude-dir "bower_components" \
+    --exclude-dir "build" \
+    --exclude-dir "dist" \
+    --exclude-dir "env" \
+    --exclude-dir "env3" \
+    --exclude-dir "node_modules" \
+    --exclude-dir "swagger-ui" \
+    --exclude-dir "venv" \
+    --exclude-dir "venv3" \
+    --exclude-dir "vizjs" \
+    "${@:=.}"
+}
