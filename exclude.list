@@ -65,6 +65,8 @@
 
 env/
 venv/
+env3/
+venv3/
 vendor/
 .venv/
 .env/
@@ -90,6 +92,7 @@ VirtualBox VMs/
 pydocs/
 
 .DS_Store
+*.exe
 *.iso
 *.swp
 *.swo
