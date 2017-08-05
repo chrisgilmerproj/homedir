@@ -30,6 +30,9 @@ export C_WHITE="\[\033[37m\]"
 export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE $ $C_NORMAL "
 export INTERACTIVE_SHELL=1
 
+# Disable stupid ansible cows
+export ANSIBLE_NOCOWS=1
+
 . $HOME/.bash/aliases
 . $HOME/.bash/functions
 . $HOME/.bash/options

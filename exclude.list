@@ -46,6 +46,7 @@
 .npm/
 .nvm/
 .oracle_jre_usage/
+.ova
 .pip/
 .pip_download_cache/
 .puppet/
@@ -57,6 +58,7 @@
 .terraform.d/
 .tmux.conf
 .Trash/
+.v8flags.*
 .vagrant.d/
 .vim/
 .viminfo
