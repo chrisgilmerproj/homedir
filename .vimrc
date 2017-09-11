@@ -8,14 +8,27 @@ set paste
 set nocompatible
 set smartindent
 set shiftwidth=4
-set expandtab
-set tabstop=4
-set noerrorbells
-set visualbell
+set expandtab          " tabs are spaces
+set tabstop=4          " number of visual spaces per TAB
+set softtabstop=4      " number of spaces in tab when editing
+set noerrorbells       " turn off error bells
+set visualbell         " turn off visual bells
+set showmatch          " highlight matching [{()}]
+set foldenable         " enable folding
+set foldlevelstart=10  " open most folds by default
+set foldnestmax=10     " 10 nested fold max
+set foldmethod=indent  " fold based on indent level
 
-syntax on
+" space open/closes folds
+nnoremap <space> za
+
+" syntax on            " enable syntax processing
+" https://stackoverflow.com/questions/33380451/is-there-a-difference-between-syntax-on-and-syntax-enable-in-vimscript
+if !exists("g:syntax_on")
+    syntax enable
+endif
 filetype on
-filetype indent on
+filetype indent on      " load filetype-specific indent files
 filetype plugin on
 filetype plugin indent on
 
@@ -110,4 +123,5 @@ set backspace=indent,eol,start
 :command Nws :%s/\s\+$//
 
 " Enable search term highlighting
-set hlsearch
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
