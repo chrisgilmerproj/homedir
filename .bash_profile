@@ -1,8 +1,8 @@
 # add user bin directory to path
+export GOPATH=~/Projects/go
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:./node_modules/.bin:$HOME/.npm-packages/bin
-export GOPATH=~/Projects/go/
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin
 export NODE_ENV=development
 
 # add editor variable
@@ -27,7 +27,7 @@ export C_CYAN="\[\033[36m\]"
 export C_WHITE="\[\033[37m\]"
 
 # Set up prompt
-export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE $ $C_NORMAL "
+# export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE $ $C_NORMAL "
 export INTERACTIVE_SHELL=1
 
 # Disable stupid ansible cows
@@ -54,3 +54,19 @@ eval "$(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Help me
+eval $(thefuck --alias)
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+
+# Powerline
+powerline-daemon -q
+export POWERLINE_BASH_CONTINUATION=1
+export POWERLINE_BASH_SELECT=1
+. /Users/cgilmer/.pyenv/versions/3.6.1/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
