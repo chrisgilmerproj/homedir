@@ -125,3 +125,8 @@ set backspace=indent,eol,start
 " Enable search term highlighting
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+
+" powerline
+let g:powerline_pycmd = 'py3'
+let g:powerline_eval = 'py3eval'
+source /Users/cgilmer/.pyenv/versions/3.6.1/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/vim/plugin/powerline.vim
