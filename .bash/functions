@@ -94,6 +94,7 @@ function gr() {
     --exclude "*.sql" \
     --exclude "*.swp" \
     --exclude "*.swo" \
+    --exclude "package-lock.json" \
     --exclude-dir ".env" \
     --exclude-dir ".git" \
     --exclude-dir ".tox" \
@@ -112,4 +113,8 @@ function gr() {
     --exclude-dir "venv3" \
     --exclude-dir "vizjs" \
     "${@:=.}"
+}
+
+function loc() {
+  git ls-files | while read f; do git blame --line-porcelain "${f}" | grep '^author '; done | sort -f | uniq -ic | sort -n
 }
