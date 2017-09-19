@@ -48,8 +48,6 @@ map - <C-w>-
 map = <C-w>+
 map < <C-w><
 map > <C-w>>
-"map <C-t> :tabe .<cr>
-"map <C-e> :tabclose <cr>
 
 map <silent> <C-d> gT
 map <silent> <C-f> gt
@@ -82,7 +80,6 @@ let g:pyflakes_use_quickfix = 0
 
 " file checkers
 let g:syntastic_aggregate_errors = 1
-
 let g:syntastic_ansible_checkers = ['ansible-lint']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_python_checkers = ['flake8']
@@ -93,32 +90,29 @@ let g:syntastic_yaml_checkers = ['yamllint']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 
 " color
-set background=dark
-:colorscheme Tomorrow-Night
-":colorscheme space-vim-dark
-:highlight OverColLimit term=bold cterm=bold
-:au BufRead,BufNewFile * match OverColLimit '\%>120v.\+'
-
-" set spell
+" set background=dark
+" :colorscheme Tomorrow-Night
+" :colorscheme space-vim-dark
+" :highlight OverColLimit term=bold cterm=bold
+" :au BufRead,BufNewFile * match OverColLimit '\%>120v.\+'
 
 vmap > >gv
 vmap < <gv
 
-
 map q :w<cr>:exe ':!./%' <cr>
 
-set statusline=%f%m%=%c%V\ \ %l/%L\ \ %{strftime(\"%H:%M\")}\ \
+" set statusline=%f%m%=%c%V\ \ %l/%L\ \ %{strftime(\"%H:%M\")}\ \
 set laststatus=2
-"set colorcolumn=80
+set colorcolumn=120
 
 "Fixes backspace not working to dedent a line
 set backspace=indent,eol,start
 
+" Remove whitespace from end of lines
 :command Nowhitespace :%s/\s\+$//
 :command Nws :%s/\s\+$//
 
@@ -130,3 +124,4 @@ set hlsearch            " highlight matches
 let g:powerline_pycmd = 'py3'
 let g:powerline_eval = 'py3eval'
 source /Users/cgilmer/.pyenv/versions/3.6.1/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/vim/plugin/powerline.vim
+set t_Co=256
