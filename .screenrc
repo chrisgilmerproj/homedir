@@ -23,5 +23,9 @@ bind K kill
 #bind O login off
 bind } history
 
+# Fix ambiguous width chars
+cjkwidth off
+
 hardstatus lastline '%c:%s  %w'
 defscrollback 5000
+term xterm-256color

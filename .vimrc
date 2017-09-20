@@ -13,11 +13,17 @@ set tabstop=4          " number of visual spaces per TAB
 set softtabstop=4      " number of spaces in tab when editing
 set noerrorbells       " turn off error bells
 set visualbell         " turn off visual bells
-set showmatch          " highlight matching [{()}]
 set foldenable         " enable folding
 set foldlevelstart=10  " open most folds by default
 set foldnestmax=10     " 10 nested fold max
 set foldmethod=indent  " fold based on indent level
+set nolazyredraw       " don't allow lazy redraws
+
+" utf-8 ftw!
+set encoding=utf-8
+set fileencodings=utf-8
+set noemoji            " Ensure emoji chars are single width
+set ambiwidth=single   " Ensure ambiguous chars are single width
 
 " space open/closes folds
 nnoremap <space> za
@@ -100,6 +106,12 @@ let g:syntastic_auto_loc_list = 0
 " :highlight OverColLimit term=bold cterm=bold
 " :au BufRead,BufNewFile * match OverColLimit '\%>120v.\+'
 
+" Disable Background Color Erase (BCE) so that color schemes
+" render properly when inside 256-color tmux and GNU screen.
+if &term =~ '256color'
+    set t_ut=
+endif
+
 vmap > >gv
 vmap < <gv
 
@@ -117,8 +129,9 @@ set backspace=indent,eol,start
 :command Nws :%s/\s\+$//
 
 " Enable search term highlighting
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set incsearch          " search as characters are entered
+set hlsearch           " highlight matches
+set showmatch          " highlight matching [{()}]
 
 " powerline
 let g:powerline_pycmd = 'py3'

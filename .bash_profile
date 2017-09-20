@@ -70,3 +70,4 @@ powerline-daemon -q
 export POWERLINE_BASH_CONTINUATION=1
 export POWERLINE_BASH_SELECT=1
 . /Users/cgilmer/.pyenv/versions/3.6.1/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+export LC_ALL=en_US.UTF-8
