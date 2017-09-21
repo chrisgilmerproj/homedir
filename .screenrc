@@ -28,4 +28,5 @@ cjkwidth off
 
 hardstatus lastline '%c:%s  %w'
 defscrollback 5000
+truecolor on
 term xterm-256color
