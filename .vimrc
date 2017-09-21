@@ -23,6 +23,7 @@ set vb t_vb=           " no visual bell
 " utf-8 ftw!
 set encoding=utf-8
 set fileencodings=utf-8
+setglobal fileencoding=utf-8
 set noemoji            " Ensure emoji chars are single width
 set ambiwidth=single   " Ensure ambiguous chars are single width
 
