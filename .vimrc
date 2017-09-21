@@ -18,6 +18,7 @@ set foldlevelstart=10  " open most folds by default
 set foldnestmax=10     " 10 nested fold max
 set foldmethod=indent  " fold based on indent level
 set nolazyredraw       " don't allow lazy redraws
+set vb t_vb=           " no visual bell
 
 " utf-8 ftw!
 set encoding=utf-8
