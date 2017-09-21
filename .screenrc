@@ -28,5 +28,11 @@ cjkwidth off
 
 hardstatus lastline '%c:%s  %w'
 defscrollback 5000
-truecolor on
+#truecolor on
+#term screen-256color
 term xterm-256color
+#term rxvt-unicode-256color
+
+#attrcolor b ".I"
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+#defbce on    # use current bg color for erased chars

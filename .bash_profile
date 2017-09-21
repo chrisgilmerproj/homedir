@@ -9,7 +9,7 @@ export NODE_ENV=development
 hash vim &>/dev/null && export EDITOR=vim
 
 # set the colors for the terminal
-export TERM=xterm-color
+export TERM=xterm-256color
 export CLICOLOR=1
 # export GREP_OPTIONS='--color=always' # v2.5.1
 export LSCOLORS=ExFxCxDxBxegedabagacad
