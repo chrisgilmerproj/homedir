@@ -74,3 +74,6 @@ alias cpssh="cp /Users/cgilmer/Projects/bossytable/ansible/ssh/config ~/.ssh/con
 
 # powerline
 alias ps1="powerline-daemon --replace"
+
+# tmux
+alias tmux="tmux -2"
