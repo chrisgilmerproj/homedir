@@ -116,5 +116,11 @@ function gr() {
 }
 
 function loc() {
-  git ls-files | while read f; do git blame --line-porcelain "${f}" | grep '^author '; done | sort -f | uniq -ic | sort -n
+  # git ls-files | while read f; do git blame -f --line-porcelain "${f}" ; done | grep '^author ' | sort -f | uniq -ic | sort -n
+  git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain HEAD | grep  "^author " | sort -f | uniq -ic | sort -n
+}
+
+function totloc() {
+  # Walk through a top level directory into each git repo and get loc
+  for d in `ls -d */`; do echo; pushd $d; if [ -d .git ]; then loc; fi; popd >> /dev/null ; done
 }
