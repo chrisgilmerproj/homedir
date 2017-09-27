@@ -26,6 +26,7 @@
     ocmmit = commit
     rev = rev-parse --verify HEAD
     skip = update-index --skip-worktree
+    unskip = update-index --no-skip-worktree
 [color]
     branch = auto
     diff   = auto
