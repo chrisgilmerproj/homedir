@@ -17,8 +17,13 @@ set foldenable         " enable folding
 set foldlevelstart=10  " open most folds by default
 set foldnestmax=10     " 10 nested fold max
 set foldmethod=indent  " fold based on indent level
+set autoindent
+set cindent
+set shiftround
 set nolazyredraw       " don't allow lazy redraws
 set vb t_vb=           " no visual bell
+
+au FileType js set sw=2 ts=2 sts=2 sta et
 
 " utf-8 ftw!
 set encoding=utf-8
@@ -35,11 +40,12 @@ nnoremap <space> za
 if !exists("g:syntax_on")
     syntax enable
 endif
-filetype on
-filetype indent on      " load filetype-specific indent files
-filetype plugin on
-filetype plugin indent on
+" filetype on
+" filetype indent on
+" filetype plugin on
+filetype plugin indent on " load filetype-specific indent files
 
+autocmd BufNewFile,BufRead *.jsx set filetype=js
 autocmd BufNewFile,BufRead *.cfg set filetype=ini
 autocmd BufNewFile,BufRead *.pp set filetype=ruby
 autocmd BufNewFile,BufRead *.yml set filetype=yaml.ansible
@@ -52,10 +58,10 @@ map <silent> <right> l
 
 map j gj
 map k gk
-map - <C-w>-
-map = <C-w>+
-map < <C-w><
-map > <C-w>>
+"map - <C-w>-
+"map = <C-w>+
+"map < <C-w><
+"map > <C-w>>
 
 map <silent> <C-d> gT
 map <silent> <C-f> gt
