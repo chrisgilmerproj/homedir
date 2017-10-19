@@ -45,7 +45,6 @@ endif
 " filetype plugin on
 filetype plugin indent on " load filetype-specific indent files
 
-autocmd BufNewFile,BufRead *.jsx set filetype=js
 autocmd BufNewFile,BufRead *.cfg set filetype=ini
 autocmd BufNewFile,BufRead *.pp set filetype=ruby
 autocmd BufNewFile,BufRead *.yml set filetype=yaml.ansible
