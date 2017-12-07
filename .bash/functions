@@ -43,6 +43,10 @@ function git_ref_head() {
   git rev-parse HEAD
 }
 
+function git_branch_name() {
+  git rev-parse --abbrev-ref HEAD
+}
+
 function sendkey() {
   ssh -q $USER@$1 "mkdir -p ~/.ssh; touch ~/.ssh/authorized_keys"
   cat ~/.ssh/id_rsa.pub | ssh -q $USER@$1 "cat - >> ~/.ssh/authorized_keys"
@@ -84,7 +88,7 @@ function gr() {
     set -- "$@" .
   fi
 
-  grep -r --colour=auto \
+  grep -r --color=auto \
     --exclude "bundle.js" \
     --exclude "*.iso" \
     --exclude "*.min.js" \
