@@ -27,6 +27,7 @@
     rev = rev-parse --verify HEAD
     skip = update-index --skip-worktree
     unskip = update-index --no-skip-worktree
+    tags = tag --list
 [color]
     branch = auto
     diff   = auto
