@@ -47,6 +47,7 @@
 .nvm/
 .oracle_jre_usage/
 .ova
+.pioenvs/
 .pip/
 .pip_download_cache/
 .puppet/
