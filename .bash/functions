@@ -67,7 +67,7 @@ function cdg() {
 }
 
 function cdb() {
-  cd $HOME/Projects/bossytable
+  cd $HOME/Projects/biomimetics
   if [ -n "$1" ]; then
     cd $1
   fi
