@@ -82,7 +82,6 @@ anaconda/
 bin
 Applications/
 exclude.list
-Dropbox/
 Library/
 mapscache/
 Movies/
