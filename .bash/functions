@@ -59,6 +59,13 @@ function cdp() {
   fi
 }
 
+function cdt() {
+  cd $HOME/Projects/truss
+  if [ -n "$1" ]; then
+    cd $1
+  fi
+}
+
 function cdg() {
   cd $HOME/Projects/github
   if [ -n "$1" ]; then
