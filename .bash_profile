@@ -69,5 +69,10 @@ eval $(thefuck --alias)
 powerline-daemon -q
 export POWERLINE_BASH_CONTINUATION=1
 export POWERLINE_BASH_SELECT=1
-. /Users/cgilmer/.pyenv/versions/3.6.5/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+. /Users/cgilmer/.pyenv/versions/3.6.2/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 export LC_ALL=en_US.UTF-8
+
+# https://direnv.net
+if command -v direnv >/dev/null; then
+    eval "$(direnv hook bash)"
+fi
