@@ -66,6 +66,13 @@ function cdt() {
   fi
 }
 
+function cdgo() {
+  cd $GOPATH/src/github.com/
+  if [ -n "$1" ]; then
+    cd $1
+  fi
+}
+
 function cdg() {
   cd $HOME/Projects/github
   if [ -n "$1" ]; then
