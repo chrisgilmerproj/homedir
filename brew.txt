@@ -28,7 +28,6 @@ ipcalc
 isl
 jpeg
 jq
-keybase
 libassuan
 libgcrypt
 libgpg-error
