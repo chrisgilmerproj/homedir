@@ -118,7 +118,6 @@ function gr() {
     --exclude-dir "env" \
     --exclude-dir "env3" \
     --exclude-dir "node_modules" \
-    --exclude-dir "pkg" \
     --exclude-dir "swagger-ui" \
     --exclude-dir "venv" \
     --exclude-dir "venv3" \
