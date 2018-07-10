@@ -100,4 +100,7 @@ pydocs/
 *.swo
 *.pyc
 *.pyo
+*.ova
+*.ovf
+*.vmdk
 ansible-ubuntu*
