@@ -2,6 +2,7 @@
 .ansible/
 .ansible_galaxy
 .asdm/
+.babel.json
 .bash
 .bash_history
 .bash_profile
@@ -21,6 +22,7 @@
 .deis/
 .devpi/
 .distlib/
+.docker/
 .dropbox/
 .esets/
 .flake8
@@ -38,21 +40,27 @@
 .jssc/
 .jupyter/
 .keepassx/
+.lesshst
 .local/
 .matplotlib/
 .matplotlibrc
 .NERDTreeBookmarks
 .node-gyp/
+.node_repl_history
 .npm/
+.npmrc
 .nvm/
 .oracle_jre_usage/
 .ova
 .pioenvs/
 .pip/
 .pip_download_cache/
+.psql_history
 .puppet/
 .pyenv/
 .pylint.d/
+.pypirc
+.python_history
 .screenrc
 .subversion/
 .tblive*/
@@ -65,6 +73,8 @@
 .viminfo
 .vimrc
 .yarn-cache/
+.yarnrc
+.zoomus/
 
 env/
 venv/
