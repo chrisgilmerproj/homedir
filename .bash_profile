@@ -2,7 +2,8 @@
 export GOPATH=~/Projects/go
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/go@1.10/libexec/bin
+export PATH=$PATH:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin
 export NODE_ENV=development
 
 # add editor variable
