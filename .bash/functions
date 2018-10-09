@@ -133,3 +133,19 @@ function totloc() {
   # Walk through a top level directory into each git repo and get loc
   for d in `ls -d */`; do echo; pushd $d; if [ -d .git ]; then loc; fi; popd >> /dev/null ; done
 }
+
+function findSSH() {
+  nmap -p22 -Pn -oG - 192.168.0.0/24 | awk '/22\/open/ {print $2}'
+}
+
+function findHTTP() {
+  nmap -p80,8080,8081,3000,3001,3002 -Pn -oG - 192.168.0.0/24 | awk '/open/ {print $2}'
+}
+
+function findNAS() {
+  nmap -p5000 -Pn -oG - 192.168.0.0/24 | awk '/open/ {print $2}' | egrep -v "192.168.0.1$"
+}
+
+function getuuid() {
+  uuidgen | awk '{printf tolower($0)}' | tee /dev/tty | pbcopy && echo
+}
