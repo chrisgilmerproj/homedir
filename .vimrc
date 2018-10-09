@@ -57,10 +57,10 @@ map <silent> <right> l
 
 map j gj
 map k gk
-"map - <C-w>-
-"map = <C-w>+
-"map < <C-w><
-"map > <C-w>>
+map - <C-w>-
+map = <C-w>+
+map < <C-w><
+map > <C-w>>
 
 map <silent> <C-d> gT
 map <silent> <C-f> gt
