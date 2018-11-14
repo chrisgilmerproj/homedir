@@ -28,6 +28,8 @@
     skip = update-index --skip-worktree
     unskip = update-index --no-skip-worktree
     tags = tag --list
+    head = reset --hard HEAD
+	c = "c() { git add \"$@\" && git commit \"$@\" ; } ; c"
 [color]
     branch = auto
     diff   = auto
@@ -36,3 +38,7 @@
     ui = auto
 [branch]
     autosetuprebase = always
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[help]
+	autocorrect = 20
