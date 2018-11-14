@@ -42,6 +42,8 @@ for i in $(ls $HOME/.bash/completions); do
     . $HOME/.bash/completions/$i;
 done
 
+complete -C /usr/local/Cellar/terraform/0.11.10/bin/terraform terraform
+
 [[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
 
 # Useful for numpy
