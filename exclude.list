@@ -65,6 +65,7 @@
 .subversion/
 .tblive*/
 .terraform.d/
+.terraform/
 .tmux.conf
 .Trash/
 .v8flags.*
