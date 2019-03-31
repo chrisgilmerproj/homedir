@@ -145,3 +145,36 @@ let g:powerline_pycmd = 'py3'
 let g:powerline_eval = 'py3eval'
 source /Users/cgilmer/.pyenv/versions/3.6.2/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/vim/plugin/powerline.vim
 set t_Co=256
+
+" prettier
+" max line length that prettier will wrap on
+" Prettier default: 80
+let g:prettier#config#print_width = 120
+
+" number of spaces per indentation level
+" Prettier default: 2
+let g:prettier#config#tab_width = 4
+
+" single quotes over double quotes
+" Prettier default: false
+let g:prettier#config#single_quote = 'true'
+
+" print spaces between brackets
+" Prettier default: true
+let g:prettier#config#bracket_spacing = 'true'
+
+" put > on the last line instead of new line
+" Prettier default: false
+let g:prettier#config#jsx_bracket_same_line = 'true'
+
+" avoid|always
+" Prettier default: avoid
+let g:prettier#config#arrow_parens = 'avoid'
+
+" none|es5|all
+" Prettier default: none
+let g:prettier#config#trailing_comma = 'all'
+
+" flow|babylon|typescript|css|less|scss|json|graphql|markdown
+" Prettier default: babylon
+let g:prettier#config#parser = 'babylon'
