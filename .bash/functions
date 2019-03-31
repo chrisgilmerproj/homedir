@@ -108,6 +108,7 @@ function gr() {
     --exclude "package-lock.json" \
     --exclude-dir ".env" \
     --exclude-dir ".git" \
+    --exclude-dir ".terraform" \
     --exclude-dir ".tox" \
     --exclude-dir ".venv" \
     --exclude-dir "aws-build" \
@@ -118,6 +119,7 @@ function gr() {
     --exclude-dir "env" \
     --exclude-dir "env3" \
     --exclude-dir "node_modules" \
+    --exclude-dir "vendor" \
     --exclude-dir "venv" \
     --exclude-dir "venv3" \
     --exclude-dir "vizjs" \
