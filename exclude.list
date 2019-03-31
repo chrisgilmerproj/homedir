@@ -24,6 +24,7 @@
 .distlib/
 .docker/
 .dropbox/
+.dropbox.cache/
 .esets/
 .flake8
 .gdbinit
