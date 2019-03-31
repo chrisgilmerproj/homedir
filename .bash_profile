@@ -44,8 +44,6 @@ done
 
 complete -C /usr/local/Cellar/terraform/0.11.10/bin/terraform terraform
 
-[[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
-
 # Useful for numpy
 # you may need to export these
 ARCHFLAGS="-arch i386 -arch x86_64"
@@ -72,10 +70,13 @@ eval $(thefuck --alias)
 powerline-daemon -q
 export POWERLINE_BASH_CONTINUATION=1
 export POWERLINE_BASH_SELECT=1
-. /Users/cgilmer/.pyenv/versions/3.6.2/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+. /Users/cgilmer/.pyenv/versions/3.7.2/Python.framework/Versions/3.7/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 export LC_ALL=en_US.UTF-8
 
 # https://direnv.net
 if command -v direnv >/dev/null; then
     eval "$(direnv hook bash)"
 fi
+
+# Local modifications should come last
+[[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
