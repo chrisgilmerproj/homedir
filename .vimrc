@@ -143,5 +143,5 @@ set showmatch          " highlight matching [{()}]
 " powerline
 let g:powerline_pycmd = 'py3'
 let g:powerline_eval = 'py3eval'
-source /Users/cgilmer/.pyenv/versions/3.6.2/Python.framework/Versions/3.6/lib/python3.6/site-packages/powerline/bindings/vim/plugin/powerline.vim
+source /Users/cgilmer/.pyenv/versions/3.7.2/Python.framework/Versions/3.7/lib/python3.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 set t_Co=256
