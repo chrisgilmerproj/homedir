@@ -102,7 +102,6 @@ function gr() {
     --exclude "*.pyc" \
     --exclude "*.pyo" \
     --exclude "*.rdb" \
-    --exclude "*.sql" \
     --exclude "*.swp" \
     --exclude "*.swo" \
     --exclude "package-lock.json" \
