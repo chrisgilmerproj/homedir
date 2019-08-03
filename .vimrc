@@ -178,3 +178,6 @@ let g:prettier#config#trailing_comma = 'all'
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown
 " Prettier default: babylon
 let g:prettier#config#parser = 'babylon'
+
+" RustFmt
+let g:rustfmt_autosave = 1
