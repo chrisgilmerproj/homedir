@@ -62,6 +62,7 @@
 .pylint.d/
 .pypirc
 .python_history
+.rustup/
 .screenrc
 .subversion/
 .tblive*/
