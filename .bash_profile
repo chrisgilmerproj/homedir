@@ -66,10 +66,12 @@ eval $(thefuck --alias)
 [ -f /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
 
 # Powerline
-powerline-daemon -q
-export POWERLINE_BASH_CONTINUATION=1
-export POWERLINE_BASH_SELECT=1
-. /Users/cgilmer/.pyenv/versions/3.7.2/Python.framework/Versions/3.7/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+if [[ -x $(which powerline-daemon) ]]; then
+ powerline-daemon -q
+ export POWERLINE_BASH_CONTINUATION=1
+ export POWERLINE_BASH_SELECT=1
+. /Users/cgilmer/.pyenv/versions/3.8.0/Python.framework/Versions/3.8/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
+fi
 export LC_ALL=en_US.UTF-8
 
 # https://direnv.net

@@ -1,6 +1,6 @@
 [user]
     name = Chris Gilmer
-    email = chris.gilmer@gmail.com
+    email = chris@truss.works
 [github]
     user = chrisgilmerproj
 [core]
@@ -30,6 +30,7 @@
     tags = tag --list
     head = reset --hard HEAD
 	c = "c() { git add \"$@\" && git commit \"$@\" ; } ; c"
+    pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 [color]
     branch = auto
     diff   = auto
