@@ -79,3 +79,13 @@ alias ps1="powerline-daemon --replace"
 
 # tmux
 alias tmux="tmux -2"
+
+# Docker
+alias d_node13="docker run -it --rm=true -v $PWD:$PWD -w $PWD node:13.8-slim bash"
+alias d_py37="docker run -it --rm=true -v $PWD:$PWD -w $PWD python:3.7-slim bash"
+alias d_py38="docker run -it --rm=true -v $PWD:$PWD -w $PWD python:3.8-slim bash"
+alias d_jv36="docker run -it --rm=true -v $PWD:$PWD -w $PWD maven:3.6-jdk-8-slim bash"
+alias d_cipy="docker run -it --rm=true circleci/python:3.8-buster bash"
+
+# Chime
+alias chime="afplay /System/Library/CoreServices/PowerChime.app/Contents/Resources/connect_power.aif"

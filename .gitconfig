@@ -1,6 +1,7 @@
 [user]
     name = Chris Gilmer
     email = chris@truss.works
+    signingkey = 9B9B5634A88AB754
 [github]
     user = chrisgilmerproj
 [core]
@@ -29,7 +30,7 @@
     unskip = update-index --no-skip-worktree
     tags = tag --list
     head = reset --hard HEAD
-	c = "c() { git add \"$@\" && git commit \"$@\" ; } ; c"
+    c = "c() { git add \"$@\" && git commit \"$@\" ; } ; c"
     pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 [color]
     branch = auto
@@ -42,4 +43,8 @@
 [url "git@github.com:"]
     insteadOf = https://github.com/
 [help]
-	autocorrect = 20
+    autocorrect = 20
+[commit]
+    gpgsign = true
+[gpg]
+	program = gpg
