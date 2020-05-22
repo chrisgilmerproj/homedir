@@ -93,3 +93,8 @@ export AWS_PAGER=""
 
 # Local modifications should come last
 [[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
+
+#Enable SSH Key on Yubikey Device
+killall gpg-agent > /dev/null 2>&1
+killall ssh-agent > /dev/null 2>&1
+eval $( gpg-agent --daemon --enable-ssh-support )

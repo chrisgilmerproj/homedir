@@ -1,7 +1,7 @@
 [user]
     name = Chris Gilmer
     email = chris@truss.works
-    signingkey = 9B9B5634A88AB754
+    signingkey = EDC220AD0A4E6839E0A6A4F7B3B5C1A76D730A90
 [github]
     user = chrisgilmerproj
 [core]
