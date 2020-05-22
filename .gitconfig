@@ -32,6 +32,7 @@
     head = reset --hard HEAD
     c = "c() { git add \"$@\" && git commit \"$@\" ; } ; c"
     pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+    last = "rev-parse --short --verify HEAD"
 [color]
     branch = auto
     diff   = auto
@@ -47,4 +48,4 @@
 [commit]
     gpgsign = true
 [gpg]
-	program = gpg
+    program = gpg
