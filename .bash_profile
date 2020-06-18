@@ -51,6 +51,7 @@ complete -C /usr/local/Cellar/terraform/0.11.10/bin/terraform terraform
 # ARCHFLAGS="-arch i386 -arch x86_64"
 # CC=clang
 
+eval "$(nodenv init -)"
 eval "$(pyenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
@@ -59,13 +60,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Help me
 eval "$(thefuck --alias)"
-
-# # tabtab source for serverless package
-# # uninstall by removing these lines or running `tabtab uninstall serverless`
-# [ -f /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
-# # tabtab source for sls package
-# # uninstall by removing these lines or running `tabtab uninstall sls`
-# [ -f /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /Users/cgilmer/.nvm/versions/node/v7.10.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
 
 # Powerline
 if command -v powerline-daemon >/dev/null; then
@@ -94,7 +88,15 @@ export AWS_PAGER=""
 # Local modifications should come last
 [[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
 
-#Enable SSH Key on Yubikey Device
-killall gpg-agent > /dev/null 2>&1
-killall ssh-agent > /dev/null 2>&1
-eval $( gpg-agent --daemon --enable-ssh-support )
+# #Enable SSH Key on Yubikey Device
+# killall gpg-agent ssh-agent > /dev/null 2>&1
+# unset GPG_AGENT_INFO SSH_AGENT_PID SSH_AUTH_SOCK
+# eval $( gpg-agent --daemon --enable-ssh-support )
+# 
+# #Enable SSH Key on Yubikey Device
+# GPG_TTY=$(tty)
+# export GPG_TTY
+# 
+# if [ -S "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
+#   export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
+# fi
