@@ -13,6 +13,7 @@
 .bundle/
 .bundler/
 .cache/
+.cargo/
 .CFUserTextEncoding
 .conda/
 .config

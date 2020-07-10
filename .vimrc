@@ -27,6 +27,7 @@ au FileType js set sw=2 ts=2 sts=2 sta et
 
 " utf-8 ftw!
 set encoding=utf-8
+scriptencoding utf-8
 set fileencodings=utf-8
 setglobal fileencoding=utf-8
 set noemoji            " Ensure emoji chars are single width
