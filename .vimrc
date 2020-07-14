@@ -92,20 +92,25 @@ autocmd vimenter * if !argc() | NERDTree | endif
 " pyflakes-vim
 let g:pyflakes_use_quickfix = 0
 
-" file checkers
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_ansible_checkers = ['ansible-lint']
-let g:syntastic_json_checkers = ['jsonlint']
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_post_args='--ignore=F405'
-let g:syntastic_yaml_checkers = ['yamllint']
+" " file checkers
+" let g:syntastic_aggregate_errors = 1
+" let g:syntastic_ansible_checkers = ['ansible-lint']
+" let g:syntastic_json_checkers = ['jsonlint']
+" let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_python_flake8_post_args='--ignore=F405'
+" let g:syntastic_yaml_checkers = ['yamllint']
+" 
+" " syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
+""" ALE settings
+let g:ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
+noremap <Leader>t :ALEFix<CR>
+"""
 
 " color
 " set background=dark
