@@ -36,6 +36,7 @@
     c = "c() { git add \"$@\" && git commit \"$@\" ; } ; c"
     pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
     last = "rev-parse --short --verify HEAD"
+	main = !git init && git checkout -b main
 [color]
     branch = auto
     diff   = auto
@@ -55,3 +56,5 @@
 [pull]
 	ff = only
 	rebase = false
+[init]
+	defaultBranch = main
