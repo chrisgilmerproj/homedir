@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+#
+# Install Brew Dependencies
+#
+
+while IFS= read -r tap; do brew tap "${tap}"; done < brew_tap.txt
+
+while IFS= read -r pkg; do brew install "${pkg}"; done < brew.txt
