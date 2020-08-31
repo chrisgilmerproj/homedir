@@ -1,5 +1,4 @@
 adns
-amazon-ecs-cli
 apr
 apr-util
 argon2
@@ -23,7 +22,6 @@ circleci
 cloc
 cmake
 coreutils
-cowsay
 curl-openssl
 dart
 dbus
@@ -36,8 +34,6 @@ docker-compose
 entr
 erlang
 exa
-find-guardduty-user
-fish
 fontconfig
 freetds
 freetype
@@ -122,7 +118,6 @@ libzip
 little-cms
 little-cms2
 lnav
-lolcat
 lua
 lua@5.1
 lzo
@@ -160,7 +155,6 @@ pixman
 pkg-config
 poppler
 popt
-postgresql
 potrace
 pre-commit
 proctools
@@ -173,14 +167,11 @@ python3
 python@3.8
 qt
 readline
-redis
 ripgrep
 rtmpdump
 ruby
 rustup-init
-sass
 screen
-setup-new-aws-user
 shellcheck
 sqlite
 ssh-copy-id
