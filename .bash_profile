@@ -1,5 +1,5 @@
 # add user bin directory to path
-export GOPATH=~/Projects/go
+export GOPATH=~/.go
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/.cargo/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH

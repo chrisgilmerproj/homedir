@@ -34,6 +34,7 @@
 .gitconfig
 .gitignore_global
 .gnupg/
+.go/
 .hgrc
 .inputrc
 .ipython
