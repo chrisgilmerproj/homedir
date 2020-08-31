@@ -59,8 +59,8 @@ function cdp() {
   fi
 }
 
-function cdt() {
-  cd $HOME/Projects/truss
+function cdds() {
+  cd $HOME/Projects/dds
   if [ -n "$1" ]; then
     cd $1
   fi
@@ -75,13 +75,6 @@ function cdgo() {
 
 function cdg() {
   cd $HOME/Projects/github
-  if [ -n "$1" ]; then
-    cd $1
-  fi
-}
-
-function cdb() {
-  cd $HOME/Projects/biomimetics
   if [ -n "$1" ]; then
     cd $1
   fi

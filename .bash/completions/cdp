@@ -12,4 +12,4 @@ _cd_complete()
     return 0
 }
 
-complete -o default -F _cd_complete cdg cdgo cdp cdt
+complete -o default -F _cd_complete cdg cdgo cdp cdds
