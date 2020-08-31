@@ -35,27 +35,33 @@ export INTERACTIVE_SHELL=1
 # Disable stupid ansible cows
 export ANSIBLE_NOCOWS=1
 
-# shellcheck disable=SC1091
-. $HOME/.bash/aliases
-. $HOME/.bash/functions
-. $HOME/.bash/options
+# shellcheck disable=SC1090
+. "${HOME}/.bash/aliases"
+# shellcheck disable=SC1090
+. "${HOME}/.bash/functions"
+# shellcheck disable=SC1090
+. "${HOME}/.bash/options"
 
-for i in $(ls $HOME/.bash/completions); do
-  . $HOME/.bash/completions/$i;
+# shellcheck disable=SC2086,SC2231
+for i in ${HOME}/.bash/completions/*; do
+  # shellcheck disable=SC1090
+  . "${i}";
 done
 
-complete -C /usr/local/Cellar/terraform/0.11.10/bin/terraform terraform
+# complete -C /usr/local/Cellar/terraform/0.11.10/bin/terraform terraform
 
 # Useful for numpy
 # you may need to export these
 # ARCHFLAGS="-arch i386 -arch x86_64"
 # CC=clang
 
-eval "$(nodenv init -)"
+# eval "$(nodenv init -)"
 eval "$(pyenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
+# shellcheck disable=SC1090
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# shellcheck disable=SC1090
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Help me
@@ -67,8 +73,9 @@ if command -v powerline-daemon >/dev/null; then
   export POWERLINE_BASH_CONTINUATION=1
   export POWERLINE_BASH_SELECT=1
   PY_VERSION_SHORT=3.8
-  PY_VERSION="${PY_VERSION_SHORT}.0"
+  PY_VERSION="${PY_VERSION_SHORT}.5"
   if [ -d "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/" ]; then
+    # shellcheck disable=SC1090
     . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
   fi
 fi
@@ -86,17 +93,19 @@ fi
 export AWS_PAGER=""
 
 # Local modifications should come last
-[[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
+# shellcheck disable=SC1090
+[[ -f $HOME/.bash_local ]] && . "${HOME}/.bash_local"
+
+# GPG activity like setting up verified git commits using GPG and Keybase.io
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # #Enable SSH Key on Yubikey Device
 # killall gpg-agent ssh-agent > /dev/null 2>&1
 # unset GPG_AGENT_INFO SSH_AGENT_PID SSH_AUTH_SOCK
 # eval $( gpg-agent --daemon --enable-ssh-support )
-# 
-# #Enable SSH Key on Yubikey Device
-# GPG_TTY=$(tty)
-# export GPG_TTY
-# 
+
+# Enable SSH Key on Yubikey Device
 # if [ -S "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
 #   export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
 # fi
