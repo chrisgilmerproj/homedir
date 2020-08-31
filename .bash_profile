@@ -94,7 +94,7 @@ export AWS_PAGER=""
 
 # Local modifications should come last
 # shellcheck disable=SC1090
-[[ -f $HOME/.bash_local ]] && . "${HOME}/.bash_local"
+[ -f "${HOME}/.bash_local" ] && . "${HOME}/.bash_local"
 
 # GPG activity like setting up verified git commits using GPG and Keybase.io
 GPG_TTY=$(tty)
