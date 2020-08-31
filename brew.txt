@@ -8,7 +8,6 @@ atk
 atkmm
 autoconf
 automake
-awk
 awscli
 bash
 bats
@@ -31,10 +30,8 @@ dbus
 dep
 dfu-util
 direnv
-dirmngr
 dive
 docker
-docker-cloud
 docker-compose
 entr
 erlang
@@ -67,7 +64,6 @@ gobject-introspection
 golangci-lint
 goreleaser
 gox
-gpg-agent
 graphite2
 graphviz
 grep
@@ -133,7 +129,6 @@ lzo
 miller
 mpfr
 mtr
-mysql
 ncurses
 netpbm
 nettle
@@ -173,10 +168,8 @@ protobuf
 pth
 pwgen
 pyenv
-pyenv-virtualenv
 python
 python3
-python@2
 python@3.8
 qt
 readline
@@ -192,7 +185,6 @@ shellcheck
 sqlite
 ssh-copy-id
 sshpass
-terraform
 terraform-docs
 tfenv
 tfsec
@@ -213,8 +205,8 @@ wireshark
 wxmac
 xz
 yarn
-yarn@1.16.0
 ykman
 ykpers
 yq
 zlib
+zstd
