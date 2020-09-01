@@ -4,7 +4,6 @@ awscli
 bash
 bdw-gc
 coreutils
-docker
 exa
 gcc
 gdbm
