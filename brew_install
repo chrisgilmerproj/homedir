@@ -3,7 +3,28 @@
 #
 # Install Brew Dependencies
 #
+# Example:
+#
+#   brew_install work
+#
 
-while IFS= read -r tap; do brew tap "${tap}"; done < brew_tap.txt
+set -eu -o pipefail
 
-while IFS= read -r pkg; do brew install "${pkg}"; done < brew.txt
+function fail() {
+    echo "Must supply 'personal' or 'work' as an argument"
+    exit 1
+}
+
+if [ "${#}" -ne 1 ]; then
+    fail
+fi
+
+TYPE=$1
+
+if [ "${TYPE}" != "personal" ] && [ "${TYPE}" != "work" ]; then
+    fail
+fi
+
+while IFS= read -r tap; do brew tap "${tap}"; done < "brew_tap_${TYPE}.txt"
+
+while IFS= read -r pkg; do brew install "${pkg}"; done < "brew_${TYPE}.txt"
