@@ -40,6 +40,7 @@ node-build
 nodenv
 npth
 oniguruma
+opensc
 openssl@1.1
 p11-kit
 pcre2
