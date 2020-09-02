@@ -4,6 +4,7 @@ awscli
 bash
 bdw-gc
 coreutils
+direnv
 exa
 gcc
 gdbm
@@ -52,8 +53,10 @@ python@3.8
 readline
 ripgrep
 ruby
+screen
 shellcheck
 sqlite
+terraform-docs
 tfenv
 thefuck
 unbound

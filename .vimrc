@@ -187,3 +187,6 @@ let g:prettier#config#parser = 'babylon'
 
 " RustFmt
 let g:rustfmt_autosave = 1
+
+" Default shell
+set shell=/usr/local/bin/bash
