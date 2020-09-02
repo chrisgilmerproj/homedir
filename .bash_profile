@@ -3,8 +3,13 @@ export GOPATH=~/.go
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/.cargo/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH
+
 # coreutils should come first
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$(manpath)"
+export MANPATH
+
+# Node settings
 export NODE_ENV=development
 
 # add editor variable

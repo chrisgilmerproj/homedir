@@ -90,3 +90,6 @@ alias d_cipy="docker run -it --rm=true circleci/python:3.8-buster bash"
 
 # Chime
 alias chime="afplay /System/Library/CoreServices/PowerChime.app/Contents/Resources/connect_power.aif"
+
+# Disable warnings about pyenv with brew
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
