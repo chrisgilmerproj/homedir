@@ -107,7 +107,6 @@ network/
 packer_cache/
 Pictures/
 Projects/go/
-Projects/dds_no_backup/
 Public/
 VirtualBox VMs/
 pydocs/
