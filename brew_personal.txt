@@ -30,7 +30,6 @@ dfu-util
 direnv
 dive
 docker
-docker-compose
 entr
 erlang
 exa
@@ -175,7 +174,6 @@ screen
 shellcheck
 sqlite
 ssh-copy-id
-sshpass
 terraform-docs
 tfenv
 tfsec
