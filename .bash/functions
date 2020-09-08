@@ -59,13 +59,6 @@ function cdp() {
   fi
 }
 
-function cdds() {
-  cd $HOME/Projects/dds
-  if [ -n "$1" ]; then
-    cd $1
-  fi
-}
-
 function cdgo() {
   cd $GOPATH/src/github.com
   if [ -n "$1" ]; then
@@ -78,44 +71,6 @@ function cdg() {
   if [ -n "$1" ]; then
     cd $1
   fi
-}
-
-function gr() {
-  args="$@"
-
-  # If no directory specified, use '.'
-  if (( $# < 2 )); then
-    set -- "$@" .
-  fi
-
-  grep -r --color=auto \
-    --exclude "bundle.js" \
-    --exclude "*.iso" \
-    --exclude "*.min.js" \
-    --exclude "*.pyc" \
-    --exclude "*.pyo" \
-    --exclude "*.rdb" \
-    --exclude "*.swp" \
-    --exclude "*.swo" \
-    --exclude "package-lock.json" \
-    --exclude-dir ".env" \
-    --exclude-dir ".git" \
-    --exclude-dir ".terraform" \
-    --exclude-dir ".tox" \
-    --exclude-dir ".venv" \
-    --exclude-dir "aws-build" \
-    --exclude-dir "bootstrap" \
-    --exclude-dir "bower_components" \
-    --exclude-dir "build" \
-    --exclude-dir "dist" \
-    --exclude-dir "env" \
-    --exclude-dir "env3" \
-    --exclude-dir "node_modules" \
-    --exclude-dir "vendor" \
-    --exclude-dir "venv" \
-    --exclude-dir "venv3" \
-    --exclude-dir "vizjs" \
-    "${@:=.}"
 }
 
 function loc() {
