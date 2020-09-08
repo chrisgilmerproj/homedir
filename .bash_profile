@@ -97,9 +97,8 @@ fi
 # aws cli
 export AWS_PAGER=""
 
-# Local modifications should come last
-# shellcheck disable=SC1090
-[ -f "${HOME}/.bash_local" ] && . "${HOME}/.bash_local"
+# gnutls
+export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 
 # GPG activity like setting up verified git commits using GPG and Keybase.io
 GPG_TTY=$(tty)
@@ -116,3 +115,7 @@ export GPG_TTY
 # fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Local modifications should come last
+# shellcheck disable=SC1090
+[ -f "${HOME}/.bash_local" ] && . "${HOME}/.bash_local"
