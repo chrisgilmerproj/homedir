@@ -124,3 +124,6 @@ function nukeRCD() {
 function unNukeRCD() {
   sudo chmod 755 /System/Library/CoreServices/rcd.app/Contents/MacOS/rcd
 }
+
+# Count uniq lines and reverse sort
+function countuniquelines () { sort "$1" | uniq -c | sort -bgr; }
