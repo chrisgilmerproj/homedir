@@ -57,4 +57,4 @@
     ff = only
     rebase = false
 [init]
-    defaultBranch = main
+	defaultBranch = main

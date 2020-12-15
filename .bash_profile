@@ -2,6 +2,9 @@
 export GOPATH=~/.go
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/.cargo/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
+# Use rbenv instead
+# export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH
 
@@ -53,6 +56,10 @@ for i in ${HOME}/.bash/completions/*; do
   # shellcheck disable=SC1090
   . "${i}";
 done
+for i in /usr/local/etc/bash_completion.d/*; do
+  # shellcheck disable=SC1090
+  . "${i}";
+done
 
 # complete -C /usr/local/Cellar/terraform/0.11.10/bin/terraform terraform
 
@@ -61,8 +68,9 @@ done
 # ARCHFLAGS="-arch i386 -arch x86_64"
 # CC=clang
 
-# eval "$(nodenv init -)"
+eval "$(nodenv init -)"
 eval "$(pyenv init -)"
+eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 # shellcheck disable=SC1090
@@ -120,3 +128,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Local modifications should come last
 # shellcheck disable=SC1090
 [ -f "${HOME}/.bash_local" ] && . "${HOME}/.bash_local"
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"

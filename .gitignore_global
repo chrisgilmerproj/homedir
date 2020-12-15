@@ -35,3 +35,6 @@ Thumbs.db
 
 # Ignore some files where I can't add them to the repo's gitignore
 ES_env.sh
+
+# VSCode
+.vscode/
