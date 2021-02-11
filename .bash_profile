@@ -61,8 +61,6 @@ for i in /usr/local/etc/bash_completion.d/*; do
   . "${i}";
 done
 
-# complete -C /usr/local/Cellar/terraform/0.11.10/bin/terraform terraform
-
 # Useful for numpy
 # you may need to export these
 # ARCHFLAGS="-arch i386 -arch x86_64"
@@ -124,6 +122,9 @@ export GPG_TTY
 # fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# OpenSC
+export OPENSC_MOD_PATH="/usr/local/Cellar/opensc/0.21.0/lib/opensc-pkcs11.so"
 
 # Local modifications should come last
 # shellcheck disable=SC1090

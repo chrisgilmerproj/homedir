@@ -29,6 +29,7 @@ dev.db
 
 # OS Generated Files
 .DS_Store?
+.DS_Store
 ehthumbs.db
 Icon?
 Thumbs.db
@@ -38,3 +39,7 @@ ES_env.sh
 
 # VSCode
 .vscode/
+
+# Helper Scripts
+helper_scripts/
+

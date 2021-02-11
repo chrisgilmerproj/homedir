@@ -63,7 +63,7 @@ alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
 alias gpr='open "https://$(git_current_domain)/$(git_current_origin)/pull/new/$(git_current_branch)"'
 alias gcompare='open "http://$(git_current_domain)/$(git_current_origin)/compare/$(git_ref_origin)...$(git_ref_head)"'
 alias gpull='git pull origin $(git_branch_name)'
-alias gcm='git checkout master || git checkout main'
+alias gcm='git checkout main || git checkout master'
 
 # postgresql
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
@@ -98,3 +98,5 @@ alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 # press and hold means I can't use vim extensions properly in vs code
 alias vscode_disable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false"
 alias vscode_enable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true"
+
+alias rand="tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 32 | head -n 1"
