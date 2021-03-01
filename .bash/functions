@@ -127,3 +127,30 @@ function unNukeRCD() {
 
 # Count uniq lines and reverse sort
 function countuniquelines () { sort "$1" | uniq -c | sort -bgr; }
+
+# Terraform utility
+tf() {
+  if [[ "$#" -eq 0 ]]; then
+    terraform
+  elif [[ "$1" == "fmt" ]] || [[ "$1" == "help" ]] || [[ "$1" == "validate" ]] || [[ "$1" == "version" ]]; then
+    terraform "$@"
+  else
+    aws-vault exec ${AWS_PROFILE} -- terraform "$@"
+  fi
+}
+
+awslogin() {
+  aws-vault login ${AWS_PROFILE}
+}
+
+fastforward() {
+    git fetch upstream
+    git merge upstream/master master
+}
+
+# Python
+
+venv() {
+    python3 -m venv .venv
+    source .venv/bin/activate
+}

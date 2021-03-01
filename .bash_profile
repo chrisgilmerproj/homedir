@@ -81,14 +81,20 @@ eval "$(thefuck --alias)"
 
 # Powerline
 if command -v powerline-daemon >/dev/null; then
+  if ! python -c 'import pkgutil; exit(not pkgutil.find_loader("powerline"))'; then
+    pip install powerline-status
+  fi
   powerline-daemon -q
   export POWERLINE_BASH_CONTINUATION=1
   export POWERLINE_BASH_SELECT=1
-  PY_VERSION_SHORT=3.8
-  PY_VERSION="${PY_VERSION_SHORT}.5"
-  if [ -d "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/" ]; then
+  PY_VERSION_SHORT=$(python -c "import sys; print('.'.join(map(lambda x: str(x), sys.version_info[0:2])))")
+  PY_VERSION=$(python -c "import sys; print('.'.join(map(lambda x: str(x), sys.version_info[0:3])))")
+  if [ -f "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh" ]; then
     # shellcheck disable=SC1090
     . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
+  elif [ -f "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh" ] ; then
+    # shellcheck disable=SC1090
+    . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
   fi
 fi
 export LC_ALL=en_US.UTF-8
