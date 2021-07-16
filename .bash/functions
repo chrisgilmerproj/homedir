@@ -143,6 +143,25 @@ awslogin() {
   aws-vault login ${AWS_PROFILE}
 }
 
+# chamber utility
+ch() {
+  if [[ "$#" -eq 0 ]]; then
+    chamber
+  elif [[ "$1" == "help" ]] || [[ "$1" == "version" ]]; then
+    chamber "$@"
+  else
+    aws-vault exec ${AWS_PROFILE} -- chamber "$@"
+  fi
+}
+
+awsgit() {
+  aws-vault exec ${AWS_PROFILE} -- git "$@"
+}
+
+ave() {
+  aws-vault exec ${AWS_PROFILE} -- "$@"
+}
+
 fastforward() {
     git fetch upstream
     git merge upstream/master master
@@ -153,4 +172,10 @@ fastforward() {
 venv() {
     python3 -m venv .venv
     source .venv/bin/activate
+}
+
+# DNS
+
+myip() {
+  dig +short myip.opendns.com @resolver1.opendns.com
 }

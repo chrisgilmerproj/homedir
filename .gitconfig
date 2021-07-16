@@ -37,6 +37,7 @@
     pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
     last = "rev-parse --short --verify HEAD"
     main = !git init && git checkout -b main
+    whereami = \\!git reflog | grep -E 'moving from (.*)' -m 30 -o | awk '{print $5}' | awk '\\!visited[$0]++'
 [color]
     branch = auto
     diff   = auto
@@ -57,4 +58,7 @@
     ff = only
     rebase = false
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[credential "https://git-codecommit.*.amazonaws.com"]
+    helper = !aws codecommit credential-helper $@
+    UseHttpPath = true
