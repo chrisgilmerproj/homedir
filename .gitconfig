@@ -28,6 +28,7 @@
     unadd = reset HEAD
     undo = reset --soft HEAD~1
     ocmmit = commit
+    commti = commit
     rev = rev-parse --verify HEAD
     skip = update-index --skip-worktree
     unskip = update-index --no-skip-worktree
