@@ -139,9 +139,9 @@ tf() {
   fi
 }
 
-awslogin() {
-  aws-vault login ${AWS_PROFILE}
-}
+# awslogin() {
+#   aws-vault login ${AWS_PROFILE}
+# }
 
 # chamber utility
 ch() {

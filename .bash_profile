@@ -136,3 +136,7 @@ export OPENSC_MOD_PATH="/usr/local/Cellar/opensc/0.21.0/lib/opensc-pkcs11.so"
 [ -f "${HOME}/.bash_local" ] && . "${HOME}/.bash_local"
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# awslogin tool
+export AWSLOGIN_BROWSER=firefox
+
