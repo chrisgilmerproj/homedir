@@ -77,7 +77,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Help me
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 
 # Powerline
 if command -v powerline-daemon >/dev/null; then
