@@ -99,7 +99,7 @@ let g:pyflakes_use_quickfix = 0
 " let g:syntastic_python_checkers = ['flake8']
 " let g:syntastic_python_flake8_post_args='--ignore=F405'
 " let g:syntastic_yaml_checkers = ['yamllint']
-" 
+"
 " " syntastic
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -149,7 +149,7 @@ set showmatch          " highlight matching [{()}]
 " powerline
 let g:powerline_pycmd = 'py3'
 let g:powerline_eval = 'py3eval'
-source /Users/cgilmer/.pyenv/versions/3.8.5/Python.framework/Versions/3.8/lib/python3.8/site-packages/powerline/bindings/vim/plugin/powerline.vim
+source /Users/cgilmer/.pyenv/versions/3.9.5/lib/python3.9/site-packages/powerline/bindings/vim/plugin/powerline.vim
 set t_Co=256
 
 " prettier
