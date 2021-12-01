@@ -52,6 +52,17 @@ function sendkey() {
   cat ~/.ssh/id_rsa.pub | ssh -q $USER@$1 "cat - >> ~/.ssh/authorized_keys"
 }
 
+function newkey() {
+  name=$1
+  sshkey="${HOME}/.ssh/${name}_$(whoami)_ed25519"
+  ([ -f "${sshkey}" ] && ssh-keygen -t ed25519 -o -a 100 -f "${sshkey}" -C "$(whoami)'s ${name} key") || echo "no such key at ${sshkey}"
+}
+
+function sadd() {
+  name=$1
+  ssh-add -t 9h "${HOME}/.ssh/${name}_$(whoami)_ed25519"
+}
+
 function cdp() {
   cd $HOME/Projects/personal
   if [ -n "$1" ]; then
