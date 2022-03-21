@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 # functions
 function random_prompt() {
   # Symbols from http://www.alanwood.net/unicode/miscellaneous_symbols.html
@@ -21,6 +23,13 @@ function random_prompt() {
   prompts[17]="♆" # neptune
   prompts[18]="♇" # pluto
   echo "${prompts[RANDOM % ${#prompts[@]}]}"
+}
+
+# Git
+
+fastforward() {
+    git fetch upstream
+    git merge upstream/master master
 }
 
 function git_current_branch() {
@@ -150,10 +159,6 @@ tf() {
   fi
 }
 
-# awslogin() {
-#   aws-vault login ${AWS_PROFILE}
-# }
-
 # chamber utility
 ch() {
   if [[ "$#" -eq 0 ]]; then
@@ -165,6 +170,8 @@ ch() {
   fi
 }
 
+# AWS with aws-vault
+
 awsgit() {
   aws-vault exec ${AWS_PROFILE} -- git "$@"
 }
@@ -173,9 +180,40 @@ ave() {
   aws-vault exec ${AWS_PROFILE} -- "$@"
 }
 
-fastforward() {
-    git fetch upstream
-    git merge upstream/master master
+function awsbash() {
+    if [ -n "${AWS_VAULT}" ]; then
+        echo "ALREADY INSIDE aws-vault BASH!"
+    else
+        aws-vault exec "${AWS_PROFILE}" -- /usr/local/bin/bash
+    fi
+}
+
+function awslogin() {
+    if [ -n "${AWS_VAULT}" ]; then
+        aws-vault login "${AWS_VAULT}"
+    else
+        [ -z "${AWS_PROFILE}" ] && echo "AWS_PROFILE not set" && return
+        aws-vault login "${AWS_PROFILE}"
+    fi
+}
+
+function awsenv() {
+    env | grep AWS | sort
+}
+
+# Firefox needs containers turned on
+# Add extension https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/
+# https://github.com/mozilla/multi-account-containers/issues/365#issuecomment-527122371
+function avl() {
+  [ -z "${AWS_PROFILE}" ] && echo "AWS_PROFILE not set" && return
+  FIREFOX="/Applications/Firefox.app/Contents/MacOS/firefox"
+  LOGIN_URL=$(aws-vault login --stdout "${AWS_PROFILE}")
+  # shellcheck disable=SC2181
+  [[ $? != 0 ]] && echo "${LOGIN_URL}" && return
+  ENCODED_URL="${LOGIN_URL//&/%26}"
+  CONTAINER=$(cut -d"@" -f2 <<< "${AWS_PROFILE}")
+  URI_HANDLER="ext+container:name=${CONTAINER}&url=${ENCODED_URL}"
+  "${FIREFOX}" "${URI_HANDLER}"
 }
 
 # Python
@@ -190,3 +228,15 @@ venv() {
 myip() {
   dig +short myip.opendns.com @resolver1.opendns.com
 }
+
+# Time
+
+utc() {
+  echo "PST"
+  TZ=America/Los_Angeles date --rfc-3339=seconds | sed 's/ /T/'
+  echo "EST"
+  TZ=America/New_York date --rfc-3339=seconds | sed 's/ /T/'
+  echo "UTC"
+  TZ=UTC date --rfc-3339=seconds | sed 's/ /T/'
+}
+

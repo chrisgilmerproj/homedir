@@ -68,6 +68,7 @@ done
 # ARCHFLAGS="-arch i386 -arch x86_64"
 # CC=clang
 
+eval "$(pyenv init -)"
 eval "$(nodenv init -)"
 
 export NVM_DIR="$HOME/.nvm"

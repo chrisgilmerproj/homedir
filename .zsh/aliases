@@ -3,7 +3,7 @@ alias ll='exa --all --long --header --git --links --group-directories-first --co
 
 # common
 alias h='history'
-alias s='source ~/.bash_profile'
+alias s='source ~/.zshrc'
 alias now="date +'%F %T'"
 
 # git

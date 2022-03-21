@@ -3,14 +3,14 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/.cargo/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
 # Use rbenv instead
 # export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
+# export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.pyenv/shims:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH
 
 # coreutils should come first
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$(manpath)"
 export MANPATH
 
@@ -87,31 +87,9 @@ plugins=(git pip)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# User configuration
+#
 
 # Node settings
 export NODE_ENV=development
@@ -154,4 +132,23 @@ export GPG_TTY
 
 # awslogin tool
 export AWSLOGIN_BROWSER=firefox
+
+# Load Antigen
+source /usr/local/opt/antigen/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle pip
+
+# Syntax highlighting bundle.
+# antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme robbyrussell
+
+# Tell Antigen that you're done.
+antigen apply
 
