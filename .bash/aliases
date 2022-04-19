@@ -59,8 +59,8 @@ alias venv3='python3 -m venv .venv; source .venv/bin/activate'
 # git
 alias gi='git'
 alias git_init='git init && git main'
-alias gpthis='git push origin HEAD:$(git_current_branch)'
-alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
+# alias gpthis='git push origin HEAD:$(git_current_branch)'
+# alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
 alias gpr='open "https://$(git_current_domain)/$(git_current_origin)/pull/new/$(git_current_branch)"'
 alias glpr='open "https://$(git_current_domain)/$(git_current_origin)/-/merge_requests/new?merge_request%5Bsource_branch%5D=$(git_current_branch)"'
 alias gcompare='open "http://$(git_current_domain)/$(git_current_origin)/compare/$(git_ref_origin)...$(git_ref_head)"'
@@ -82,17 +82,6 @@ alias ps1="powerline-daemon --replace"
 
 # tmux
 alias tmux="tmux -2"
-
-# Docker
-alias d_node13="docker run -it --rm=true -v $PWD:$PWD -w $PWD node:13.8-slim bash"
-alias d_py35="docker run -it --rm=true -v $PWD:$PWD -w $PWD python:3.5-slim bash"
-alias d_py36="docker run -it --rm=true -v $PWD:$PWD -w $PWD python:3.6-slim bash"
-alias d_py37="docker run -it --rm=true -v $PWD:$PWD -w $PWD python:3.7-slim bash"
-alias d_py38="docker run -it --rm=true -v $PWD:$PWD -w $PWD python:3.8-slim bash"
-alias d_py39="docker run -it --rm=true -v $PWD:$PWD -w $PWD python:3.9-slim bash"
-alias d_jv36="docker run -it --rm=true -v $PWD:$PWD -w $PWD maven:3.6-jdk-8-slim bash"
-alias d_centos7="docker run -it --rm=true -v $PWD:$PWD -w $PWD centos:7 bash"
-alias d_cipy="docker run -it --rm=true circleci/python:3.8-buster bash"
 
 # Chime
 alias chime="afplay /System/Library/CoreServices/PowerChime.app/Contents/Resources/connect_power.aif"

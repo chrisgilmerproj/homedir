@@ -36,6 +36,15 @@ function git_current_branch() {
   git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
 }
 
+function gpthis() {
+  cur_branch=$(git_current_branch)
+  if [ "${cur_branch}" == "main" ] || [ "${cur_branch}" == "master" ]; then
+    echo "Cannot push to ${cur_branch}!"
+  else
+    git push origin "HEAD:${cur_branch}"
+  fi
+}
+
 function git_current_origin() {
   git config --get remote.origin.url | sed -e 's/^.*\://' | sed -e 's/\.git.*//'
 }
@@ -159,6 +168,10 @@ tf() {
   fi
 }
 
+tfvalidate() {
+    terraform validate -json | jq '.diagnostics[] | {detail: .detail, filename: .range.filename, start_line: .range.start.line}'
+}
+
 # chamber utility
 ch() {
   if [[ "$#" -eq 0 ]]; then
@@ -197,6 +210,10 @@ function awslogin() {
     fi
 }
 
+function ae() {
+    env | grep AWS | sort
+}
+
 function awsenv() {
     env | grep AWS | sort
 }
@@ -232,11 +249,22 @@ myip() {
 # Time
 
 utc() {
-  echo "PST"
-  TZ=America/Los_Angeles date --rfc-3339=seconds | sed 's/ /T/'
-  echo "EST"
-  TZ=America/New_York date --rfc-3339=seconds | sed 's/ /T/'
-  echo "UTC"
-  TZ=UTC date --rfc-3339=seconds | sed 's/ /T/'
+  echo "PST $(TZ=America/Los_Angeles date --rfc-3339=seconds | sed 's/ /T/')"
+  echo "EST $(TZ=America/New_York date --rfc-3339=seconds | sed 's/ /T/')"
+  echo "UTC $(TZ=UTC date --rfc-3339=seconds | sed 's/ /T/')"
 }
+
+# docker
+
+function run_docker() {
+    image=$1
+    cmd=${2:-"/bin/bash"}
+    docker run -it --rm=true -v "${PWD}:${PWD}" -w "${PWD}" "${image}" "${cmd}"
+}
+
+alias d_node16="run_docker node:16.14-slim"
+alias d_py37="run_docker python:3.7-slim"
+alias d_py38="run_docker python:3.8-slim"
+alias d_py39="run_docker python:3.9-slim"
+alias d_centos7="run_docker centos:7.9.2009"
 
