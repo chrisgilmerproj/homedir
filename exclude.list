@@ -1,7 +1,10 @@
 .ackrc
 .ansible/
 .ansible_galaxy
+.antigen
 .asdm/
+.aspera
+.aws-sam
 .babel.json
 .bash
 .bash_history
@@ -22,6 +25,8 @@
 .conda/
 .config
 .continuum/
+.cookiecutter_replay
+.coverage
 .cpan/
 .cups/
 .dbt/
@@ -55,6 +60,7 @@
 .local/
 .matplotlib/
 .matplotlibrc
+.mypy_cache
 .NERDTreeBookmarks
 .node-gyp/
 .nodenv/
@@ -76,6 +82,7 @@
 .pyenv/
 .pylint.d/
 .pypirc
+.pytest_cache
 .python_history
 .rbenv/
 .rustup/
@@ -84,6 +91,8 @@
 .tblive*/
 .terraform.d/
 .terraform/
+.terraform-prod
+.terraform-qa
 .tfenv/
 .tmux.conf
 .Trash/
