@@ -45,6 +45,15 @@ function gpthis() {
   fi
 }
 
+function gpfthis() {
+  cur_branch=$(git_current_branch)
+  if [ "${cur_branch}" == "main" ] || [ "${cur_branch}" == "master" ]; then
+    echo "Cannot push to ${cur_branch}!"
+  else
+    git push --force origin "HEAD:${cur_branch}"
+  fi
+}
+
 function git_current_origin() {
   git config --get remote.origin.url | sed -e 's/^.*\://' | sed -e 's/\.git.*//'
 }
