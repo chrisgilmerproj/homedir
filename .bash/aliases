@@ -95,3 +95,7 @@ alias vscode_disable_pressandhold="defaults write com.microsoft.VSCode ApplePres
 alias vscode_enable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true"
 
 alias rand="tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 32 | head -n 1"
+
+# GPG
+alias gpg_list_keys="gpg --list-secret-keys --keyid-format=long"
+
