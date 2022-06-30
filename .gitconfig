@@ -1,8 +1,10 @@
 [user]
     name = Chris Gilmer
-    email = chris.gilmer@gmail.com
+    # email = chris.gilmer@gmail.com
+    email = cgilmer@lucasfilm.com
     # Keybase
-    signingkey = 9B9B5634A88AB754
+    # signingkey = 9B9B5634A88AB754
+    signingkey = 0379DF76E1A2A567
     # Yubikey
     # signingkey = EDC220AD0A4E6839E0A6A4F7B3B5C1A76D730A90
 [github]
@@ -19,6 +21,7 @@
     ci = commit
     co = checkout
     df = diff
+    sw = switch
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     yd = diff "@{yesterday}"
     prune = gc --prune=now
@@ -29,6 +32,7 @@
     undo = reset --soft HEAD~1
     ocmmit = commit
     commti = commit
+    commmit = commit
     rev = rev-parse --verify HEAD
     skip = update-index --skip-worktree
     unskip = update-index --no-skip-worktree
@@ -49,8 +53,8 @@
     ui = auto
 [branch]
     autosetuprebase = always
-[url "git@github.com:"]
-    insteadOf = https://github.com/
+# [url "git@github.com:"]
+#     insteadOf = https://github.com/
 [help]
     autocorrect = 20
 [commit]

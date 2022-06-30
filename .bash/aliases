@@ -6,8 +6,8 @@ if [ "$(uname)" == 'Linux' ]; then
     alias ip='ifconfig eth0 | grep "inet addr" | cut -d":" -f 2 | cut -d " " -f 1'
 else
     alias ps='ps aux'
-    alias ls='ls -Gh'
-    alias ll='exa --all --long --header --git --links --group-directories-first --color-scale --time-style=long-iso'
+    alias ls='ls -h'
+    alias ll='exa --all --long --header --group --git --links --group-directories-first --color-scale --time-style=long-iso'
     alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f 2"
     alias sethostname='scutil –set HostName'
     alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'

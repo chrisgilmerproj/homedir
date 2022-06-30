@@ -10,6 +10,9 @@ export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # coreutils should come first
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$(manpath)"
@@ -58,10 +61,10 @@ for i in ${HOME}/.bash/completions/*; do
   # shellcheck disable=SC1090
   . "${i}";
 done
-for i in /usr/local/etc/bash_completion.d/*; do
-  # shellcheck disable=SC1090
-  . "${i}";
-done
+# for i in /usr/local/etc/bash_completion.d/*; do
+#   # shellcheck disable=SC1090
+#   . "${i}";
+# done
 
 # Useful for numpy
 # you may need to export these
