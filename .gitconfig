@@ -5,8 +5,6 @@
     # Keybase
     # signingkey = 9B9B5634A88AB754
     signingkey = 0379DF76E1A2A567
-    # Yubikey
-    # signingkey = EDC220AD0A4E6839E0A6A4F7B3B5C1A76D730A90
 [github]
     user = chrisgilmerproj
 [core]
