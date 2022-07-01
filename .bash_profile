@@ -61,10 +61,10 @@ for i in ${HOME}/.bash/completions/*; do
   # shellcheck disable=SC1090
   . "${i}";
 done
-# for i in /usr/local/etc/bash_completion.d/*; do
-#   # shellcheck disable=SC1090
-#   . "${i}";
-# done
+for i in "$(brew --prefix)"/etc/bash_completion.d/*; do
+  # shellcheck disable=SC1090
+  . "${i}";
+done
 
 # Useful for numpy
 # you may need to export these
