@@ -125,10 +125,8 @@ temp/
 tmp/
 build/
 dist/
-bin/
 
 anaconda/
-bin
 Applications/
 exclude.list
 Library/
