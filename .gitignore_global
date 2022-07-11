@@ -43,3 +43,9 @@ ES_env.sh
 # Helper Scripts
 helper_scripts/
 
+# Venv
+.venv
+.env
+.venv3
+.env3
+

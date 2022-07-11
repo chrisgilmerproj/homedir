@@ -8,7 +8,12 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.pyenv/shims:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/sbin:$PATH
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
+
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"

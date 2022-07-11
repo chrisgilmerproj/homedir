@@ -268,7 +268,13 @@ utc() {
 function run_docker() {
     image=$1
     cmd=${2:-"/bin/bash"}
-    docker run -it --rm=true -v "${PWD}:${PWD}" -w "${PWD}" "${image}" "${cmd}"
+    docker run -it \
+      --rm=true \
+      -v "${HOME}/.aws/:/root/.aws:ro" \
+      -v "${HOME}/.ssh/:/root/.ssh:ro" \
+      -v "${PWD}:${PWD}" \
+      -w "${PWD}" \
+      "${image}" "${cmd}"
 }
 
 alias d_node16="run_docker node:16.14-slim"
