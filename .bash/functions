@@ -219,10 +219,6 @@ function awslogin() {
     fi
 }
 
-function ae() {
-    env | grep AWS | sort
-}
-
 function awsenv() {
     env | grep AWS | sort
 }

@@ -11,12 +11,14 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
 
-export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
-
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Flags
+export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix libffi)/lib -L$(brew --prefix zlib)/lib"
+export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libffi)/include -I$(brew --prefix zlib)/include"
+export CFLAGS="-Wno-error=implicit-function-declaration ${CPPFLAGS}"
+export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
 
 # coreutils should come first
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -88,24 +90,27 @@ export NVM_DIR="$HOME/.nvm"
 # Help me
 # eval "$(thefuck --alias)"
 
-# Powerline
-if command -v powerline-daemon >/dev/null; then
-  if ! python -c 'import pkgutil; exit(not pkgutil.find_loader("powerline"))'; then
-    pip install powerline-status
-  fi
-  powerline-daemon -q
-  export POWERLINE_BASH_CONTINUATION=1
-  export POWERLINE_BASH_SELECT=1
-  PY_VERSION_SHORT=$(python -c "import sys; print('.'.join(map(lambda x: str(x), sys.version_info[0:2])))")
-  PY_VERSION=$(python -c "import sys; print('.'.join(map(lambda x: str(x), sys.version_info[0:3])))")
-  if [ -f "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh" ]; then
-    # shellcheck disable=SC1090
-    . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
-  elif [ -f "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh" ] ; then
-    # shellcheck disable=SC1090
-    . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
-  fi
-fi
+# starship prompt
+hash starship && eval "$(starship init bash)"
+
+# # Powerline
+# if command -v powerline-daemon >/dev/null; then
+#   if ! python -c 'import pkgutil; exit(not pkgutil.find_loader("powerline"))'; then
+#     pip install powerline-status
+#   fi
+#   powerline-daemon -q
+#   export POWERLINE_BASH_CONTINUATION=1
+#   export POWERLINE_BASH_SELECT=1
+#   PY_VERSION_SHORT=$(python -c "import sys; print('.'.join(map(lambda x: str(x), sys.version_info[0:2])))")
+#   PY_VERSION=$(python -c "import sys; print('.'.join(map(lambda x: str(x), sys.version_info[0:3])))")
+#   if [ -f "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh" ]; then
+#     # shellcheck disable=SC1090
+#     . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
+#   elif [ -f "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh" ] ; then
+#     # shellcheck disable=SC1090
+#     . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
+#   fi
+# fi
 export LC_ALL=en_US.UTF-8
 
 # RipGrep
