@@ -1,29 +1,20 @@
-# add user bin directory to path
+
 export GOPATH=~/.go
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/.cargo/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
-# Use rbenv instead
-# export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.pyenv/shims:$PATH"
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+
+# OS Specific Modifications
+[[ "$(uname)" == 'Linux'  &&  -f "${HOME}/.bash_linux" ]] && . "${HOME}/.bash_linux"
+[[ "$(uname)" == 'Darwin'  &&  -f "${HOME}/.bash_darwin" ]] && . "${HOME}/.bash_darwin"
+
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# aws cli
+export AWS_PAGER="less"
 
-# Flags
-export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix libffi)/lib -L$(brew --prefix zlib)/lib"
-export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libffi)/include -I$(brew --prefix zlib)/include"
-export CFLAGS="-Wno-error=implicit-function-declaration ${CPPFLAGS}"
-export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
-
-# coreutils should come first
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$(manpath)"
-export MANPATH
+# less
+export LESS="-R"
 
 # Node settings
 export NODE_ENV=development
@@ -34,23 +25,10 @@ hash vim &>/dev/null && export EDITOR=vim
 # set the colors for the terminal
 export TERM=xterm-256color
 export CLICOLOR=1
-# export GREP_OPTIONS='--color=always' # v2.5.1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export RI="--format ansi --width 70"
 
-# set colors
-export C_NORMAL="\[\033[0m\]"
-export C_BLACK="\[\033[30m\]"
-export C_RED="\[\033[31m\]"
-export C_GREEN="\[\033[32m\]"
-export C_YELLOW="\[\033[33m\]"
-export C_BLUE="\[\033[34m\]"
-export C_MAGENTA="\[\033[35m\]"
-export C_CYAN="\[\033[36m\]"
-export C_WHITE="\[\033[37m\]"
-
 # Set up prompt
-# export PS1="$C_GREEN\u@\h:$C_BLUE\W $C_CYAN (\$(git_current_branch))$C_WHITE $ $C_NORMAL "
 export INTERACTIVE_SHELL=1
 
 # Disable stupid ansible cows
@@ -68,90 +46,32 @@ for i in ${HOME}/.bash/completions/*; do
   # shellcheck disable=SC1090
   . "${i}";
 done
-for i in "$(brew --prefix)"/etc/bash_completion.d/*; do
-  # shellcheck disable=SC1090
-  . "${i}";
-done
 
-# Useful for numpy
-# you may need to export these
-# ARCHFLAGS="-arch i386 -arch x86_64"
-# CC=clang
-
+# Pyenv
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(nodenv init -)"
 
-export NVM_DIR="$HOME/.nvm"
-# shellcheck disable=SC1090
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# shellcheck disable=SC1090
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Help me
-# eval "$(thefuck --alias)"
+# Rust
+[ -f "${HOME}/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # starship prompt
 hash starship && eval "$(starship init bash)"
 
-# # Powerline
-# if command -v powerline-daemon >/dev/null; then
-#   if ! python -c 'import pkgutil; exit(not pkgutil.find_loader("powerline"))'; then
-#     pip install powerline-status
-#   fi
-#   powerline-daemon -q
-#   export POWERLINE_BASH_CONTINUATION=1
-#   export POWERLINE_BASH_SELECT=1
-#   PY_VERSION_SHORT=$(python -c "import sys; print('.'.join(map(lambda x: str(x), sys.version_info[0:2])))")
-#   PY_VERSION=$(python -c "import sys; print('.'.join(map(lambda x: str(x), sys.version_info[0:3])))")
-#   if [ -f "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh" ]; then
-#     # shellcheck disable=SC1090
-#     . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/Python.framework/Versions/${PY_VERSION_SHORT}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
-#   elif [ -f "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh" ] ; then
-#     # shellcheck disable=SC1090
-#     . "/Users/cgilmer/.pyenv/versions/${PY_VERSION}/lib/python${PY_VERSION_SHORT}/site-packages/powerline/bindings/bash/powerline.sh"
-#   fi
-# fi
 export LC_ALL=en_US.UTF-8
 
 # RipGrep
-export RIPGREP_CONFIG_PATH=/Users/cgilmer/.ripgreprc
+export RIPGREP_CONFIG_PATH="${HOME}"/.ripgreprc
 
 # https://direnv.net
 if command -v direnv >/dev/null; then
   eval "$(direnv hook bash)"
 fi
 
-# aws cli
-export AWS_PAGER=""
-
-# gnutls
-export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
-
-# GPG activity like setting up verified git commits using GPG and Keybase.io
+# GPG
 GPG_TTY=$(tty)
 export GPG_TTY
-
-# #Enable SSH Key on Yubikey Device
-# killall gpg-agent ssh-agent > /dev/null 2>&1
-# unset GPG_AGENT_INFO SSH_AGENT_PID SSH_AUTH_SOCK
-# eval $( gpg-agent --daemon --enable-ssh-support )
-
-# Enable SSH Key on Yubikey Device
-# if [ -S "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
-#   export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
-# fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# OpenSC
-export OPENSC_MOD_PATH="/usr/local/Cellar/opensc/0.21.0/lib/opensc-pkcs11.so"
 
 # Local modifications should come last
 # shellcheck disable=SC1090
 [ -f "${HOME}/.bash_local" ] && . "${HOME}/.bash_local"
-
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
-# awslogin tool
-export AWSLOGIN_BROWSER=firefox
 
