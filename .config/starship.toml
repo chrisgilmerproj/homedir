@@ -1,17 +1,29 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# Command timeout
+command_timeout = 500
+
 # Inserts a blank line between shell prompts
 add_newline = true
-
-# Replace the "❯" symbol in the prompt with "➜"
-[character]
-success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
 
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style)'
 style = "bold blue"
+force_display = true
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+# [line_break]
+# disabled = true
+
+[hostname]
+format = "@[$hostname](bold purple) "
+
+# [package]
+# disabled = true
+
+[username]
+format = "[$user]($style)"
