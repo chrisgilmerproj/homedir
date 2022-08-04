@@ -2,7 +2,7 @@
 export GOPATH=~/.go
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/.cargo/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
-export PATH="$HOME/.pyenv/shims:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # OS Specific Modifications
 [[ "$(uname)" == 'Linux'  &&  -f "${HOME}/.bash_linux" ]] && . "${HOME}/.bash_linux"
@@ -48,8 +48,7 @@ for i in ${HOME}/.bash/completions/*; do
 done
 
 # Pyenv
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+hash pyenv && eval "$(pyenv init -)"
 
 # Rust
 [ -f "${HOME}/.cargo/env" ] && . "$HOME/.cargo/env"
@@ -63,9 +62,7 @@ export LC_ALL=en_US.UTF-8
 export RIPGREP_CONFIG_PATH="${HOME}"/.ripgreprc
 
 # https://direnv.net
-if command -v direnv >/dev/null; then
-  eval "$(direnv hook bash)"
-fi
+hash direnv && eval "$(direnv hook bash)"
 
 # GPG
 GPG_TTY=$(tty)

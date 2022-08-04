@@ -3,10 +3,14 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Path
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+# Path with coreutils last
+export PATH="$(brew --prefix curl)/bin:$PATH"
+export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix openssl)/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# Shims help with homebrew
+export PATH="$HOME/.pyenv/shims:$PATH"
 
 # Flags
 export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix libffi)/lib -L$(brew --prefix zlib)/lib"
@@ -14,20 +18,19 @@ export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libffi)/in
 export CFLAGS="-Wno-error=implicit-function-declaration ${CPPFLAGS}"
 export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
 
-# coreutils should come first
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$(manpath)"
-export MANPATH
+# man pages
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$(manpath)"
 
 # awslogin tool
 export AWSLOGIN_BROWSER=firefox
 
 # OpenSC
-export OPENSC_MOD_PATH="/usr/local/Cellar/opensc/0.21.0/lib/opensc-pkcs11.so"
+# export OPENSC_MOD_PATH="/usr/local/Cellar/opensc/0.21.0/lib/opensc-pkcs11.so"
 
 # gnutls
-export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
+# export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 
+# Brew bash completions
 for i in "$(brew --prefix)"/etc/bash_completion.d/*; do
   # shellcheck disable=SC1090
   . "${i}";
