@@ -1,13 +1,11 @@
-# set alias commands
+#! /usr/bin/env bash
+
 if [ "$(uname)" == 'Linux' ]; then
     alias ps='ps auxf'
-    alias ls='ls -h --color=auto'
-    alias ll='ls -al --color=auto'
-    alias ip='ifconfig eth0 | grep "inet addr" | cut -d":" -f 2 | cut -d " " -f 1'
+    alias ls='ls -alh --color=auto'
 else
     alias ps='ps aux'
     alias ls='ls -h'
-    alias ll='exa --all --long --header --group --git --links --group-directories-first --color-scale --time-style=long-iso'
     alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f 2"
     alias sethostname='scutil –set HostName'
     alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
@@ -25,77 +23,39 @@ else
     # Clear DNS
     alias cleardns="sudo killall -HUP mDNSResponder"
     #alias cleardns="sudo discoveryutil udnsflushcaches"
+
+    # Disable warnings about pyenv with brew
+    alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
+    # VS Code
+    # press and hold means I can't use vim extensions properly in vs code
+    alias vscode_disable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false"
+    alias vscode_enable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true"
 fi
 
 # common
-alias h='history'
-alias s='source ~/.bash_profile'
+alias h="history"
+alias s="source ~/.bash_profile"
+alias ll='exa --all --long --header --group --git --links --group-directories-first --color-scale --time-style=long-iso'
 alias now="date +'%F %T'"
-alias tree="find ./ -type d | sed -e 's/[^-][^\/]*\//--/g;s/--/ |-/'"
-alias pmake="make --eval=\"print-%: ; @echo $*=$($*)\""
-alias sshfind="nmap -sV -p 22 192.168.0.0/24 | grep 192"
-alias pubkey="cat ~/.ssh/id_rsa.pub"
+alias rand="tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 32 | head -n 1"
+
+# GPG
+alias gpg_list_keys="gpg --list-secret-keys --keyid-format=long"
 
 # tar files
 alias maketar='tar -pczf'
 alias untar='tar -xvf'
 
 # python
-alias pydocs='open /Users/cgilmer/Documents/pydocs/python-2.7.13-docs-html/index.html'
-alias pydocs3='open /Users/cgilmer/Documents/pydocs/python-3.6.1-docs-html/index.html'
-alias findjs='find . -type f -name "*.js*" -print0 | xargs -0 grep'
-alias findpy='find . -type f -name "*.py" -print0 | xargs -0 grep'
-alias rmpyc='find . -name "*.pyc" -exec rm {} \;'
-alias pyproc='ps aux | grep python'
-alias notebook='ipython notebook --pylab inline'
 alias simpleserver='python -m SimpleHTTPServer 8000'
-alias pysort='isort -rc -sl -dt -sg "*env/*" .'
-alias fixpy='for version in 2.7.11 3.5.1 3.4.4 3.3.6 2.6.9; do echo $version; pyenv uninstall -f $version; pyenv install $version; done; pyenv global 2.7.11 3.5.1 3.4.4 3.3.6 2.6.9;'
-alias fixcrypto='env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pip install cryptography'
-alias mkcli='cp ~/cli_template.py .'
-alias venv2='virtualenv .venv -p python2.7; source .venv/bin/activate'
-alias venv3='python3 -m venv .venv; source .venv/bin/activate'
+alias d="deactivate"
 
 # git
 alias gi='git'
-alias git_init='git init && git main'
-# alias gpthis='git push origin HEAD:$(git_current_branch)'
-# alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
 alias gpr='open "https://$(git_current_domain)/$(git_current_origin)/pull/new/$(git_current_branch)"'
 alias glpr='open "https://$(git_current_domain)/$(git_current_origin)/-/merge_requests/new?merge_request%5Bsource_branch%5D=$(git_current_branch)"'
 alias gcompare='open "http://$(git_current_domain)/$(git_current_origin)/compare/$(git_ref_origin)...$(git_ref_head)"'
 alias gpull='git pull origin $(git_branch_name)'
 alias gcm='git checkout main || git checkout master'
-
-# postgresql
-alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-
-# fix ssh screen session
-alias fs="source ~/fixssh"
-
-# ansible
-alias cpssh="cp /Users/cgilmer/Projects/bossytable/ansible/ssh/config ~/.ssh/config && sed -i -e 's/UserKnownHostsFile.*/ForwardAgent Yes/' ~/.ssh/config"
-
-# powerline
-alias ps1="powerline-daemon --replace"
-
-# tmux
-alias tmux="tmux -2"
-
-# Chime
-alias chime="afplay /System/Library/CoreServices/PowerChime.app/Contents/Resources/connect_power.aif"
-
-# Disable warnings about pyenv with brew
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-
-# VS Code
-# press and hold means I can't use vim extensions properly in vs code
-alias vscode_disable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false"
-alias vscode_enable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true"
-
-alias rand="tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 32 | head -n 1"
-
-# GPG
-alias gpg_list_keys="gpg --list-secret-keys --keyid-format=long"
 

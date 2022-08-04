@@ -1,30 +1,5 @@
 #! /usr/bin/env bash
 
-# functions
-function random_prompt() {
-  # Symbols from http://www.alanwood.net/unicode/miscellaneous_symbols.html
-  prompts[0]="☭" # hammer & sickle
-  prompts[1]="★" # star
-  prompts[2]="☁" # cloud
-  prompts[3]="☯" # yin-yang
-  prompts[4]="♥" # heart
-  prompts[5]="♦" # diamond
-  prompts[6]="♣" # club
-  prompts[7]="♠" # spade
-  prompts[8]="♬" # music notes
-  prompts[9]="☢" # radiation
-  prompts[10]="☿" # mercury
-  prompts[11]="♀" # venus
-  prompts[12]="♁" # earth
-  prompts[13]="♂" # mars
-  prompts[14]="♃" # jupiter
-  prompts[15]="♄" # saturn
-  prompts[16]="♅" # uranus
-  prompts[17]="♆" # neptune
-  prompts[18]="♇" # pluto
-  echo "${prompts[RANDOM % ${#prompts[@]}]}"
-}
-
 # Git
 
 fastforward() {
@@ -139,28 +114,6 @@ function findUnifi() {
 
 function getuuid() {
   uuidgen | awk '{printf tolower($0)}' | tee /dev/tty | pbcopy && echo
-}
-
-# Stop RCD from opening iTunes when Bluetooth Headphones get a call
-# Must run all commands with sudo
-# https://discussions.apple.com/thread/2570254
-function stopRCD() {
-  launchctl stop com.apple.rcd
-  launchctl unload /System/Library/LaunchAgents/com.apple.rcd.plist
-}
-
-function startRCD() {
-  sudo chmod 755 /System/Library/CoreServices/rcd.app/Contents/MacOS/rcd
-  launchctl start com.apple.rcd
-}
-
-function nukeRCD() {
-  sudo chmod 000 /System/Library/CoreServices/rcd.app/Contents/MacOS/rcd
-  sudo pkill -9 rcd
-}
-
-function unNukeRCD() {
-  sudo chmod 755 /System/Library/CoreServices/rcd.app/Contents/MacOS/rcd
 }
 
 # Count uniq lines and reverse sort

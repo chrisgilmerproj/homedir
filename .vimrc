@@ -30,7 +30,7 @@ set encoding=utf-8
 scriptencoding utf-8
 set fileencodings=utf-8
 setglobal fileencoding=utf-8
-set noemoji            " Ensure emoji chars are single width
+" set noemoji            " Ensure emoji chars are single width
 set ambiwidth=single   " Ensure ambiguous chars are single width
 
 " space open/closes folds
@@ -146,11 +146,11 @@ set incsearch          " search as characters are entered
 set hlsearch           " highlight matches
 set showmatch          " highlight matching [{()}]
 
-" powerline
-let g:powerline_pycmd = 'py3'
-let g:powerline_eval = 'py3eval'
-source /Users/cgilmer/.pyenv/versions/3.9.9/lib/python3.9/site-packages/powerline/bindings/vim/plugin/powerline.vim
-set t_Co=256
+" " powerline
+" let g:powerline_pycmd = 'py3'
+" let g:powerline_eval = 'py3eval'
+" source /Users/cgilmer/.pyenv/versions/3.9.9/lib/python3.9/site-packages/powerline/bindings/vim/plugin/powerline.vim
+" set t_Co=256
 
 " prettier
 " max line length that prettier will wrap on

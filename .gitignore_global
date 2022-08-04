@@ -49,3 +49,6 @@ helper_scripts/
 .venv3
 .env3
 
+# Python
+__pycache__/
+
