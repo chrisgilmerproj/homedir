@@ -25,5 +25,9 @@ format = "@[$hostname](bold purple) "
 # [package]
 # disabled = true
 
+[status]
+format="[$symbol $status]($style) "
+disabled = false
+
 [username]
 format = "[$user]($style)"

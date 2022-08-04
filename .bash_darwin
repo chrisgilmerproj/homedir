@@ -30,8 +30,10 @@ export AWSLOGIN_BROWSER=firefox
 # gnutls
 # export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 
-# Brew bash completions
-for i in "$(brew --prefix)"/etc/bash_completion.d/*; do
-  # shellcheck disable=SC1090
-  . "${i}";
-done
+# # Brew bash completions
+# for i in "$(brew --prefix)"/etc/bash_completion.d/*; do
+#   # shellcheck disable=SC1090
+#   . "${i}";
+# done
+
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"

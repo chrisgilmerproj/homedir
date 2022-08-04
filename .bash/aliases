@@ -31,6 +31,10 @@ else
     # press and hold means I can't use vim extensions properly in vs code
     alias vscode_disable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false"
     alias vscode_enable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true"
+
+    if hash bat; then
+        alias cat="bat"
+    fi
 fi
 
 # common
