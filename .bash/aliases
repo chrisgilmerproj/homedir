@@ -6,15 +6,6 @@ if [ "$(uname)" == 'Linux' ]; then
 else
     alias ps='ps aux'
     alias ls='ls -h'
-    alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f 2"
-    alias sethostname='scutil –set HostName'
-    alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
-    alias fsleep="osascript -e 'tell the application \"Finder\" to sleep'"
-    alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
-
-    # This requires the directory of the app you wish to unquarantine
-    # $ xrelease /Applications/Adium.app/
-    alias xrelease="sudo xattr -d -r com.apple.quarantine"
 
     # show and hide hidden files
     alias showfiles="defaults write com.apple.Finder AppleShowAllFiles TRUE; killall Finder"
@@ -32,9 +23,10 @@ else
     alias vscode_disable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false"
     alias vscode_enable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true"
 
-    if hash bat; then
-        alias cat="bat"
-    fi
+fi
+
+if hash bat; then
+    alias cat="bat"
 fi
 
 # common
@@ -43,6 +35,7 @@ alias s="source ~/.bash_profile"
 alias ll='exa --all --long --header --group --git --links --group-directories-first --color-scale --time-style=long-iso'
 alias now="date +'%F %T'"
 alias rand="tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 32 | head -n 1"
+alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f 2"
 
 # GPG
 alias gpg_list_keys="gpg --list-secret-keys --keyid-format=long"
