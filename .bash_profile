@@ -50,6 +50,9 @@ done
 # Pyenv
 hash pyenv && eval "$(pyenv init -)"
 
+# nodenv
+hash nodenv && eval "$(nodenv init -)"
+
 # Rust
 [ -f "${HOME}/.cargo/env" ] && . "$HOME/.cargo/env"
 

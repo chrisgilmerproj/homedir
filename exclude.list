@@ -107,6 +107,7 @@
 .yarnrc
 .zoomus/
 
+v/
 env/
 venv/
 env3/

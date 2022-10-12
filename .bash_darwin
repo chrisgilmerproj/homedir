@@ -8,15 +8,18 @@ export PATH="$(brew --prefix curl)/bin:$PATH"
 export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix openssl)/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix libxml2)/bin:$PATH"
+export PATH="$(brew --prefix libxslt)/bin:$PATH"
 
 # Shims help with homebrew
 export PATH="$HOME/.pyenv/shims:$PATH"
 
 # Flags
-export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix libffi)/lib -L$(brew --prefix zlib)/lib"
-export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libffi)/include -I$(brew --prefix zlib)/include"
+export LDFLAGS="-L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/system"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib -L$(brew --prefix libffi)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix libxml2)/lib -L$(brew --prefix libxslt)/lib"
+export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libffi)/include -I$(brew --prefix zlib)/include -I$(brew --prefix libxml2)/include -I$(brew --prefix libxslt)/include"
 export CFLAGS="-Wno-error=implicit-function-declaration ${CPPFLAGS}"
-export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
+export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix libffi)/lib/pkgconfig:$(brew --prefix libxml2)/lib/pkgconfig:$(brew --prefix libxslt)/lib/pkgconfig"
 
 # man pages
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$(manpath)"

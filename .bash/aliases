@@ -56,3 +56,6 @@ alias gcompare='open "http://$(git_current_domain)/$(git_current_origin)/compare
 alias gpull='git pull origin $(git_branch_name)'
 alias gcm='git checkout main || git checkout master'
 
+# Terraform
+alias tflock="terraform providers lock -platform=linux_amd64 -platform=darwin_amd64"
+
