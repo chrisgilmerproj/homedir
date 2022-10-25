@@ -35,13 +35,6 @@ export INTERACTIVE_SHELL=1
 # Disable stupid ansible cows
 export ANSIBLE_NOCOWS=1
 
-# shellcheck disable=SC1090
-. "${HOME}/.bash/aliases"
-# shellcheck disable=SC1090
-. "${HOME}/.bash/functions"
-# shellcheck disable=SC1090
-. "${HOME}/.bash/options"
-
 # shellcheck disable=SC2086,SC2231
 for i in ${HOME}/.bash/completions/*; do
   # shellcheck disable=SC1090
@@ -49,13 +42,13 @@ for i in ${HOME}/.bash/completions/*; do
 done
 
 # Pyenv
-hash pyenv && eval "$(pyenv init -)"
+hash pyenv &>/dev/null && eval "$(pyenv init -)"
 
 # nodenv
-hash nodenv && eval "$(nodenv init -)"
+hash nodenv &>/dev/null && eval "$(nodenv init -)"
 
 # starship prompt
-hash starship && eval "$(starship init bash)"
+hash starship &>/dev/null && eval "$(starship init bash)"
 
 export LC_ALL=en_US.UTF-8
 
@@ -63,7 +56,7 @@ export LC_ALL=en_US.UTF-8
 export RIPGREP_CONFIG_PATH="${HOME}"/.ripgreprc
 
 # https://direnv.net
-hash direnv && eval "$(direnv hook bash)"
+hash direnv &>/dev/null && eval "$(direnv hook bash)"
 
 # GPG
 GPG_TTY=$(tty)
@@ -72,4 +65,11 @@ export GPG_TTY
 # Local modifications should come last
 # shellcheck disable=SC1090
 [ -f "${HOME}/.bash_local" ] && . "${HOME}/.bash_local"
+
+# shellcheck disable=SC1090
+. "${HOME}/.bash/aliases"
+# shellcheck disable=SC1090
+. "${HOME}/.bash/functions"
+# shellcheck disable=SC1090
+. "${HOME}/.bash/options"
 
