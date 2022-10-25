@@ -1,8 +1,9 @@
 
 export GOPATH=~/.go
 export PYENV_ROOT=$HOME/.pyenv
-export PATH=$HOME/.cargo/bin:./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
+export PATH=./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$HOME/.tfenv/bin:$PATH"
 
 # OS Specific Modifications
 [[ "$(uname)" == 'Linux'  &&  -f "${HOME}/.bash_linux" ]] && . "${HOME}/.bash_linux"
@@ -52,9 +53,6 @@ hash pyenv && eval "$(pyenv init -)"
 
 # nodenv
 hash nodenv && eval "$(nodenv init -)"
-
-# Rust
-[ -f "${HOME}/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # starship prompt
 hash starship && eval "$(starship init bash)"

@@ -14,6 +14,11 @@ export PATH="$(brew --prefix libxslt)/bin:$PATH"
 # Shims help with homebrew
 export PATH="$HOME/.pyenv/shims:$PATH"
 
+# Rust
+export CARGO_HOME="${HOME}/.cargo"
+export PATH="${CARGO_HOME}/bin:$PATH"
+[ -f "${CARGO_HOME}/env" ] && . "${CARGO_HOME}/env"
+
 # Flags
 export LDFLAGS="-L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/system"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib -L$(brew --prefix libffi)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix libxml2)/lib -L$(brew --prefix libxslt)/lib"
