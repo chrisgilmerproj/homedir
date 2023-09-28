@@ -32,7 +32,7 @@ fi
 # common
 alias h="history"
 alias s="source ~/.bash_profile"
-alias ll='exa --all --long --header --group --git --links --group-directories-first --color-scale --time-style=long-iso'
+alias ll='eza --all --long --header --group --git --links --group-directories-first --color-scale --time-style=long-iso'
 alias now="date +'%F %T'"
 alias rand="tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 32 | head -n 1"
 alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f 2"
@@ -59,3 +59,5 @@ alias gcm='git checkout main || git checkout master'
 # Terraform
 alias tflock="terraform providers lock -platform=linux_amd64 -platform=darwin_amd64"
 
+# Docker
+alias docker_remove_images="docker rm $(docker ps -a -f status=exited -f status=created -q)"

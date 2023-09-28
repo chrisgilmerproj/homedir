@@ -22,7 +22,7 @@ export PATH="${CARGO_HOME}/bin:$PATH"
 # Flags
 export LDFLAGS="-L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/system"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib -L$(brew --prefix libffi)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix libxml2)/lib -L$(brew --prefix libxslt)/lib"
-export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libffi)/include -I$(brew --prefix zlib)/include -I$(brew --prefix libxml2)/include -I$(brew --prefix libxslt)/include"
+export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libffi)/include -I$(brew --prefix zlib)/include -I$(brew --prefix libxml2)/include -I$(brew --prefix libxslt)/include -DXMLSEC_NO_XKMS=1"
 export CFLAGS="-Wno-error=implicit-function-declaration ${CPPFLAGS}"
 export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix libffi)/lib/pkgconfig:$(brew --prefix libxml2)/lib/pkgconfig:$(brew --prefix libxslt)/lib/pkgconfig"
 

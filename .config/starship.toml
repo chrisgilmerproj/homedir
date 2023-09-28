@@ -1,6 +1,10 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = """
+${custom.PROD}\
+$all"""
+
 # Command timeout
 command_timeout = 500
 
@@ -8,7 +12,7 @@ command_timeout = 500
 add_newline = true
 
 [aws]
-format = 'on [$symbol($profile )(\($region\) )]($style)'
+format = 'on [($profile )(\($region\) )]($style)'
 style = "bold blue"
 force_display = true
 
@@ -31,3 +35,16 @@ disabled = false
 
 [username]
 format = "[$user]($style)"
+
+[env_var.PROJECT]
+variable="PROJECT"
+format="for [$env_value]($style) "
+description="A project identifier"
+style = "yellow bold"
+
+[custom.PROD]
+when = "[[ ${PROJECT,,} == *prod* ]]"
+style = "red bold"
+symbol = "PROD"
+format = "[$symbol]($style) "
+

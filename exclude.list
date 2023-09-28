@@ -76,6 +76,7 @@
 .packer.d/
 .pioenvs/
 .pip/
+.pip-audit-cache/
 .pip_download_cache/
 .psql_history
 .puppet/
