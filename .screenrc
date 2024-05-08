@@ -38,4 +38,4 @@ term xterm-256color
 #defbce on    # use current bg color for erased chars
 
 # Set default shell
-shell "/usr/local/bin/bash"
+shell "/usr/bin/bash"
