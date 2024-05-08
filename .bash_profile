@@ -1,15 +1,12 @@
 
-export GOPATH=~/.go
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=./node_modules/.bin:$HOME/.npm-packages/bin:$GOPATH/bin:$PATH
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$HOME/.tfenv/bin:$PATH"
+# Remove original path
+#export PATH=".:./bin/linux64.el9:./bin:/home/cgilmer/bin/linux64.el9:/home/cgilmer/bin:./bin:/home/cgilmer/bin:/sww/gfx/bin:/sww/sand/bin:/sww/tools/bin:/usr/bin:/bin:/usr/local/bin:/usr/local/sbin"
 
 # OS Specific Modifications
 [[ "$(uname)" == 'Linux'  &&  -f "${HOME}/.bash_linux" ]] && . "${HOME}/.bash_linux"
 [[ "$(uname)" == 'Darwin'  &&  -f "${HOME}/.bash_darwin" ]] && . "${HOME}/.bash_darwin"
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH
+export PATH="$HOME/bin:./node_modules/.bin:$HOME/.npm-packages/bin:/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH"
 
 # aws cli
 export AWS_PAGER="less"
@@ -41,9 +38,6 @@ for i in ${HOME}/.bash/completions/*; do
   . "${i}";
 done
 
-# Pyenv
-hash pyenv &>/dev/null && eval "$(pyenv init -)"
-
 # nodenv
 hash nodenv &>/dev/null && eval "$(nodenv init -)"
 
@@ -73,3 +67,4 @@ export GPG_TTY
 # shellcheck disable=SC1090
 . "${HOME}/.bash/options"
 
+[ -f "/opt/.cargo/env" ] && . "/opt/.cargo/env"
