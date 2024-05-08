@@ -25,7 +25,7 @@ else
 
 fi
 
-if hash bat; then
+if hash bat > /dev/null 2>&1 ; then
     alias cat="bat"
 fi
 
