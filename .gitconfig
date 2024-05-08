@@ -67,3 +67,11 @@
 [credential "https://git-codecommit.*.amazonaws.com"]
     helper = !aws codecommit credential-helper $@
     UseHttpPath = true
+[safe]
+	directory = /s/atris/scripts/gitlab/../..
+	directory = /s/slate/slate-deploy
+	directory = /s/is-aws-infrastructure
+	directory = /s/atris-admin
+	directory = /opt/slate-deploy
+	directory = /opt/slate-deploy
+	directory = /opt/pyenv
