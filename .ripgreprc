@@ -2,4 +2,5 @@
 --hidden
 --glob=!.git
 --glob=!node_modules/*
+--glob=!*.min.css
 --sort=path

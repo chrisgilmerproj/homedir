@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+
+umask 022
+
+# Pyenv
+[[ -f /opt/pyenv/.pyenvrc ]] && . /opt/pyenv/.pyenvrc
+
+export GOPATH=/opt/go
+export PATH="$GOPATH/bin:$PATH"
+export TFENV_ROOT=/s/repos/tfenv
+export PATH="$TFENV_ROOT/bin:$PATH"
+export AWSCLIV2_ROOT=/opt/awscliv2
+export PATH="$AWSCLIV2_ROOT/bin:$PATH"
+
+function tnew() {
+    tmux new -s "${PWD##*/}"
+}
+
+function tattach() {
+    tmux attach -t "${PWD##*/}"
+}
+
+function tkillses() {
+    tmux kill-ses -t "${PWD##*/}"
+}

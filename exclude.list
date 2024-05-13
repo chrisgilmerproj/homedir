@@ -130,6 +130,7 @@ dist/
 
 anaconda/
 Applications/
+AppleInternal/
 exclude.list
 Library/
 mapscache/
@@ -155,3 +156,4 @@ go/
 *.ovf
 *.vmdk
 ansible-ubuntu*
+

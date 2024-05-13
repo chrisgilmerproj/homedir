@@ -11,8 +11,10 @@
     editor = vim
     whitespace = space-before-tab,trailing-space
     excludesfile = /Users/cgilmer/.gitignore_global
+    pager = delta
 [diff]
     tool = vimdiff
+    colorMoved = default
 [alias]
     st = status --short --branch
     br = branch
@@ -43,6 +45,7 @@
     whereami = \\!git reflog | grep -E 'moving from (.*)' -m 30 -o | awk '{print $5}' | awk '\\!visited[$0]++'
     deletetag = push --delete origin
     yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
+    bname = rev-parse --abbrev-ref HEAD
 [color]
     branch = auto
     diff   = auto
@@ -75,3 +78,17 @@
 	directory = /opt/slate-deploy
 	directory = /opt/slate-deploy
 	directory = /opt/pyenv
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+    conflictstyle = diff3
+[diff "sopsdiffer"]
+	textconv = sops -d
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
