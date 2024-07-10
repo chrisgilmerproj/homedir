@@ -6,7 +6,7 @@
 [[ "$(uname)" == 'Linux'  &&  -f "${HOME}/.bash_linux" ]] && . "${HOME}/.bash_linux"
 [[ "$(uname)" == 'Darwin'  &&  -f "${HOME}/.bash_darwin" ]] && . "${HOME}/.bash_darwin"
 
-export PATH="$HOME/bin:./node_modules/.bin:$HOME/.npm-packages/bin:/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/sbin:$PATH"
+export PATH="$PATH:$HOME/bin:./node_modules/.bin:$HOME/.npm-packages/bin:/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/sbin"
 
 # aws cli
 export AWS_PAGER="less"
@@ -38,6 +38,7 @@ for i in ${HOME}/.bash/completions/*; do
   . "${i}";
 done
 
+
 # nodenv
 hash nodenv &>/dev/null && eval "$(nodenv init -)"
 
@@ -60,6 +61,7 @@ export GPG_TTY
 # shellcheck disable=SC1090
 [ -f "${HOME}/.bash_local" ] && . "${HOME}/.bash_local"
 
+
 # shellcheck disable=SC1090
 . "${HOME}/.bash/aliases"
 # shellcheck disable=SC1090
@@ -67,4 +69,3 @@ export GPG_TTY
 # shellcheck disable=SC1090
 . "${HOME}/.bash/options"
 
-[ -f "/opt/.cargo/env" ] && . "/opt/.cargo/env"
