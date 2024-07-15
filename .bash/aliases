@@ -51,10 +51,16 @@ alias d="deactivate"
 
 # git
 alias gi='git'
+# github PR
 alias gpr='open "https://$(git_current_domain)/$(git_current_origin)/pull/new/$(git_current_branch)"'
-alias glpr='open "https://$(git_current_domain)/$(git_current_origin)/-/merge_requests/new?merge_request%5Bsource_branch%5D=$(git_current_branch)"'
 alias gcompare='open "http://$(git_current_domain)/$(git_current_origin)/compare/$(git_ref_origin)...$(git_ref_head)"'
+# gitlab PR
+alias glpr='open "https://$(git_current_domain)/$(git_current_origin)/-/merge_requests/new?merge_request%5Bsource_branch%5D=$(git_current_branch)"'
+# git login
+alias gl='open "https://$(git_current_domain)/$(git_current_origin)/"'
+# git pull
 alias gpull='git pull origin $(git_branch_name)'
+# git checkout main
 alias gcm='git checkout main || git checkout master'
 
 # Terraform
