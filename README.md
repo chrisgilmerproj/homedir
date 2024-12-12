@@ -8,7 +8,9 @@ This doc will get GPG set up on your work computer with your work email. Install
 continue forward.
 
 ```sh
-brew install gnupg
+brew install gnupg pinentry-mac
+ln -s /Users/cgilmer/Projects/personal/homedir/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -s /Users/cgilmer/Projects/personal/homedir/.gnupg/gpg.conf ~/.gnupg/gpg.conf
 ```
 
 Download Private and Public Key from Keybase.io (edit Button next to Key on Profile, Export my Private Key, Key Checksum for Export of Public Key)
