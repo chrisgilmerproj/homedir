@@ -1,4 +1,8 @@
-# GPG with Keybase.io
+# Homedir
+
+This is a repository of home directory files.
+
+## GPG with Keybase.io
 
 This doc will get GPG set up on your work computer with your work email. Install the keybase app before beginning. Then
 continue forward.
@@ -10,8 +14,8 @@ brew install gnupg
 Download Private and Public Key from Keybase.io (edit Button next to Key on Profile, Export my Private Key, Key Checksum for Export of Public Key)
 
 ```sh
-gpg --allow-secret-key-import --import keybase-private.key
-gpg --import keybase-public.key
+keybase pgp export -q 9B9B5634A88AB754 -s | gpg --import --allow-secret-key-import
+# Enter passphrase for key several times
 gpg --edit-key myname@keybase.io
 ```
 

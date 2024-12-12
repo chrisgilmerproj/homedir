@@ -1,0 +1,53 @@
+#!/usr/bin/env zsh
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Path with coreutils last
+export PATH="$(brew --prefix curl)/bin:$PATH"
+export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix openssl)/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix libxml2)/bin:$PATH"
+export PATH="$(brew --prefix libxslt)/bin:$PATH"
+export PATH="$(brew --prefix gnu-getopt)/bin:$PATH"
+
+# Shims help with homebrew
+export PATH="$HOME/.pyenv/shims:$PATH"
+
+# Pyenv
+if hash pyenv &>/dev/null; then
+  eval "$(pyenv init -)"
+fi
+
+# Rust
+export CARGO_HOME="${HOME}/.cargo"
+export PATH="${CARGO_HOME}/bin:$PATH"
+if [[ -f "${CARGO_HOME}/env" ]]; then
+  source "${CARGO_HOME}/env"
+fi
+
+# Flags
+export LDFLAGS="-L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/system"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib -L$(brew --prefix libffi)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix libxml2)/lib -L$(brew --prefix libxslt)/lib"
+export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libffi)/include -I$(brew --prefix zlib)/include -I$(brew --prefix libxml2)/include -I$(brew --prefix libxslt)/include -DXMLSEC_NO_XKMS=1"
+export CFLAGS="-Wno-error=implicit-function-declaration ${CPPFLAGS}"
+export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix libffi)/lib/pkgconfig:$(brew --prefix libxml2)/lib/pkgconfig:$(brew --prefix libxslt)/lib/pkgconfig"
+
+# man pages
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$(manpath)"
+
+# awslogin tool
+export AWSLOGIN_BROWSER=firefox
+
+# OpenSC
+# export OPENSC_MOD_PATH="/usr/local/Cellar/opensc/0.21.0/lib/opensc-pkcs11.so"
+
+# gnutls
+# export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
+
+# Zsh completions
+if [[ -r "$(brew --prefix)/share/zsh/site-functions" ]]; then
+  source "$(brew --prefix)/share/zsh/site-functions"
+fi
+

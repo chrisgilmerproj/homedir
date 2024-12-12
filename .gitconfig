@@ -1,10 +1,10 @@
 [user]
     name = Chris Gilmer
-    # email = chris.gilmer@gmail.com
-    email = cgilmer@lucasfilm.com
+    email = chris.gilmer@gmail.com
+    # email = cgilmer@lucasfilm.com
     # Keybase
-    # signingkey = 9B9B5634A88AB754
-    signingkey = 0379DF76E1A2A567
+    signingkey = 9B9B5634A88AB754
+    # signingkey = 0379DF76E1A2A567
 [github]
     user = chrisgilmerproj
 [core]

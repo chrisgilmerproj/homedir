@@ -1,27 +1,53 @@
+#! /usr/bin/env zsh
 
-alias ll='exa --all --long --header --git --links --group-directories-first --color-scale --time-style=long-iso'
-
-# common
-alias h='history'
-alias s='source ~/.zshrc'
-alias now="date +'%F %T'"
-
-# git
-alias git_init='git init && git main'
-alias gpthis='git push origin HEAD:$(git_current_branch)'
-alias gpfthis='git push -f origin HEAD:$(git_current_branch)'
-alias gpr='open "https://$(git_current_domain)/$(git_current_origin)/pull/new/$(git_current_branch)"'
-alias glpr='open "https://$(git_current_domain)/$(git_current_origin)/-/merge_requests/new?merge_request%5Bsource_branch%5D=$(git_current_branch)"'
-alias gcompare='open "http://$(git_current_domain)/$(git_current_origin)/compare/$(git_ref_origin)...$(git_ref_head)"'
-alias gpull='git pull origin $(git_branch_name)'
-alias gcm='git checkout main || git checkout master'
+alias ps='ps aux'
+alias ls='ls -h'
 
 # Disable warnings about pyenv with brew
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
-# VS Code
-# press and hold means I can't use vim extensions properly in vs code
-alias vscode_disable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false"
-alias vscode_enable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true"
+if hash bat > /dev/null 2>&1 ; then
+    alias cat="bat"
+fi
 
+# common
+alias h="history"
+alias s="source ~/.zprofile"
+alias ll='eza --all --long --header --group --git --links --group-directories-first --color-scale --time-style=long-iso'
+alias now="date +'%F %T'"
 alias rand="tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 32 | head -n 1"
+alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f 2"
+
+# GPG
+alias gpg_list_keys="gpg --list-secret-keys --keyid-format=long"
+
+# tar files
+alias maketar='tar -pczf'
+alias untar='tar -xvf'
+
+# python
+alias simpleserver='python -m SimpleHTTPServer 8000'
+alias d="deactivate"
+
+# git
+alias gi='git'
+# github PR
+alias gpr='open "https://$(git_current_domain)/$(git_current_origin)/pull/new/$(git_current_branch)"'
+alias gcompare='open "http://$(git_current_domain)/$(git_current_origin)/compare/$(git_ref_origin)...$(git_ref_head)"'
+# gitlab PR
+alias glpr='open "https://$(git_current_domain)/$(git_current_origin)/-/merge_requests/new?merge_request%5Bsource_branch%5D=$(git_current_branch)"'
+# git login
+alias gl='open "https://$(git_current_domain)/$(git_current_origin)/"'
+# git pull
+alias gpull='git pull origin $(git_branch_name)'
+# git checkout main
+alias gcm='git checkout main || git checkout master'
+
+# Terraform
+alias tflock="terraform providers lock -platform=linux_amd64 -platform=darwin_amd64"
+
+# Docker
+alias docker_remove_images='docker rm "$(docker ps -a -f status=exited -f status=created -q)"'
+
+# DevUtils
+alias dutils="open \"devutils://auto?copy\""
