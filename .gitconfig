@@ -46,6 +46,7 @@
     deletetag = push --delete origin
     yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
     bname = rev-parse --abbrev-ref HEAD
+    ignoreblame = config blame.ignoreRevsFile .git-blame-ignore-revs
 [color]
     branch = auto
     diff   = auto

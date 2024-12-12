@@ -14,6 +14,8 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix libxml2)/bin:$PATH"
 export PATH="$(brew --prefix libxslt)/bin:$PATH"
 export PATH="$(brew --prefix gnu-getopt)/bin:$PATH"
+export PATH="$(brew --prefix mysql@8.4)/bin:$PATH"
+export PATH="/usr/local/google-cloud-sdk/bin:$PATH"
 
 # Shims help with homebrew
 export PATH="$HOME/.pyenv/shims:$PATH"
@@ -48,3 +50,12 @@ export AWSLOGIN_BROWSER=firefox
 # Brew bash completions
 [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/cgilmer/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/cgilmer/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/cgilmer/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/cgilmer/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# Integrate fzf
+hash fzf &>/dev/null &&  eval "$(fzf --bash)"

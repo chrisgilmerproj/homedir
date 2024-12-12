@@ -72,3 +72,4 @@ alias docker_remove_images="docker rm $(docker ps -a -f status=exited -f status=
 # DevUtils
 alias dutils="open \"devutils://auto?copy\""
 
+alias shouldideploy="curl -Ss https://shouldideploy.today/api | jq"

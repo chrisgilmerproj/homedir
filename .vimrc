@@ -190,3 +190,6 @@ let g:rustfmt_autosave = 1
 
 " Default shell
 set shell=/usr/local/bin/bash
+
+" fzf integration
+set rtp+=/opt/homebrew/opt/fzf

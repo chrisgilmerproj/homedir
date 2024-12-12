@@ -6,7 +6,7 @@ ${custom.PROD}\
 $all"""
 
 # Command timeout
-command_timeout = 500
+command_timeout = 1000
 
 # Inserts a blank line between shell prompts
 add_newline = true

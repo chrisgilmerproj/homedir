@@ -212,6 +212,13 @@ utc() {
   echo "UTC $(TZ=UTC date --rfc-3339=seconds | sed 's/ /T/')"
 }
 
+convert_timestamp() {
+  local timestamp=$1
+  echo "PST $(TZ=America/Los_Angeles date --rfc-3339=seconds -d @"${timestamp}" | sed 's/ /T/')"
+  echo "EST $(TZ=America/New_York date --rfc-3339=seconds -d @"${timestamp}" | sed 's/ /T/')"
+  echo "UST $(TZ=UTC date --rfc-3339=seconds -d @"${timestamp}" | sed 's/ /T/')"
+}
+
 # docker
 
 function run_docker() {

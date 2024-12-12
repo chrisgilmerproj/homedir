@@ -3,4 +3,6 @@
 --glob=!.git
 --glob=!node_modules/*
 --glob=!*.min.css
+--glob=!*.min.js
+--glob=!_tmp
 --sort=path
