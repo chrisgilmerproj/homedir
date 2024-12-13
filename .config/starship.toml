@@ -47,5 +47,3 @@ when = "[[ ${PROJECT,,} == *prod* ]]"
 style = "red bold"
 symbol = "PROD"
 format = "[$symbol]($style) "
-
-
