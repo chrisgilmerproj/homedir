@@ -23,7 +23,7 @@ else
     alias vscode_disable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false"
     alias vscode_enable_pressandhold="defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true"
 
-    alias bupdate="brew unlink tfenv && brew update && brew upgrade && brew link --overwrite tfenv && echo \"All done!\""
+    alias bupdate="(brew unlink tfenv && brew update && brew upgrade) || true && brew link --overwrite tfenv && echo \"All done!\""
 fi
 
 if hash bat > /dev/null 2>&1 ; then

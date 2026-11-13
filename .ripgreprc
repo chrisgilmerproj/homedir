@@ -5,4 +5,6 @@
 --glob=!*.min.css
 --glob=!*.min.js
 --glob=!_tmp
+--glob=!.claude-cache/
+--glob=!.uv-cache/
 --sort=path

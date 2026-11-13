@@ -6,7 +6,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Silence the bash deprecation warning
 export export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# Slack and other tools
+export PATH="$HOME/.local/bin:$PATH"
+
 # Path with coreutils last
+export PATH="$(go env GOPATH)/bin:$PATH"
+export PATH="$(brew --prefix helm@3)/bin:$PATH"
 export PATH="$(brew --prefix curl)/bin:$PATH"
 export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix openssl)/bin:$PATH"

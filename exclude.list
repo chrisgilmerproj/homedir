@@ -22,6 +22,9 @@
 .cargo/env/
 .CFUserTextEncoding
 .circleci/
+.claude/
+.claude-cache/
+.claude-name
 .conda/
 .config
 .continuum/
@@ -44,7 +47,6 @@
 .gem/
 .gemrc
 .gitconfig
-.gitignore_global
 .gnupg/
 .go/
 .hgrc
@@ -61,6 +63,7 @@
 .matplotlib/
 .matplotlibrc
 .mypy_cache
+.mypy_cache/
 .NERDTreeBookmarks
 .node-gyp/
 .nodenv/
@@ -94,7 +97,10 @@
 .terraform/
 .terraform-prod
 .terraform-qa
+.terraform-prod/
+.terraform-qa/
 .tfenv/
+.tmp/
 .tmux.conf
 .Trash/
 .v8flags.*
@@ -117,7 +123,6 @@ vendor/
 .venv/
 .env/
 .tox/
-pkg/
 node_modules/
 bower_components/
 
@@ -142,6 +147,7 @@ Pictures/
 Projects/go/
 Public/
 VirtualBox VMs/
+WordPress/
 pydocs/
 go/
 
@@ -156,4 +162,45 @@ go/
 *.ovf
 *.vmdk
 ansible-ubuntu*
+
+*.bin
+*.dat
+*.dll
+*.cube
+*.jar
+*.spi1d
+*.spimtx
+*.wasm
+*.wasm.js
+site-packages/
+.direnv/
+tfenv/
+password-store/
+vim/
+*.psd
+*.ttf
+*.xz
+atris_importer/data/
+aspera-s3/files/
+atris_web/ui2/atris/public/images/pspdfkit-lib/
+.terraform-qa/
+.terraform-prod/
+.terraform/
+
+.uv-cache/
+
+Data.fs*
+.Data.fs*
+
+test-results/
+data/index/
+
+swt/holocron/data/export/
+swt/archive/
+swt/skyriver/data/
+swt/skyriver/media/
+swt/skyriver/static/
+swt/skyriver/tmp/
+
+*.mp4
 

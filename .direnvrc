@@ -2,7 +2,7 @@
 
 layout_poetry() {
   if [[ ! -f pyproject.toml ]]; then
-    log_error 'No pyproject.toml found. Use `poetry new` or `poetry init` to create one first.'
+    log_error "No pyproject.toml found. Use 'poetry new' or 'poetry init' to create one first."
     exit 2
   fi
 
@@ -11,7 +11,28 @@ layout_poetry() {
   unset POETRY_ACTIVE
   poetry run true
 
-  export VIRTUAL_ENV=$(poetry env info --path)
+  VIRTUAL_ENV=$(poetry env info --path)
+  export VIRTUAL_ENV
   export POETRY_ACTIVE=1
   PATH_add "$VIRTUAL_ENV/bin"
+}
+
+layout_uv() {
+    if [[ ! -f pyproject.toml ]]; then
+        log_error "No pyproject.toml found. Use 'uv init' or similar first."
+        exit 2
+    fi
+
+    unset VIRTUAL_ENV
+    unset UV_ACTIVE
+
+    # Create venv only if it does not exist
+    if [[ ! -d ".venv" ]]; then
+        uv venv
+    fi
+
+    # Set environment variables for direnv
+    export VIRTUAL_ENV="$PWD/.venv"
+    export UV_ACTIVE=1
+    PATH_add "${VIRTUAL_ENV}/bin"
 }

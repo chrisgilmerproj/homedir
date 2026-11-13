@@ -18,6 +18,8 @@
 *.jar
 *.rar
 *.tar
+*.tar.xz
+*.xz
 *.zip
 
 # Logs
@@ -52,3 +54,19 @@ helper_scripts/
 # Python
 __pycache__/
 
+# Direnv
+.envrc.local
+
+#AI
+.ai-dc
+.ai-name
+.ai-cache/
+.ai-docker.yaml
+.claude/
+.claude-docker.yaml
+.claude-dc
+.claude-name
+.claude-cache/
+.claude/settings.local.json
+.mcp.json
+.weave-session

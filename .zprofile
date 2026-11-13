@@ -5,7 +5,7 @@
 export PATH="$PATH:$HOME/bin:./node_modules/.bin:$HOME/.npm-packages/bin:/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/sbin"
 
 # aws cli
-export AWS_PAGER="less"
+export AWS_PAGER=""
 
 # less
 export LESS="-R"
