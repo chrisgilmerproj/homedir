@@ -80,6 +80,51 @@ You can sign now on Github with:
 git commit -S -m "signed commit"
 ```
 
+## Moving a GPG key between computers without Keybase
+
+Use this for any key that is not stored in Keybase. Find the fingerprint or long key ID of the key to move with:
+
+```sh
+gpg --list-secret-keys --keyid-format LONG
+```
+
+On the computer that has the key (replace `<FINGERPRINT>` with the fingerprint or long key ID):
+
+```sh
+gpg --export-secret-keys --armor <FINGERPRINT> > secret.asc
+gpg --export --armor <FINGERPRINT> > public.asc
+gpg --export-ownertrust > ownertrust.txt
+```
+
+The secret key export asks for the key passphrase. It includes the subkeys.
+
+Copy the three files to the new computer (AirDrop, scp or an encrypted USB stick). Then on the new computer:
+
+```sh
+gpg --import secret.asc
+gpg --import public.asc
+gpg --import-ownertrust ownertrust.txt
+gpg --list-secret-keys --keyid-format LONG
+```
+
+The ownertrust import restores the trust level. To set trust by hand instead:
+
+```sh
+gpg --edit-key <FINGERPRINT>
+```
+
+```text
+gpg> trust
+Your decision? 5
+gpg> quit
+```
+
+Delete the exported files on both computers when done:
+
+```sh
+rm -P secret.asc public.asc ownertrust.txt
+```
+
 ## Troubleshooting
 
 If you have issues try this.
